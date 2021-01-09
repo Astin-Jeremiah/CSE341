@@ -1,0 +1,40 @@
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+/* Global */
+html{
+  min-height: 100%;
+  overflow: hidden;
+}
+body{
+  padding: 4em;
+  font-family: 'Press Start 2P', cursive;
+  background-color: #191919;  
+}
+h1{
+    position: relative;
+    width: 24em;
+    margin: 0 auto;
+    border-right: 2px solid;
+    font-size: 180%;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden; 
+    letter-spacing: 5px;
+    color: #33ff33;
+}
+
+/* Animation */
+.type{
+  animation: typewriter 4s steps(25) 1s 1 normal both,
+             blinkTextCursor 700ms steps(25) infinite normal;
+}
+@keyframes typewriter{
+  from{width: 0;}
+  to{width: 20em;}
+}
+@keyframes blinkTextCursor{
+  from{border-right-color: #33ff33;}
+  to{border-right-color: transparent;}
+}
+
