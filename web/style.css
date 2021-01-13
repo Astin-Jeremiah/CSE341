@@ -6,6 +6,7 @@ html{
   min-height: 100%;
   overflow: hidden;
 }
+
 body.retro{
   padding: 4em;
   font-family: 'Press Start 2P', cursive;
@@ -36,5 +37,34 @@ h1.type{
 @keyframes blinkTextCursor{
   from{border-right-color: #33ff33;}
   to{border-right-color: transparent;}
+}
+
+
+#one {
+    font-size: 30px;
+    background-color: red;
+}
+
+#two {
+    font-size: 20px;
+    background-color: yellow;
+}
+
+#three {
+    font-size: 10px;
+    background-color: greenyellow;
+}
+
+#one:hover, #two:hover, #three:hover {
+    font-weight: bold;
+}
+
+#color, #color2 {
+    width: 100px;
+    display: inline-block;
+}
+
+#button1, #button2, #fade {
+    margin: auto;
 }
 

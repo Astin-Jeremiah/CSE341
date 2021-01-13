@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewpoint" content="width=device-width, initial-scale=1.0">
+    <title>
+        Week 2 Team Activity
+    </title>
+    <link href="../style.css" type="text/css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row g-2">
+            <div class="col-lg" id="one">Div Number One</div>
+            <div class="col-lg" id="two">Div Number Two</div>
+            <div class="col-lg" id="three">Div Number Three</div>
+        </div>
+        
+        <div class="row g-2">
+            <div class="col-lg">Div 1 Background Color:&nbsp;<input class="form-control form-control-sm" type="text" id="color" placeholder="#123456" maxlength="7"></div>
+            <div class="col-lg">Div 2 Background Color:&nbsp;<input class="form-control form-control-sm" type="text" id="color2" placeholder="#123456" maxlength="7"></div>
+            <div class="col-lg"></div>
+        </div>
+        
+        <div class="row g-2">
+            <div class="col-lg"><button class="btn btn-outline-success btn-sm" id="button1" onclick="change()">Change Color Div 1</button></div>
+            <div class="col-lg"><button class="btn btn-outline-success btn-sm" id="button2">Change Color Div 2</button></div>
+            <div class="col-lg"><button class="btn btn-outline-success btn-sm" id="fade">Fade In/Out Div 3</button></div>
+        </div>
+        <br>
+        <button class="btn btn-outline-success btn-sm" onclick="alt()">Click Me</button>
+    </div>
+</body>
+<script src="java.js"></script>
+</html>
