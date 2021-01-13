@@ -6,12 +6,12 @@ html{
   min-height: 100%;
   overflow: hidden;
 }
-body{
+body.retro{
   padding: 4em;
   font-family: 'Press Start 2P', cursive;
   background-color: #191919;  
 }
-h1{
+h1.type{
     position: relative;
     width: 24em;
     margin: 0 auto;
