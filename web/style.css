@@ -1,5 +1,15 @@
 /* Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bubblegum+Sans&display=swap');
+
+@font-face {
+    font-family: 'rustico';
+    src: url('../fonts/rustico-regular-webfont.ttf') format('truetype'),
+         url('../fonts/rustico-regular-webfont.woff') format('woff'),
+         url('../fonts/rustico-regular-webfont.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
 
 /* Global */
 html{
@@ -67,4 +77,52 @@ h1.type{
 #button1, #button2, #fade {
     margin: auto;
 }
+
+main > .container {
+  padding: 60px 15px 0;
+}
+
+nav {
+    text-align: center;
+}
+
+i {
+    font-size: 30px;
+    color: #ffc107;
+}
+
+i:hover {
+    color: #f8f9fa;
+}
+
+footer {
+    color: #ffc107;
+}
+
+.social {
+    margin-right: 25px;
+}
+
+blockquote {
+    font-family: 'Bubblegum Sans';
+    margin-top: 20px;
+    font-size: 25px;
+    line-height: .75cm;
+}
+
+ul.navbar-nav a:hover { 
+    color: #f8f9fa !important; 
+}
+
+body {
+  padding-top: 100px;
+}
+
+@media (min-width: 768px) {
+  body {
+    padding-top: 0px;
+  }
+}
+
+
 
