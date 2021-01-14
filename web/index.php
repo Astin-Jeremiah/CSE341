@@ -21,7 +21,7 @@
             <blockquote class="text-danger">“You're off to great palces!<br>Today is your day!<br>Your mountain is waiting.<br>So...get on your way!"<br><span class="text-primary">Dr.Seuss</span></blockquote>
         </div>
     </main>
-    <footer>
+    <footer class="mt-1 footer mt-auto py-2 bg-primary">
         <?php include $_SERVER['DOCUMENT_ROOT'] . '/modules/footer.php'; ?>
     </footer>
 
