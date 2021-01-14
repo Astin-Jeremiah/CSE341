@@ -3,13 +3,13 @@
         <div class="navbar-collapse justify-content-center">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link fs-3 fw-bold text-dark" href="index.html">Home</a>
+                    <a class="nav-link fs-3 fw-bold text-dark" href="../index.php">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link fs-3 fw-bold text-dark" href="about.html">About Me</a>
+                    <a class="nav-link fs-3 fw-bold text-dark" href="../about/index.php">About Me</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link fs-3 fw-bold text-dark" href="portfolio.html">Portfolio</a>
+                    <a class="nav-link fs-3 fw-bold text-dark" href="../portfolio/index.php">Portfolio</a>
                 </li>
             </ul>
         </div>
