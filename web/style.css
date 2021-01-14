@@ -88,15 +88,15 @@ nav {
 
 i {
     font-size: 30px;
-    color: #f8f9fa;
-}
-
-i:hover {
     color: #dc3545;
 }
 
-footer {
+i:hover {
     color: #f8f9fa;
+}
+
+footer {
+    color: #dc3545;
 }
 
 .social {
