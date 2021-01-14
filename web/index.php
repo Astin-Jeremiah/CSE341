@@ -18,7 +18,7 @@
         <div class="container text-center">
             <h1 class="m-4 text-dark">Jeremiah Astin <br>CSE 341 Portfolio</h1>
             <img class="img-fluid" src="images/family.jpg" alt="Astin Family Photo" />
-            <blockquote class="text-danger">“Today is your day!<br>Your mountain is waiting.<br>So...get on your way!<br>Dr.Seuss</blockquote>
+            <blockquote class="text-danger">“You're off to great palces!<br>Today is your day!<br>Your mountain is waiting.<br>So...get on your way!<br>Dr.Seuss</blockquote>
         </div>
     </main>
     <footer class="footer mt-auto py-2 bg-dark">
