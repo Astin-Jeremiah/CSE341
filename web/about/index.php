@@ -16,7 +16,7 @@
 
     <main class="flex-shrink-0">
         <div class="container text-center">
-            <h1 class="mt-3 text-dark">About Me</h1>
+            <h1 class="text-dark">About Me</h1>
             <div class="clearfix">
                 <img class="mb-2" src="../images/jeremiah.jpg" alt="Jeremiah Astin" />
                 <p>Hello! My name is Jeremiah Astin. I am currently an applied technologies student at Brigham Young University Idaho Online. I have always been interested in computers and the internet and I have really enjoyed learning how to design and develop websites.</p>

@@ -15,7 +15,7 @@
     </header>
     <main class="flex-shrink-0">
         <div class="container text-center">
-            <h1 class="m-4 text-dark">CSE 341 Portfolio</h1>
+            <h1 class="text-dark">CSE 341 Portfolio</h1>
             <div class="btn-group gap-5">
                 <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                     Week 1
