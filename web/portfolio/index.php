@@ -17,8 +17,120 @@
     <main class="flex-shrink-0">
         <div class="container text-center">
             <h1 class="m-4 text-dark">CSE 341 Portfolio</h1>
-            <img class="img-fluid" src="images/family.jpg" alt="Astin Family Photo" />
-            <blockquote class="text-danger">“Today is your day!<br>Your mountain is waiting.<br>So...get on your way!<br>Dr.Seuss</blockquote>
+            <ol>
+                <li>
+                    <details>
+                        <summary>Week 1</summary>
+                            <ul>
+                                <li><a href="../week1/hello.html">Hello World</a></li>
+                            </ul>
+                    </details>
+                </li>
+                <li>
+                    <details>
+                        <summary>Week 2</summary>
+                            <ul>
+                                <li><a href="../week2/02TeamActicity.html">Week 2 Team Activity</a></li>
+                            </ul>
+                    </details>
+                </li>
+                <li>
+                    <details>
+                        <summary>Week 3</summary>
+                            <ul>
+                                
+                            </ul>
+                    </details>
+                </li>
+                <li>
+                    <details>
+                        <summary>Week 4</summary>
+                            <ul>
+                                
+                            </ul>
+                    </details>
+                </li>
+                <li>
+                    <details>
+                        <summary>Week 5</summary>
+                            <ul>
+                             
+                            </ul>
+                    </details>
+                </li>
+                <li>
+                    <details>
+                        <summary>Week 6</summary>
+                            <ul>
+
+                            </ul>
+                    </details>
+                </li>
+                <li>
+                    <details>
+                        <summary>Week 7</summary>
+                            <ul>
+
+                            </ul>
+                    </details>
+                </li>
+                <li>
+                    <details>
+                        <summary>Week 8</summary>
+                            <ul>
+
+                            </ul>
+                    </details>
+                </li>
+                <li>
+                    <details>
+                        <summary>Week 9</summary>
+                            <ul>
+                                
+                            </ul>
+                    </details>
+                </li>
+                <li>
+                    <details>
+                        <summary>Week 10</summary>
+                            <ul>
+                            
+                            </ul>
+                    </details>
+                </li>
+                <li>
+                    <details>
+                        <summary>Week 11</summary>
+                            <ul>
+                                
+                            </ul>
+                    </details>
+                </li>
+                <li>
+                    <details>
+                        <summary>Week 12</summary>
+                            <ul>
+                               
+                            </ul>
+                    </details>
+                </li>
+                <li>
+                    <details>
+                        <summary>Week 13</summary>
+                            <ul>
+                                
+                            </ul>
+                    </details>
+                </li>
+                <li>
+                    <details>
+                        <summary>Week 14</summary>
+                            <ul>
+                                
+                            </ul>
+                    </details>
+                </li>
+            </ol>
         </div>
     </main>
     <footer class="footer mt-auto py-2 bg-dark">
