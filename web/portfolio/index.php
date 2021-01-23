@@ -30,7 +30,7 @@
                     <li><a class="dropdown-item" href="../week2/02TeamActicity.html">Week 2 Team Activity</a></li>
                     </ul>
                 <button type="button" class="btn btn-success dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                    Week 2
+                    Week 3
                 </button>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                     <li><a class="dropdown-item" href="../week3/teamproject/team03.php">Week 3 Team Activity</a></li>
