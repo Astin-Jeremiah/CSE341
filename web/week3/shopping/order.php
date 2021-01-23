@@ -43,7 +43,7 @@ if(isset($_POST['number']))
     <header>
         <div class="container text-end">
             <form action="items.php" method="post">
-                <button type="submit" class="special" name="destroy" value="true"><i class="bi bi-house-door" style="font-size: 35px; color: black;" id="cart"></i></button>
+                <button type="submit" class="special" name="destroy" value="true"><i class="bi bi-house-door" id="home"></i></button>
             </form>
         </div>
     </header>
