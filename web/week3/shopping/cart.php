@@ -30,6 +30,7 @@ if(isset($_POST['number']))
 
     <link href="../../bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <link href="style.css" rel="stylesheet">
 
 </head>
 
@@ -54,7 +55,7 @@ if(isset($_POST['number']))
             {
                 echo "<li class='list-group-item d-flex justify-content-between lh-sm'>
                 <div>
-                <h6 class='my-0'> <form action='' method='post'><input type='hidden' name='number' value='$id'><button type='submit' class='btn btn-link' value='Remove'><i class='bi bi-x-circle' style='color: black; font-size:1rem;'></i></button>";
+                <h6 class='my-0'> <form action='' method='post'><input type='hidden' name='number' value='$id'><button type='submit' class='btn btn-link' value='Remove'><i class='bi bi-x-circle'></i></button>";
                 echo $id;
                 echo "</form>
                     </h6>

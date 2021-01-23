@@ -14,6 +14,7 @@ if (empty($_SESSION['cart'])) {
 
       <link href="../../bootstrap.min.css" rel="stylesheet">
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+      <link href="style.css" rel="stylesheet">
 
   </head>
   <body class="bg-light">
@@ -21,7 +22,7 @@ if (empty($_SESSION['cart'])) {
 <header>
     <div class="container text-end">
       <a href="cart.php">
-        <i class="bi bi-cart2" style="font-size: 35px; color: black;" id="cart"></i>
+        <i class="bi bi-cart2" id="cart"></i>
       </a>
   </div>
 </header>

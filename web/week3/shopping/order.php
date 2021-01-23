@@ -35,6 +35,7 @@ if(isset($_POST['number']))
 
     <link href="../../bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <link href="style.css" rel="stylesheet">
 
 </head>
 
@@ -42,9 +43,8 @@ if(isset($_POST['number']))
     <header>
         <div class="container text-end">
             <form action="items.php" method="post">
-                <a href="items.php" type="submit" name="destroy">
-                    <i class="bi bi-house-door" style="font-size: 35px; color: black;" id="cart"></i>
-                </a>
+                <button type="submit" class="special" name="destroy" value="true"><i class="bi bi-house-door" style="font-size: 35px; color: black;" id="cart"></i></button>
+            </form>
         </div>
     </header>
 
