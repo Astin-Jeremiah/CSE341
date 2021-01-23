@@ -7,3 +7,7 @@
    color: black; 
    font-size:1rem; 
 }
+
+.special {
+    border: 0;
+}
