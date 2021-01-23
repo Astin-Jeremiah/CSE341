@@ -55,7 +55,7 @@ if(isset($_POST['number']))
             {
                 echo "<li class='list-group-item d-flex justify-content-between lh-sm'>
                 <div>
-                <h6 class='my-0'> <form action='' method='post'><input type='hidden' name='number' value='$id'><button type='submit' class='btn btn-link' value='Remove'><i class='bi bi-x-circle'></i></button>";
+                <h6 class='my-0'> <form action='' method='post'><input type='hidden' name='number' value='$id'><button type='submit' class='btn btn-link' value='Remove'><i class='bi bi-x-circle' id='del'></i></button>";
                 echo $id;
                 echo "</form>
                     </h6>
