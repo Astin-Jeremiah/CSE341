@@ -19,40 +19,55 @@ if(isset($_POST['number']))
                 "Jim Henson Funko Pop" => 17.99,
                 "Little Green Alien Funko Pop" => 8.99
             );
+
+        if (isset($_GET["destroy"])){
+    session_destroy();
+}
+
 ?>
 <!doctype html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Order Confirmation</title>
 
-      <link href="../../bootstrap.min.css" rel="stylesheet">
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <link href="../../bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
 
-  </head>
-  <body class="bg-light">
-    
-<div class="container">
-  <main>
-    <div class="py-5 text-center">
-      <img class="img-fluid" src="../../images/pop.png" alt="Pop Culture Vinyl Logo">
-        <br>
-      <h1>Order Confirmation</h1>
-    </div>
+</head>
 
-    <div class="row g-3">
-      <div class="col-md-6 offset-md-3">
-        <ul class="list-group list-group-flush">
-            <li class="list-group-item d-flex justify-content-between">
-                <span><strong><u>Shipping Information</u></strong>
+<body class="bg-light">
+    <header>
+        <div class="container text-end">
+            <form action="items.php" method="post">
+                <a href="items.php" type="submit" name="destroy">
+                    <i class="bi bi-house-door" style="font-size: 35px; color: black;" id="cart"></i>
+                </a>
+        </div>
+    </header>
+
+    <div class="container">
+        <main>
+            <div class="py-5 text-center">
+                <img class="img-fluid" src="../../images/pop.png" alt="Pop Culture Vinyl Logo">
                 <br>
-                  <?php echo htmlspecialchars($_POST["firstname"])." ".htmlspecialchars($_POST["lastname"])."<br>".htmlspecialchars($_POST["address1"])."<br>".htmlspecialchars($_POST["city"])." ".htmlspecialchars($_POST["state"])." ".htmlspecialchars($_POST["zip"])."<br>".htmlspecialchars($_POST["email"]);?>
-                </span>
-          </li>
-        <span class="list-group-item">
-            <strong><u>Items</u></strong>
-          <?php   
+                <h1>Order Confirmation</h1>
+            </div>
+
+            <div class="row g-3">
+                <div class="col-md-6 offset-md-3">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item d-flex justify-content-between">
+                            <span><strong><u>Shipping Information</u></strong>
+                                <br>
+                                <?php echo htmlspecialchars($_POST["firstname"])." ".htmlspecialchars($_POST["lastname"])."<br>".htmlspecialchars($_POST["address1"])."<br>".htmlspecialchars($_POST["city"])." ".htmlspecialchars($_POST["state"])." ".htmlspecialchars($_POST["zip"])."<br>".htmlspecialchars($_POST["email"]);?>
+                            </span>
+                        </li>
+                        <span class="list-group-item">
+                            <strong><u>Items</u></strong>
+                            <?php   
         if(isset($_SESSION['cart']))
         {
             $money = array();
@@ -71,18 +86,19 @@ if(isset($_POST['number']))
             }
         }
         ?>
-        </span> 
-        <li class="list-group-item d-flex justify-content-between">
-              <span><strong>Total</strong></span>
-            <strong><?php echo '$'.array_sum($money);?></strong>
-          </li>
-        </ul>
-      </div>
-      </div>
-      </main>
-      </div>
+                        </span>
+                        <li class="list-group-item d-flex justify-content-between">
+                            <span><strong>Total</strong></span>
+                            <strong><?php echo '$'.array_sum($money);?></strong>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </main>
+    </div>
     <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
 
-      <script src="form-validation.js"></script>
-    </body>
+    <script src="form-validation.js"></script>
+</body>
+
 </html>

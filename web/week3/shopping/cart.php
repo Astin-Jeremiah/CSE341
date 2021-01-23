@@ -22,29 +22,31 @@ if(isset($_POST['number']))
 ?>
 <!doctype html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Cart</title>
 
-      <link href="../../bootstrap.min.css" rel="stylesheet">
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <link href="../../bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
 
-  </head>
-  <body class="bg-light">
-    
-<div class="container">
-  <main>
-    <div class="py-5 text-center">
-      <img class="img-fluid" src="../../images/pop.png" alt="Pop Culture Vinyl Logo">
-        <br>
-      <h1>Your Cart</h1>
-    </div>
+</head>
 
-    <div class="row g-3">
-      <div class="col-md-6 offset-md-3">
-        <ul class="list-group mb-3">
-          <?php   
+<body class="bg-light">
+
+    <div class="container">
+        <main>
+            <div class="py-5 text-center">
+                <img class="img-fluid" src="../../images/pop.png" alt="Pop Culture Vinyl Logo">
+                <br>
+                <h1>Your Cart</h1>
+            </div>
+
+            <div class="row g-3">
+                <div class="col-md-6 offset-md-3">
+                    <ul class="list-group mb-3">
+                        <?php   
         if(isset($_SESSION['cart']))
         {
             $money = array();
@@ -64,22 +66,22 @@ if(isset($_POST['number']))
             }
         }
         ?>
-        <li class="list-group-item d-flex justify-content-between">
-              <span><strong>Total</strong></span>
-            <strong><?php echo '$'.array_sum($money);?></strong>
-          </li>
-        </ul>
-            <div class="text-center">
-              <a class="btn btn-outline-danger btn-lgy" href="items.php" role="button">Continue Shopping</a>
-              <a class="btn btn-outline-danger btn-lgy" href="checkout.php" role="button">Complete Checkout</a>
+                        <li class="list-group-item d-flex justify-content-between">
+                            <span><strong>Total</strong></span>
+                            <strong><?php echo '$'.array_sum($money);?></strong>
+                        </li>
+                    </ul>
+                    <div class="text-center">
+                        <a class="btn btn-outline-danger btn-lgy" href="items.php" role="button">Continue Shopping</a>
+                        <a class="btn btn-outline-danger btn-lgy" href="checkout.php" role="button">Complete Checkout</a>
+                    </div>
+                </div>
             </div>
-      </div>
-      </div>
-      </main>
-      </div>
+        </main>
+    </div>
     <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
 
-      <script src="form-validation.js"></script>
-    </body>
-</html>
+    <script src="form-validation.js"></script>
+</body>
 
+</html>
