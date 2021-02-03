@@ -28,8 +28,8 @@ $content = $stmt->fetchAll(PDO::FETCH_ASSOC);
             foreach ($content as $con)
             {
                 $name = $con['content_name'];
-                $des = $con['content_descirption'];
-                echo "<li><p>$name&emsp;$des</p></li>";
+                $des = $con['content_description'];
+                echo "<li><p>$name&nbsp;&#8212;&nbsp;$des</p></li>";
             }
         ?>
         <li></li>
