@@ -1,5 +1,5 @@
 <?php
-require('../modules/dbConnect.php');
+require('../../modules/dbConnect.php');
 $db = get_db();
 
 $query = 'SELECT public.content.content_name, public.content.description, public.service.service_name FROM public.content';
