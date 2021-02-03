@@ -3,7 +3,7 @@
 require $_SERVER['DOCUMENT_ROOT'] . '/modules/dbConnect.php';
 $db = get_db();
 
-$query = 'SELECT public.content.content_name, public.content.description, public.service.service_name FROM public.content INNER JOIN public.service ON public.service.id = public.content.service_id';
+$query = 'SELECT public.content.content_name, public.content.description FROM public.content';
 $stmt = $db->prepare($query);
 $stmt->execute();
 $content = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -27,10 +27,9 @@ $content = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <?php
             foreach ($content as $con)
             {
-                $name = $content['content_name'];
-                $des = $content['content_descirption'];
-                $service = $content['service_name'];
-                echo "<li><p>$name&emsp;$des&emsp;$service</p></li>";
+                $name = $con['content_name'];
+                $des = $con['content_descirption'];
+                echo "<li><p>$name&emsp;$des</p></li>";
             }
         ?>
         <li></li>
