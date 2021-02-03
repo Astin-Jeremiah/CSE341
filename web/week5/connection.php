@@ -26,8 +26,8 @@ $content = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <?php
             foreach ($content as $con)
             {
-                $name = $content['name'];
-                $des = $content['descirption'];
+                $name = $content['content_name'];
+                $des = $content['content_descirption'];
                 $service = $content['service_name'];
                 echo "<li><p>$name&emsp;$des&emsp;$service</p></li>";
             }
