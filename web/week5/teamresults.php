@@ -31,8 +31,7 @@ $scripture = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 $book = $script['book'];
                 $chapter = $script['chapter'];
                 $verse = $script['verse'];
-                $content = $script['content'];
-                echo "<p><b>$book&nbsp;$chapter:$verse</b> - \"$content\"</p>";
+                echo "<p><a href="details.php">$book&nbsp;$chapter:$verse</a></p>";
             }
         ?>
 </div>

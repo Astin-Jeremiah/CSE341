@@ -25,7 +25,7 @@ $scripture = $stmt->fetchAll(PDO::FETCH_ASSOC);
   <h1>Scripture References</h1>
     
     <form action="teamresults.php" method="post">
-        Book:<input type="text" name="book">
+        Book: <input type="text" name="book">
         <input type=submit value="Search">
     </form>
 
