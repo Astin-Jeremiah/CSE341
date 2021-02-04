@@ -32,7 +32,7 @@ $content = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 $sid = con['service_id'];
                 $image = $con['picture'];
                 $name = $con['content_name'];
-                echo "<div class='col'> <div class='card shadow-sm bg-secondary border-light text-center'>
+                echo "<div class='col'> <div class='card shadow-sm bg-secondary text-center'>
             <a href='contentdetails.php?id=$id'><img class='img-fluid card-img-top' src='$image' alt='$name'></a>
           </div>
         </div>";
