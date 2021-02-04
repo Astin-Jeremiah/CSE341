@@ -36,11 +36,12 @@
                     <li><a class="dropdown-item" href="../week3/teamproject/team03.php">Week 3 Team Activity</a></li>
                     <li><a class="dropdown-item" href="../week3/shopping/items.php">Shopping Cart</a></li>
                     </ul>
-                <button type="button" class="btn btn-warning dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                     Week 5
                 </button>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                     <li><a class="dropdown-item" href="../week5/week5team.php">Week 5 Team Activity</a></li>
+                    <li><a class="dropdown-item" href="../week5/teamstretch.php">Week 5 Team Activity Stretch</a></li>
                     <li><a class="dropdown-item" href="../week5/connection.php">Week 5 Connection Test</a></li>
                     </ul>
             </div>

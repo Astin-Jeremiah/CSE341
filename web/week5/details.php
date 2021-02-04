@@ -21,17 +21,21 @@ $details = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 <!doctype html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Scripture Details</title>
-  </head>
-  <body class="bg-light">
-    
-<div class="container">
-  <h1>Scripture Details</h1>
-    
-    <?php
+    <link href="../../bootstrap.min.css" rel="stylesheet">
+    <link href="form-validation.css" rel="stylesheet">
+</head>
+
+<body class="bg-light">
+
+    <div class="container">
+        <h1>Scripture Details</h1>
+
+        <?php
             foreach ($details as $detail)
             {
                 $book = $detail['book'];
@@ -41,9 +45,10 @@ $details = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 echo "<p><b>$book&nbsp;$chapter:$verse</b> - \"$content\"</p>";
             }
         ?>
-    
-     
-</div>
 
-  </body>
+
+    </div>
+
+</body>
+
 </html>
