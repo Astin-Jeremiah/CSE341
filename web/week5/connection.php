@@ -19,23 +19,30 @@ $content = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <link href="form-validation.css" rel="stylesheet">
   </head>
   <body class="bg-light">
-    
+ 
+<div class="album">      
 <div class="container">
-  <h1>Content</h1>
     
+  <h1>Content</h1>
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
     <ul>
         <?php
             foreach ($content as $con)
             {
                 $image = $con['picture'];
                 $name = $con['content_name'];
-                echo "<li><img src='$image' alt='$name'></li>";
+                echo "<div class='col'> <div class='card shadow-sm pt-1'>
+            <img class='img-fluid' src='$image' alt='$name'>
+          </div>
+        </div>";
             }
         ?>
     </ul>
 
 
 </div>
+      </div>
+      </div>
 
   </body>
 </html>
