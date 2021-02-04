@@ -2,7 +2,7 @@
 
 require $_SERVER['DOCUMENT_ROOT'] . '/modules/dbConnect.php';
 
-if (!issset($_GET['course_id']))
+if (!issset($_GET['scripture_id']))
 {
     die("Error, ID not specified");
 }
@@ -14,7 +14,7 @@ $db = get_db();
 $stmt = $db->prepare('SELECT * FROM scripture WHERE id = :id');
 $stmt->bindValue(':id', $sid, PDO::PARAM_INT);
 $stmt->execute();
-$scripture = $stmt->fetchAll(PDO::FETCH_ASSOC);
+$details = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 
 
@@ -32,12 +32,12 @@ $scripture = $stmt->fetchAll(PDO::FETCH_ASSOC);
   <h1>Scripture Details</h1>
     
     <?php
-            foreach ($scripture as $script)
+            foreach ($details as $detail)
             {
-                $book = $script['book'];
-                $chapter = $script['chapter'];
-                $verse = $script['verse'];
-                $content = $script['content'];
+                $book = $detail['book'];
+                $chapter = $detail['chapter'];
+                $verse = $detail['verse'];
+                $content = $detail['content'];
                 echo "<p><b>$book&nbsp;$chapter:$verse</b> - \"$content\"</p>";
             }
         ?>
