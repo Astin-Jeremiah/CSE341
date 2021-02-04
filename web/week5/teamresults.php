@@ -28,7 +28,7 @@ $scripture = $stmt->fetchAll(PDO::FETCH_ASSOC);
      <?php
             foreach ($scripture as $script)
             {
-                $book2 = $script['book'];
+                $book = $script['book'];
                 $chapter = $script['chapter'];
                 $verse = $script['verse'];
                 $content = $script['content'];
