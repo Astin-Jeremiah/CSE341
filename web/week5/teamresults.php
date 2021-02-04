@@ -5,7 +5,7 @@ require $_SERVER['DOCUMENT_ROOT'] . '/modules/dbConnect.php';
 $book1 = htmlspecialchars($_POST["book"]);
 
 $db = get_db();
-$query = 'SELECT * FROM public.scripture WHERE public.scripture.book = "John"';
+$query = 'SELECT * FROM scripture WHERE book = "John"';
 $stmt = $db->prepare($query);
 $stmt->execute();
 $scripture = $stmt->fetchAll(PDO::FETCH_ASSOC);
