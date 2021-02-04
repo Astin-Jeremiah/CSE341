@@ -3,7 +3,7 @@
 require $_SERVER['DOCUMENT_ROOT'] . '/modules/dbConnect.php';
 $db = get_db();
 
-$query = 'SELECT public.content.content_name, public.content.description, public.service.service_name FROM public.content INNER JOIN public.service ON public.service.id = public.content.service_id';
+$query = 'SELECT content.content_name, content.description, service.service_name FROM content INNER JOIN service ON service.id = content.service_id';
 $stmt = $db->prepare($query);
 $stmt->execute();
 $content = $stmt->fetchAll(PDO::FETCH_ASSOC);
