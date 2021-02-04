@@ -4,11 +4,7 @@ require $_SERVER['DOCUMENT_ROOT'] . '/modules/dbConnect.php';
 
 $book1 = htmlspecialchars($_POST["book"]);
 
-$db = get_db();
-$query = 'SELECT * FROM public.scripture WHERE public.scripture.book = '.$book1;
-$stmt = $db->prepare($query);
-$stmt->execute();
-$scripture = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
 
 ?>
 <!doctype html>
@@ -24,14 +20,7 @@ $scripture = $stmt->fetchAll(PDO::FETCH_ASSOC);
   <h1>Scripture Results</h1>
     
     <?php
-            foreach ($scripture as $script)
-            {
-                $book2 = $script['book'];
-                $chapter = $script['chapter'];
-                $verse = $script['verse'];
-                $content = $script['content'];
-                echo "<p><b>$book&nbsp;$chapter:$verse</b> - \"$content\"</p>";
-            }
+            echo $book1;
         ?>
 
 </div>
