@@ -18,7 +18,7 @@ $content = $stmt->fetchAll(PDO::FETCH_ASSOC);
       <link href="../../bootstrap.min.css" rel="stylesheet">
     <link href="form-validation.css" rel="stylesheet">
   </head>
-  <body class="bg-light">
+  <body class="bg-secondary">
  
 <div class="album">      
 <div class="container">
