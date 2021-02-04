@@ -30,7 +30,7 @@ $details = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <link href="form-validation.css" rel="stylesheet">
 </head>
 
-<body class="bg-light">
+<body class="bg-secondary">
 
     <div class="container">
         <h1>Content Details</h1>
@@ -41,7 +41,17 @@ $details = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 $name = $detail['content_name'];
                 $desc = $detail['description'];
                 $service = $detail['service_name'];
+                $image = $detail['picture'];
                 echo "<p><b>$name&nbsp;$desc&nbsp;$service</p>";
+                echo "<div class='card'><img src='$iamge' class='card-img-top' alt='$name'>
+                <div class='card-body'>
+                <h3 class='card-title'>$name</h3>
+                <p class='card-text'>$desc</p>
+                <a href='#' class='card-link'>Add To Q</a>
+                <a href='#' class='card-link'>Write A Review</a>
+                </div>
+                </div>"
+                
             }
         ?>
 
