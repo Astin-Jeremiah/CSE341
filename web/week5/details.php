@@ -10,8 +10,8 @@ if (!issset($_GET['course_id']))
 $sid = htmlspecialchars($_GET['scripture_id']);
 
 $db = get_db();
-$query = 'SELECT * FROM scripture WHERE id = \''.$sid.'\'';
-$stmt = $db->prepare($query);
+
+$stmt = $db->prepare('SELECT * FROM scripture WHERE id = :id');
 $stmt->bindValue(':id', $sid, PDO::PARAM_INT);
 $stmt->execute();
 $scripture = $stmt->fetchAll(PDO::FETCH_ASSOC);
