@@ -25,7 +25,6 @@ $content = $stmt->fetchAll(PDO::FETCH_ASSOC);
     
   <h1>Content</h1>
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-    <ul>
         <?php
             foreach ($content as $con)
             {
@@ -37,9 +36,6 @@ $content = $stmt->fetchAll(PDO::FETCH_ASSOC);
         </div>";
             }
         ?>
-    </ul>
-
-
 </div>
       </div>
       </div>
