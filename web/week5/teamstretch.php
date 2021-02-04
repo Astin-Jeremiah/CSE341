@@ -8,7 +8,6 @@ $stmt = $db->prepare($query);
 $stmt->execute();
 $scripture = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-<
 ?>
 <!doctype html>
 <html lang="en">
