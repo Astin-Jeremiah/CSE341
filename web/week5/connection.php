@@ -3,7 +3,7 @@
 require $_SERVER['DOCUMENT_ROOT'] . '/modules/dbConnect.php';
 $db = get_db();
 
-$query = 'SELECT content.content_name, content.picture FROM content ORDER BY content.content_name ASC';
+$query = 'SELECT * FROM content ORDER BY content.content_name ASC';
 $stmt = $db->prepare($query);
 $stmt->execute();
 $content = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -30,7 +30,7 @@ $content = $stmt->fetchAll(PDO::FETCH_ASSOC);
             {
                 $image = $con['picture'];
                 $name = $con['content_name'];
-                echo "<div class='col'> <div class='card shadow-sm pt-1'>
+                echo "<div class='col'> <div class='card shadow-sm'>
             <img class='img-fluid' src='$image' alt='$name'>
           </div>
         </div>";
