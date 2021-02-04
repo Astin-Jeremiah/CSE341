@@ -45,7 +45,7 @@ $details = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 echo "<div class='card mb-3 w-75'>
                 <div class='row g-0'>
                 <div class='col-md-4'>
-                <img src='$image' class='card-img-top' alt='$name'>
+                <img src='$image' class='img-fluid' alt='$name'>
                 </div>
                 <div class='col-md-8'>
                 <div class='card-body'>
