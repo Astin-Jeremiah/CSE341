@@ -2,12 +2,12 @@
 
 require $_SERVER['DOCUMENT_ROOT'] . '/modules/dbConnect.php';
 
-if (!issset($_GET['scripture_id']))
+if (!isset($_GET['id']))
 {
-    die("Error, ID not specified");
+	die("Error, id not specified...");
 }
 
-$sid = htmlspecialchars($_GET['scripture_id']);
+$sid = htmlspecialchars($_GET['id']);
 
 $db = get_db();
 

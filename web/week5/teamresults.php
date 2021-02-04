@@ -32,7 +32,7 @@ $scripture = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 $chapter = $script['chapter'];
                 $verse = $script['verse'];
                 $id = $script['id'];
-                echo "<p><a href='details.php?scripture_id=$id'>$book&nbsp;$chapter:$verse</a></p>";
+                echo "<p><a href='details.php?id=$id'>$book&nbsp;$chapter:$verse</a></p>";
             }
         ?>
 </div>
