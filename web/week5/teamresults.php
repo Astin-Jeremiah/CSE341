@@ -4,6 +4,12 @@ require $_SERVER['DOCUMENT_ROOT'] . '/modules/dbConnect.php';
 
 $book1 = htmlspecialchars($_POST["book"]);
 
+$db = get_db();
+$query = 'SELECT * FROM public.scripture WHERE public.scripture.book = "John"';
+$stmt = $db->prepare($query);
+$stmt->execute();
+$scripture = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
 
 
 ?>
@@ -19,10 +25,16 @@ $book1 = htmlspecialchars($_POST["book"]);
 <div class="container">
   <h1>Scripture Results</h1>
     
-    <?php
-            echo $book1;
+     <?php
+            foreach ($scripture as $script)
+            {
+                $book2 = $script['book'];
+                $chapter = $script['chapter'];
+                $verse = $script['verse'];
+                $content = $script['content'];
+                echo "<p><b>$book&nbsp;$chapter:$verse</b> - \"$content\"</p>";
+            }
         ?>
-
 </div>
 
   </body>
