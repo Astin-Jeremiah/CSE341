@@ -1,9 +1,11 @@
 <?php
 
 require $_SERVER['DOCUMENT_ROOT'] . '/modules/dbConnect.php';
-$db = get_db();
+
 $book1 = htmlspecialchars($_POST["book"]);
-$query = 'SELECT * FROM public.scripture WHERE public.scripture.book = $book1';
+
+$db = get_db();
+$query = 'SELECT * FROM public.scripture WHERE public.scripture.book = '.$book1;
 $stmt = $db->prepare($query);
 $stmt->execute();
 $scripture = $stmt->fetchAll(PDO::FETCH_ASSOC);
