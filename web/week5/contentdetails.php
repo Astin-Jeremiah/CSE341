@@ -42,13 +42,20 @@ $details = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 $desc = $detail['description'];
                 $service = $detail['service_name'];
                 $image = $detail['picture'];
-                echo "<div class='card text-center'><img src='$image' class='card-img-top' alt='$name'>
+                echo "<div class='card mb-3 w-75'>
+                <div class='row g-0'>
+                <div class='col-md-4'>
+                <img src='$image' class='card-img-top' alt='$name'>
+                </div>
+                <div class='col-md-8'>
                 <div class='card-body'>
                 <h3 class='card-title'>$name</h3>
-                <p class='card-text'>$desc</p>
-                <p class='card-text'>$service</p>
+                <p class='card-text'>Description: $desc</p>
+                <p class='card-text'>Streaming Service: $service</p>
                 <a href='#' class='card-link'>Add To Q</a>
                 <a href='#' class='card-link'>Write A Review</a>
+                </div>
+                </div>
                 </div>
                 </div>";
                 
