@@ -28,7 +28,7 @@ $content = $stmt->fetchAll(PDO::FETCH_ASSOC);
             foreach ($content as $con)
             {
                 $image = $con['picture'];
-                $name = $con['name'];
+                $name = $con['content_name'];
                 echo "<li><img src='$image' alt='$name'></li>";
             }
         ?>
