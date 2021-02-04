@@ -24,7 +24,7 @@ $content = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <div class="container">
     
   <h1>Content</h1>
-    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-md-4 g-3">
         <?php
             foreach ($content as $con)
             {
