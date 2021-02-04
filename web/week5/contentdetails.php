@@ -42,10 +42,11 @@ $details = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 $desc = $detail['description'];
                 $service = $detail['service_name'];
                 $image = $detail['picture'];
-                echo "<div class='card'><img src='$iamge' class='card-img-top' alt='$name'>
+                echo "<div class='card text-center'><img src='$image' class='img-fluid card-img-top' alt='$name'>
                 <div class='card-body'>
                 <h3 class='card-title'>$name</h3>
                 <p class='card-text'>$desc</p>
+                <p class='card-text'>$service</p>
                 <a href='#' class='card-link'>Add To Q</a>
                 <a href='#' class='card-link'>Write A Review</a>
                 </div>
