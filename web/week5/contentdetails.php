@@ -82,7 +82,7 @@ $review = $stmt2->fetchAll(PDO::FETCH_ASSOC);
                 $fn = $reviews['first_name'];
                 $ln = $reviews['last_name'];
                 $note = $reviews['note'];
-                echo "<p class='card-text'><b>$note</b> &#8212; $fn $lk</p>";
+                echo "<p class='card-text'><b>$note</b> &#8212; $fn $ln</p>";
                 }
                 ?>    
                 </div>
