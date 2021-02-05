@@ -7,6 +7,11 @@ $query = 'SELECT * FROM content ORDER BY content_name ASC';
 $stmt = $db->prepare($query);
 $stmt->execute();
 $content = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+$query2 = 'SELECT * FROM service';
+$stmt2 = $db->prepare($query2);
+$stmt2->execute();
+$serv = $stmt2->fetchAll(PDO::FETCH_ASSOC);
 ?>
 <!doctype html>
 <html lang="en">
@@ -37,7 +42,21 @@ $content = $stmt->fetchAll(PDO::FETCH_ASSOC);
     </div>      
 <div class="album">      
 <div class="container">
-    
+    <form action="index.php">
+  <label for="cars">Streaming Service:</label>
+  <select name="service" id="service">
+      <?php
+            foreach ($serv as $service)
+            {
+                $id = $serv['id'];
+                $servicename = $serv['service_name'];
+                echo "<option value='$id'>$servicename</option>";
+            }
+        ?>
+  </select>
+  <br><br>
+  <input type="submit" value="Submit">
+</form>
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-md-4 g-3">
         <?php
             foreach ($content as $con)
