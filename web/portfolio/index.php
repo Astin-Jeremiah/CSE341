@@ -42,7 +42,7 @@
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                     <li><a class="dropdown-item" href="../week5/week5team.php">Week 5 Team Activity</a></li>
                     <li><a class="dropdown-item" href="../week5/teamstretch.php">Week 5 Team Activity Stretch</a></li>
-                    <li><a class="dropdown-item" href="../week5/connection.php">Week 5 Connection Test</a></li>
+                    <li><a class="dropdown-item" href="../project1/index.php">Week 5 Database Access</a></li>
                     </ul>
             </div>
         </div>
