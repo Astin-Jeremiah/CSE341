@@ -3,7 +3,7 @@
 require $_SERVER['DOCUMENT_ROOT'] . '/modules/dbConnect.php';
 $db = get_db();
 
-$test = WHERE service_id = 3;
+$test = "WHERE service_id = 3";
 $query = 'SELECT * FROM content \''.$test.'\'';
 $stmt = $db->prepare($query);
 $stmt->execute();
