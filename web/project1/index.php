@@ -1,10 +1,9 @@
 <?php
 
 require $_SERVER['DOCUMENT_ROOT'] . '/modules/dbConnect.php';
-$test = "WHERE service_id = 3";
-
 $db = get_db();
-$query = 'SELECT * FROM content \''.$test.'\'';
+
+$query = 'SELECT * FROM content ORDER BY content_name ASC';
 $stmt = $db->prepare($query);
 $stmt->execute();
 $content = $stmt->fetchAll(PDO::FETCH_ASSOC);
