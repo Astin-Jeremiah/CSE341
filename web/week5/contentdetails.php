@@ -49,9 +49,9 @@ $review = $stmt2->fetchAll(PDO::FETCH_ASSOC);
                 $service = $detail['service_name'];
                 $image = $detail['picture'];
                 echo "
-                <div class='row g-0'>
+                <div class='row p-2 g-0'>
                 <div class='col-md-4'>
-                <img class='mt-2 ms-2' src='$image' class='img-fluid' alt='$name'>
+                <img src='$image' class='img-fluid' alt='$name'>
                 </div>
                 <div class='col-md-8'>
                 <div class='card-body'>
@@ -68,7 +68,7 @@ $review = $stmt2->fetchAll(PDO::FETCH_ASSOC);
             }
         ?>
         
-                <div class='row g-0'>
+                <div class='row p-2 g-0'>
                 <div class='col-md-4'>
                 <h3>&emsp;Reviews</h3>
                 </div>
