@@ -50,9 +50,7 @@ $review = $stmt2->fetchAll(PDO::FETCH_ASSOC);
         <br>
     </div>      
     <div class="container">
-        <h1>Content Details</h1>
-
-        <div class='card col-md-6 offset-md-3'>
+<div class='card col-md-6 offset-md-3'>
         <?php
             foreach ($details as $detail)
             {
