@@ -92,7 +92,7 @@ $review = $stmt2->fetchAll(PDO::FETCH_ASSOC);
                 echo "<p class='card-text'><b>$note</b> &#8212; $uname</p>";
                 }
                 ?> 
-                <a href='connection.php' class='btn btn-dark' role='button'>Return To List</a>
+                <a href='index.php' class='btn btn-dark' role='button'>Return To List</a>
                 </div>
                 </div>
                 </div>
