@@ -67,35 +67,29 @@ $review = $stmt2->fetchAll(PDO::FETCH_ASSOC);
                 ";
                 
             }
+        ?>
         
-        foreach ($review as $reviews)
-            {
-                $fn = $reviews['first_name'];
-                $ln = $reviews['last_name'];
-                $note = $reviews['note'];
-                echo "
-                <div class='card col-md-6 offset-md-3'>
+        <div class='card col-md-6 offset-md-3'>
                 <div class='row g-0'>
                 <div class='col-md-4'>
                 <h3>Reviews</h3>
                 </div>
                 <div class='col-md-8'>
                 <div class='card-body'>
-                <p class='card-text'><b>$note</b> &#8212; $fn $lk</p>
+                <?php
+                foreach ($review as $reviews)
+                {
+                $fn = $reviews['first_name'];
+                $ln = $reviews['last_name'];
+                $note = $reviews['note'];
+                echo "<p class='card-text'><b>$note</b> &#8212; $fn $lk</p>";
+                }
+                ?>    
                 </div>
                 </div>
                 </div>
                 </div>
-                ";
-                
-            }
-        
-            
-        ?>
-
-
-    </div>
-
+            </div>
 </body>
 
 </html>
