@@ -10,17 +10,16 @@ if (!isset($_GET['id']))
 $sid = htmlspecialchars($_GET['id']);
 
 $db = get_db();
-$db2 = get_db();
 
 $stmt = $db->prepare('SELECT content_name, description, service_name, picture FROM content INNER JOIN service ON service.id = content.service_id WHERE content.id = :id');
 $stmt->bindValue(':id', $sid, PDO::PARAM_INT);
 $stmt->execute();
 $details = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-$stmt2 = $db2->prepare('SELECT first_name, last_name, note FROM reviews INNER JOIN account ON account.id = reviews.account_id WHERE reviews.content_id = :id');
-$stmt2->bindValue(':id', $sid, PDO::PARAM_INT);
-$stmt2->execute();
-$review = $stmt2->fetchAll(PDO::FETCH_ASSOC);
+$stmt = $db->prepare('SELECT first_name, last_name, note FROM reviews INNER JOIN account ON account.id = reviews.account_id WHERE reviews.content_id = :id');
+$stmt->bindValue(':id', $sid, PDO::PARAM_INT);
+$stmt->execute();
+$review = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 
 
