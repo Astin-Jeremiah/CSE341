@@ -46,7 +46,7 @@ $review = $stmt2->fetchAll(PDO::FETCH_ASSOC);
 </header>
 <main>
     <div class="py-3 text-center">
-      <img class="img-fluid" src="../../images/pop.png" alt="Pop Culture Vinyl Logo">
+      <img class="img-fluid" src="../../images/logo.png" alt="Stream Central Logo">
         <br>
     </div>      
     <div class="container">
