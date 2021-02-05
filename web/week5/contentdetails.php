@@ -63,10 +63,11 @@ $details = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 </div>
                 <div class='row g-0'>
                 <div class='col-md-4'>
-                <br><br>
+                <br>
                 <h3 class='card-title'>Reviews</h3>
                 </div>
                 <div class='col-md-8'>
+                <br><br>
                 <div class='card-body'>
                 <p class='card-text'><b>Best thing to happen to Star Wars since the original trilogy!</b> &#8212; Jeremiah Astin</p>
                 </div> 
