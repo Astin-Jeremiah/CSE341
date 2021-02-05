@@ -29,7 +29,6 @@ $content = $stmt->fetchAll(PDO::FETCH_ASSOC);
             foreach ($content as $con)
             {
                 $id = $con['id'];
-                $sid = con['service_id'];
                 $image = $con['picture'];
                 $name = $con['content_name'];
                 echo "<div class='col'> <div class='card shadow-sm bg-secondary text-center'>

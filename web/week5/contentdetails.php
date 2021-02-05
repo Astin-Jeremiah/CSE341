@@ -16,7 +16,10 @@ $stmt->bindValue(':id', $sid, PDO::PARAM_INT);
 $stmt->execute();
 $details = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-
+$stmt = $db2->prepare('SELECT first_name, last_name, note FROM reviews INNER JOIN account ON account.id = reviews.account_id WHERE reviews.content_id = :id');
+$stmt2->bindValue(':id', $sid, PDO::PARAM_INT);
+$stmt2->execute();
+$review = $stmt2->fetchAll(PDO::FETCH_ASSOC);
 
 
 
@@ -48,13 +51,13 @@ $details = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 echo "
                 <div class='row g-0'>
                 <div class='col-md-4'>
-                <img src='../images/man.jpg' class='img-fluid' alt='The Mandalorian'>
+                <img src='$image' class='img-fluid' alt='$name'>
                 </div>
                 <div class='col-md-8'>
                 <div class='card-body'>
-                <h3 class='card-title'>The Mandalorian</h3>
-                <p class='card-text'><b>Description:</b> The travels of a lone bounty hunter in the outer reaches of the galaxy, far from the authority of the New Republic.</p>
-                <p class='card-text'><b>Streaming Service:</b> Disney Plus</p>
+                <h3 class='card-title'>$name</h3>
+                <p class='card-text'><b>Description:</b> $desc</p>
+                <p class='card-text'><b>Streaming Service:</b> $service</p>
                 <a href='#' class='card-link'>Add To Q</a>
                 <a href='#' class='card-link'>Write A Review</a>
                 </div>
@@ -71,7 +74,15 @@ $details = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 </div>
                 <div class='col-md-8'>
                 <div class='card-body'>
-                
+                <?php
+                foreach ($review as $reviews)
+                {
+                $fn = $reviews['first_name'];
+                $ln = $reviews['last_name'];
+                $note = $reviews['note'];
+                echo "<p class='card-text'><b>$note</b> &#8212; $fn $ln</p>";
+                }
+                ?>    
                 </div>
                 </div>
                 </div>
