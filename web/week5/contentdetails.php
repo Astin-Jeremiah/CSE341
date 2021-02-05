@@ -16,8 +16,8 @@ $stmt->bindValue(':id', $sid, PDO::PARAM_INT);
 $stmt->execute();
 $details = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-$stmt2 = $db->prepare('SELECT first_name, last_name, note FROM reviews INNER JOIN account ON account.id = reviews.account_id WHERE reviews.content_id = :id');
-$stmt2->bindValue(':id', $sid, PDO::PARAM_INT);
+$stmt2 = $db->prepare('SELECT first_name, last_name, note FROM reviews INNER JOIN account ON account.id = reviews.account_id WHERE reviews.content_id = :id2');
+$stmt2->bindValue(':id2', $sid, PDO::PARAM_INT);
 $stmt2->execute();
 $review = $stmt2->fetchAll(PDO::FETCH_ASSOC);
 
