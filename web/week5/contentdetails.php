@@ -11,7 +11,7 @@ $sid = htmlspecialchars($_GET['id']);
 
 $db = get_db();
 
-$stmt = $db->prepare('SELECT content_name, description, service_name, picture FROM content INNER JOIN service ON service.id = content.service_id INNER JOIN reviews ON reviews.content_id = content.id WHERE content.id = :id');
+$stmt = $db->prepare('SELECT content_name, description, service_name, picture FROM content INNER JOIN service ON service.id = content.service_id WHERE content.id = :id');
 $stmt->bindValue(':id', $sid, PDO::PARAM_INT);
 $stmt->execute();
 $details = $stmt->fetchAll(PDO::FETCH_ASSOC);
