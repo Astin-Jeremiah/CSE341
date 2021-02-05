@@ -42,7 +42,7 @@ $details = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 $desc = $detail['description'];
                 $service = $detail['service_name'];
                 $image = $detail['picture'];
-                echo "<div class='card md-6 offset-md-3'>
+                echo "<div class='card col-md-6 offset-md-3'>
                 <div class='row g-0'>
                 <div class='col-md-4'>
                 <img src='$image' class='img-fluid' alt='$name'>
