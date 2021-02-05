@@ -11,7 +11,7 @@ $sid = htmlspecialchars($_GET['id']);
 
 $db = get_db();
 
-$stmt = $db->prepare('SELECT * FROM content INNER JOIN service ON service.id = content.service_id INNER JOIN reviews ON reviews.content_id = content_id INNER JOIN account ON account_id = reviews.account_id WHERE content.id = :id');
+$stmt = $db->prepare('SELECT content_name, description, service_name, picture, note, first_name, last_name  FROM content INNER JOIN service ON service.id = content.service_id INNER JOIN reviews ON reviews.content_id = content_id INNER JOIN account ON account_id = reviews.account_id WHERE content.id = :id');
 $stmt->bindValue(':id', $sid, PDO::PARAM_INT);
 $stmt->execute();
 $details = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -42,9 +42,9 @@ $details = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 $desc = $detail['description'];
                 $service = $detail['service_name'];
                 $image = $detail['picture'];
-                $rev = $details['reviews.note'];
-                $fn = $details['account.first_name'];
-                $ln = $details['account.last_name'];
+                $rev = $details['note'];
+                $fn = $details['first_name'];
+                $ln = $details['last_name'];
                 echo "<div class='card col-md-6 offset-md-3'>
                 <div class='row g-0'>
                 <div class='col-md-4'>
