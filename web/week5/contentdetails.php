@@ -60,7 +60,6 @@ $details = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 </div>
                 </div>
                 </div>
-                <div class='card col-md-6 offset-md-3'>
                 <div class='row g-0'>
                 <div class='col-md-8'>
                 <div class='card-body'>
