@@ -63,6 +63,7 @@ $details = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 </div>
                 <div class='row g-0'>
                 <div class='col-md-4'>
+                <br><br>
                 <h3 class='card-title'>Reviews</h3>
                 </div>
                 <div class='col-md-8'>
