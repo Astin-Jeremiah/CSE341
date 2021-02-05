@@ -58,8 +58,8 @@ $review = $stmt2->fetchAll(PDO::FETCH_ASSOC);
                 <h3 class='card-title'>$name</h3>
                 <p class='card-text'><b>Description:</b> $desc</p>
                 <p class='card-text'><b>Streaming Service:</b> $service</p>
-                <a href='#' class='btn btn-outline-dark' role='button'>Add To Q</a>
-                <a href='#' class='btn btn-outline-dark' role='button'>Write A Review</a>
+                <a href='#' class='btn btn-dark' role='button'>Add To Q</a>
+                <a href='#' class='btn btn-dark' role='button'>Write A Review</a>
                 </div>
                 </div>
                 </div>
