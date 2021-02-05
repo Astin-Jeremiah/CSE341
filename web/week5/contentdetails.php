@@ -51,7 +51,7 @@ $review = $stmt2->fetchAll(PDO::FETCH_ASSOC);
                 echo "
                 <div class='row g-0'>
                 <div class='col-md-4'>
-                <img src='$image' class='img-fluid' alt='$name'>
+                <img class='mt-2 ms-2' src='$image' class='img-fluid' alt='$name'>
                 </div>
                 <div class='col-md-8'>
                 <div class='card-body'>
