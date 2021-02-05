@@ -40,6 +40,7 @@ $review = $stmt2->fetchAll(PDO::FETCH_ASSOC);
     <div class="container">
         <h1>Content Details</h1>
 
+        <div class='card col-md-6 offset-md-3'>
         <?php
             foreach ($details as $detail)
             {
@@ -48,7 +49,6 @@ $review = $stmt2->fetchAll(PDO::FETCH_ASSOC);
                 $service = $detail['service_name'];
                 $image = $detail['picture'];
                 echo "
-                <div class='card col-md-6 offset-md-3'>
                 <div class='row g-0'>
                 <div class='col-md-4'>
                 <img src='../images/man.jpg' class='img-fluid' alt='The Mandalorian'>
@@ -63,16 +63,14 @@ $review = $stmt2->fetchAll(PDO::FETCH_ASSOC);
                 </div>
                 </div>
                 </div>
-                </div>
                 ";
                 
             }
         ?>
         
-        <div class='card col-md-6 offset-md-3'>
                 <div class='row g-0'>
                 <div class='col-md-4'>
-                <h3>&emsp;&emsp;Reviews</h3>
+                <h3>&emsp;Reviews</h3>
                 </div>
                 <div class='col-md-8'>
                 <div class='card-body'>
@@ -88,8 +86,8 @@ $review = $stmt2->fetchAll(PDO::FETCH_ASSOC);
                 </div>
                 </div>
                 </div>
-                </div>
             </div>
+    </div>
 </body>
 
 </html>
