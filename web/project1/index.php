@@ -42,7 +42,6 @@ $serv = $stmt2->fetchAll(PDO::FETCH_ASSOC);
     </div>      
 <div class="album">      
 <div class="container">
-    <form action="index.php">
   <label for="cars">Filter By Streaming Service:</label>
   <select name="service" id="service">
       <option value='all'>All</option>
@@ -55,8 +54,8 @@ $serv = $stmt2->fetchAll(PDO::FETCH_ASSOC);
             }
         ?>
   </select>
-  <input type="submit" value="Submit">
-</form><br>
+  <button onclick="fil()">Submit</button>
+<br>
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-md-4 g-3">
         <?php
             foreach ($content as $con)
@@ -75,5 +74,18 @@ $serv = $stmt2->fetchAll(PDO::FETCH_ASSOC);
       </div>
       </div>
       </main>
+      <script>
+        function fil() {
+            let s = document.getElementById("service");
+            let serviceid = s.value;
+            
+            let c = document.getElementsByClassName("card");
+            let otherid = c.dataset.key;
+            
+            if s = c {
+                c.classList.add("hidden");
+            }
+        }
+      </script>
   </body>
 </html>
