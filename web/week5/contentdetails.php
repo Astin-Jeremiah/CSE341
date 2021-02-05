@@ -45,30 +45,35 @@ $details = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 $rev = $detail['note'];
                 $fn = $detail['first_name'];
                 $ln = $detail['last_name'];
-                echo "<div class='card col-md-6 offset-md-3'>
+                echo "
+                <div class='card col-md-6 offset-md-3'>
                 <div class='row g-0'>
                 <div class='col-md-4'>
-                <img src='$image' class='img-fluid' alt='$name'>
+                <img src='../images/man.jpg' class='img-fluid' alt='The Mandalorian'>
                 </div>
                 <div class='col-md-8'>
                 <div class='card-body'>
-                <h3 class='card-title'>$name</h3>
-                <p class='card-text'><b>Description:</b> $desc</p>
-                <p class='card-text'><b>Streaming Service:</b> $service</p>
+                <h3 class='card-title'>The Mandalorian</h3>
+                <p class='card-text'><b>Description:</b> The travels of a lone bounty hunter in the outer reaches of the galaxy, far from the authority of the New Republic.</p>
+                <p class='card-text'><b>Streaming Service:</b> Disney Plus</p>
                 <a href='#' class='card-link'>Add To Q</a>
                 <a href='#' class='card-link'>Write A Review</a>
                 </div>
                 </div>
                 </div>
                 <div class='row g-0'>
-                <div class='col-md-4>
+                <div class='col-md-4'>
                 <h3 class='card-title'>Reviews</h3>
                 </div>
                 <div class='col-md-8'>
-                <p class='card-text'><b>$rev</b> &#8212; $fn $ln</p>
+                <div class='card-body'>
+                <p class='card-text'><b>Best thing to happen to Star Wars since the original trilogy!</b> &#8212; Jeremiah Astin</p>
+                </div> 
                 </div>
                 </div>
-                </div>";
+
+                </div>
+                ";
                 
             }
         ?>
