@@ -56,7 +56,7 @@ $serv = $stmt2->fetchAll(PDO::FETCH_ASSOC);
         ?>
   </select>
   <input type="submit" value="Submit">
-</form>
+</form><br>
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-md-4 g-3">
         <?php
             foreach ($content as $con)
@@ -64,7 +64,8 @@ $serv = $stmt2->fetchAll(PDO::FETCH_ASSOC);
                 $id = $con['id'];
                 $image = $con['picture'];
                 $name = $con['content_name'];
-                echo "<div class='col'> <div class='card shadow-sm bg-secondary text-center'>
+                $sn = $con['service_id'];
+                echo "<div class='col'> <div class='card shadow-sm bg-secondary text-center' data-key='$sn'>
             <a href='programdetails.php?id=$id'><img class='img-fluid card-img-top' src='$image' alt='$name'></a>
           </div>
         </div>";
