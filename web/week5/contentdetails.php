@@ -60,12 +60,12 @@ $details = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 </div>
                 </div>
                 </div>
+                <div class='card col-md-6 offset-md-3'>
                 <div class='row g-0'>
                 <div class='col-md-8'>
                 <div class='card-body'>
                 <h3 class='card-title'>Reviews</h3>
-                <p class='card-text'><b>$rev</b></p>
-                <p class='card-text'><b>$fn $ln</b></p>
+                <p class='card-text-center'><b>$rev</b>&#8212; $fn $ln</p>
                 </div>
                 </div>
                 </div>
