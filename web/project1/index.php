@@ -23,6 +23,19 @@ $serv = $stmt2->fetchAll(PDO::FETCH_ASSOC);
       <link href="../../bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
       <link href="style.css" rel="stylesheet">
+      <script>
+        function fil() {
+            let s = document.getElementById("service");
+            let serviceid = s.value;
+            
+            let c = document.getElementsByClassName("card");
+            let otherid = c.dataset.key;
+            
+            if s = c {
+                c.classList.add("hidden");
+            }
+        }
+      </script>
   </head>
   <body class="bg-secondary">
  <header>
@@ -74,18 +87,5 @@ $serv = $stmt2->fetchAll(PDO::FETCH_ASSOC);
       </div>
       </div>
       </main>
-      <script>
-        function fil() {
-            let s = document.getElementById("service");
-            let serviceid = s.value;
-            
-            let c = document.getElementsByClassName("card");
-            let otherid = c.dataset.key;
-            
-            if s = c {
-                c.classList.add("hidden");
-            }
-        }
-      </script>
   </body>
 </html>
