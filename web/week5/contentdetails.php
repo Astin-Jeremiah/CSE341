@@ -11,7 +11,7 @@ $sid = htmlspecialchars($_GET['id']);
 
 $db = get_db();
 
-$stmt = $db->prepare('SELECT * FROM content INNER JOIN service ON service.id = content.service_id WHERE content.id = :id');
+$stmt = $db->prepare('SELECT * FROM content INNER JOIN service ON service.id = content.service_id INNER JOIN reviews ON reviews.content_id = content_id INNER JOIN account ON account_id = reviews.account_id WHERE content.id = :id');
 $stmt->bindValue(':id', $sid, PDO::PARAM_INT);
 $stmt->execute();
 $details = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -42,6 +42,9 @@ $details = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 $desc = $detail['description'];
                 $service = $detail['service_name'];
                 $image = $detail['picture'];
+                $rev = $details['reviews.note'];
+                $fn = $details['account.first_name'];
+                $ln = $details['account.last_name'];
                 echo "<div class='card col-md-6 offset-md-3'>
                 <div class='row g-0'>
                 <div class='col-md-4'>
@@ -54,6 +57,15 @@ $details = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 <p class='card-text'><b>Streaming Service:</b> $service</p>
                 <a href='#' class='card-link'>Add To Q</a>
                 <a href='#' class='card-link'>Write A Review</a>
+                </div>
+                </div>
+                </div>
+                <div class='row g-0'>
+                <div class='col-md-8'>
+                <div class='card-body'>
+                <h3 class='card-title'>Reviews</h3>
+                <p class='card-text'><b>$rev</b></p>
+                <p class='card-text'><b>$fn $ln</b></p>
                 </div>
                 </div>
                 </div>
