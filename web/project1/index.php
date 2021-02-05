@@ -30,7 +30,7 @@ $content = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
       <main>
 <div class="py-3 text-center">
-      <img class="img-fluid" src="../../images/pop.png" alt="Pop Culture Vinyl Logo">
+      <img class="img-fluid" src="../../images/logo.png" alt="Stream Central Logo">
         <br>
       <h1>Placeholder Text</h1>
     </div>      
