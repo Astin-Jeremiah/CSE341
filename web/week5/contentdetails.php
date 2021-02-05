@@ -42,7 +42,7 @@ $details = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 $desc = $detail['description'];
                 $service = $detail['service_name'];
                 $image = $detail['picture'];
-                echo "<div class='card mb-3 w-50'>
+                echo "<div class='card md-6 offset-md-3'>
                 <div class='row g-0'>
                 <div class='col-md-4'>
                 <img src='$image' class='img-fluid' alt='$name'>
@@ -50,8 +50,8 @@ $details = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 <div class='col-md-8'>
                 <div class='card-body'>
                 <h3 class='card-title'>$name</h3>
-                <p class='card-text'>Description: $desc</p>
-                <p class='card-text'>Streaming Service: $service</p>
+                <p class='card-text'><b>Description:</b> $desc</p>
+                <p class='card-text'><b>Streaming Service:</b> $service</p>
                 <a href='#' class='card-link'>Add To Q</a>
                 <a href='#' class='card-link'>Write A Review</a>
                 </div>
