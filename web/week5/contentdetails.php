@@ -72,7 +72,7 @@ $review = $stmt2->fetchAll(PDO::FETCH_ASSOC);
         <div class='card col-md-6 offset-md-3'>
                 <div class='row g-0'>
                 <div class='col-md-4'>
-                <h3>Reviews</h3>
+                <h3>&emsp;&emsp;Reviews</h3>
                 </div>
                 <div class='col-md-8'>
                 <div class='card-body'>
