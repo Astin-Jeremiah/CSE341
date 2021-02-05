@@ -48,8 +48,8 @@ $serv = $stmt2->fetchAll(PDO::FETCH_ASSOC);
       <?php
             foreach ($serv as $service)
             {
-                $id = $serv['id'];
-                $servicename = $serv['service_name'];
+                $id2 = $service['id'];
+                $servicename = $service['service_name'];
                 echo "<option value='$id'>$servicename</option>";
             }
         ?>
