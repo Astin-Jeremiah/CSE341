@@ -31,6 +31,7 @@ $content = $stmt->fetchAll(PDO::FETCH_ASSOC);
       <main>
 <div class="py-3 text-center">
       <img class="img-fluid" src="../../images/logo.png" alt="Stream Central Logo">
+        <h3>Find Something New To Watch</h3>
         <br>
       <h1>Popular Shows</h1>
     </div>      
