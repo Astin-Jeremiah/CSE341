@@ -22,8 +22,8 @@ $content = $stmt->fetchAll(PDO::FETCH_ASSOC);
   <body class="bg-secondary">
  <header>
     <div class="container text-end">
-      <a href="cart.php">
-        <i class="bi bi-cart2" id="cart"></i>
+      <a href="#">
+        <i class="bi bi-person-circle" id="login"></i>
       </a>
   </div>
 </header>
