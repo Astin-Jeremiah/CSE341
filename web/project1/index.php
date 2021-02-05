@@ -43,8 +43,9 @@ $serv = $stmt2->fetchAll(PDO::FETCH_ASSOC);
 <div class="album">      
 <div class="container">
     <form action="index.php">
-  <label for="cars">Streaming Service:</label>
+  <label for="cars">Filter By Streaming Service:</label>
   <select name="service" id="service">
+      <option value='all'>All</option>
       <?php
             foreach ($serv as $service)
             {
@@ -54,7 +55,6 @@ $serv = $stmt2->fetchAll(PDO::FETCH_ASSOC);
             }
         ?>
   </select>
-  <br><br>
   <input type="submit" value="Submit">
 </form>
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-md-4 g-3">
