@@ -11,10 +11,15 @@ $sid = htmlspecialchars($_GET['id']);
 
 $db = get_db();
 
-$stmt = $db->prepare('SELECT content_name, description, service_name, picture, note, first_name, last_name FROM content INNER JOIN service ON service.id = content.service_id INNER JOIN reviews ON reviews.content_id = content.id INNER JOIN account ON  account.id = reviews.account_id WHERE content.id = :id');
+$stmt = $db->prepare('SELECT content_name, description, service_name, picture FROM content INNER JOIN service ON service.id = content.service_id INNER JOIN reviews ON reviews.content_id = content.id WHERE content.id = :id');
 $stmt->bindValue(':id', $sid, PDO::PARAM_INT);
 $stmt->execute();
 $details = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+$stmt2 = $db->prepare('SELECT first_name, last_name, note FROM reviews INNER JOIN account ON account.id = reviews.account_id WHERE reviews.content_id = :id');
+$stmt2->bindValue(':id', $sid, PDO::PARAM_INT);
+$stmt2->execute();
+$review = $stmt2->fetchAll(PDO::FETCH_ASSOC);
 
 
 
@@ -42,9 +47,6 @@ $details = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 $desc = $detail['description'];
                 $service = $detail['service_name'];
                 $image = $detail['picture'];
-                $rev = $detail['note'];
-                $fn = $detail['first_name'];
-                $ln = $detail['last_name'];
                 echo "
                 <div class='card col-md-6 offset-md-3'>
                 <div class='row g-0'>
@@ -61,23 +63,34 @@ $details = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 </div>
                 </div>
                 </div>
-                <div class='row g-0'>
-                <div class='col-md-4'>
-                <br>
-                <h3 class='card-title'>Reviews</h3>
-                </div>
-                <div class='col-md-8'>
-                <br><br>
-                <div class='card-body'>
-                <p class='card-text'><b>Best thing to happen to Star Wars since the original trilogy!</b> &#8212; Jeremiah Astin</p>
-                </div> 
-                </div>
-                </div>
-
                 </div>
                 ";
                 
             }
+        
+        foreach ($review as $reviews)
+            {
+                $fn = $reviews['first_name'];
+                $ln = $reviews['last_name'];
+                $note = $reviews['note'];
+                echo "
+                <div class='card col-md-6 offset-md-3'>
+                <div class='row g-0'>
+                <div class='col-md-4'>
+                <h3>Reviews</h3>
+                </div>
+                <div class='col-md-8'>
+                <div class='card-body'>
+                <p class='card-text'><b>$note</b> &#8212; $fn $lk</p>
+                </div>
+                </div>
+                </div>
+                </div>
+                ";
+                
+            }
+        
+            
         ?>
 
 
