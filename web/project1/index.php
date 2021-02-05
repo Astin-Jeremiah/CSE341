@@ -3,7 +3,7 @@
 require $_SERVER['DOCUMENT_ROOT'] . '/modules/dbConnect.php';
 $db = get_db();
 
-$query = 'SELECT * FROM content ORDER BY content_name ASC';
+$query = 'SELECT * FROM content WHERE service_id = 2 ORDER BY content_name ASC';
 $stmt = $db->prepare($query);
 $stmt->execute();
 $content = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -23,19 +23,6 @@ $serv = $stmt2->fetchAll(PDO::FETCH_ASSOC);
       <link href="../../bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
       <link href="style.css" rel="stylesheet">
-      <script>
-        function fil() {
-            let s = document.getElementById("service");
-            let serviceid = s.value;
-            
-            let c = document.getElementsByClassName("card");
-            let otherid = c.dataset.key;
-            
-            if s = c {
-                c.classList.add("hidden");
-            }
-        }
-      </script>
   </head>
   <body class="bg-secondary">
  <header>
@@ -57,7 +44,7 @@ $serv = $stmt2->fetchAll(PDO::FETCH_ASSOC);
 <div class="container">
   <label for="cars">Filter By Streaming Service:</label>
   <select name="service" id="service">
-      <option value='all'>All</option>
+      <option value=''>All</option>
       <?php
             foreach ($serv as $service)
             {
@@ -77,7 +64,7 @@ $serv = $stmt2->fetchAll(PDO::FETCH_ASSOC);
                 $image = $con['picture'];
                 $name = $con['content_name'];
                 $sn = $con['service_id'];
-                echo "<div class='col'> <div class='card shadow-sm bg-secondary text-center' data-key='$sn'>
+                echo "<div class='col'> <div class='card shadow-sm bg-secondary text-center'>
             <a href='programdetails.php?id=$id'><img class='img-fluid card-img-top' src='$image' alt='$name'></a>
           </div>
         </div>";
