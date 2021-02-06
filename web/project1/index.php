@@ -51,12 +51,7 @@ $serv = $stmt2->fetchAll(PDO::FETCH_ASSOC);
       <link href="../../bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
       <link href="style.css" rel="stylesheet">
-      <script>
-          function submitform(){
-            document.filter.submit();
-          }
-      </script>
-  </head>
+      <script src="script.js"></script>
   <body class="bg-secondary">
  <header>
     <div class="container text-end">
