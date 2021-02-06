@@ -3,6 +3,35 @@
 require $_SERVER['DOCUMENT_ROOT'] . '/modules/dbConnect.php';
 $db = get_db();
 
+$serid = htmlspecialchars($_GET['value']);
+
+if ($serid = "1") {
+  $query =  'SELECT * FROM content WHERE service_id = 1 ORDER BY content_name ASC';
+} elseif ($serid = "2") {
+  $query =  'SELECT * FROM content WHERE service_id = 2 ORDER BY content_name ASC';
+} elseif ($serid = "3") {
+  $query =  'SELECT * FROM content WHERE service_id = 3 ORDER BY content_name ASC';
+} elseif ($serid = "4") {
+  $query =  'SELECT * FROM content WHERE service_id = 4 ORDER BY content_name ASC';
+} elseif ($serid = "5") {
+  $query =  'SELECT * FROM content WHERE service_id = 5 ORDER BY content_name ASC';
+} elseif ($serid = "6") {
+  $query =  'SELECT * FROM content WHERE service_id = 6 ORDER BY content_name ASC';
+} elseif ($serid = "7") {
+  $query =  'SELECT * FROM content WHERE service_id = 7 ORDER BY content_name ASC';
+} elseif ($serid = "8") {
+  $query =  'SELECT * FROM content WHERE service_id = 8 ORDER BY content_name ASC';
+} elseif ($serid = "9") {
+  $query =  'SELECT * FROM content WHERE service_id = 9 ORDER BY content_name ASC';
+} elseif ($serid = "10") {
+  $query =  'SELECT * FROM content WHERE service_id = 10 ORDER BY content_name ASC';
+} elseif ($serid = "11") {
+  $query =  'SELECT * FROM content WHERE service_id = 11 ORDER BY content_name ASC';
+} else {
+  $query =  'SELECT * FROM content ORDER BY content_name ASC';
+}
+
+
 $query = 'SELECT * FROM content ORDER BY content_name ASC';
 $stmt = $db->prepare($query);
 $stmt->execute();
@@ -42,7 +71,7 @@ $serv = $stmt2->fetchAll(PDO::FETCH_ASSOC);
     </div>      
 <div class="album">      
 <div class="container">
-   <form action="" method="get">
+   <form action="" method="post">
     <label for="cars">Filter By Streaming Service:</label>
   <select name="service" id="service">
       <option value=''>All</option>
