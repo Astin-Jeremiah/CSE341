@@ -76,11 +76,8 @@ $serv = $stmt2->fetchAll(PDO::FETCH_ASSOC);
 <div class="album">      
 <div class="container">
    <form name="filter" action="" method="get">
-       <div class="row mb-3">
-           <label for="select" class="col-sm-3 col-form-label"><h4>Filter By Streaming Service</h4></label>
-           <div class="col-sm-9">
-            <select class="form-select" name="service" id="service" onchange="submitform();">
-      <option disabled selected hidden>Filter By Streaming Service</option>
+            <select lass="form-select" aria-label="Default select example" name="service" id="service" onchange="submitform();">
+      <option selected>Filter By Streaming Service</option>
       <option value='0'<?php if($_GET['service'] == 0) {
                     echo "selected=selected";
                 } ?>>All</option>
@@ -97,11 +94,6 @@ $serv = $stmt2->fetchAll(PDO::FETCH_ASSOC);
             }
         ?>
   </select>  
-           </div>
-       </div>
-  
-  
-    
 </form>
 <br>
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-md-4 g-3">
