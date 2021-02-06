@@ -88,7 +88,7 @@ $serv = $stmt2->fetchAll(PDO::FETCH_ASSOC);
             }
         ?>
   </select>
-  <input type="submit" type="submit">
+  
     
 </form>
 <br>
