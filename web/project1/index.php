@@ -51,6 +51,11 @@ $serv = $stmt2->fetchAll(PDO::FETCH_ASSOC);
       <link href="../../bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
       <link href="style.css" rel="stylesheet">
+      <script>
+          function submitform(){
+            document.myform.submit();
+          }
+      </script>
   </head>
   <body class="bg-secondary">
  <header>
@@ -71,8 +76,8 @@ $serv = $stmt2->fetchAll(PDO::FETCH_ASSOC);
 <div class="album">      
 <div class="container">
    <form action="" method="get">
-    <label for="cars">Filter By Streaming Service:</label>
-  <select name="service" id="service">
+    <label class="form-label">Filter By Streaming Service:</label>
+  <select class="form-select" name="service" id="service" onchange="submitform();">
       <option value=''>All</option>
       <?php
             foreach ($serv as $service)
