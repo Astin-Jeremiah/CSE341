@@ -34,6 +34,11 @@ $review = $stmt2->fetchAll(PDO::FETCH_ASSOC);
     <link href="../../bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
       <link href="style.css" rel="stylesheet">
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
 </head>
 
 <body class="bg-secondary">
@@ -92,7 +97,7 @@ $review = $stmt2->fetchAll(PDO::FETCH_ASSOC);
                 echo "<p class='card-text'><b>$note</b> &#8212; $uname</p>";
                 }
                 ?> 
-                <a href='index.php' class='btn btn-dark' role='button'>Return To List</a>
+                <button class='btn btn-dark' onclick="goBack()">Return To List</button>
                 </div>
                 </div>
                 </div>
