@@ -51,7 +51,7 @@ $serv = $stmt2->fetchAll(PDO::FETCH_ASSOC);
             {
                 $id2 = $service['id'];
                 $servicename = $service['service_name'];
-                echo "<option name='$id'>$servicename</option>";
+                echo "<option name='$id2'>$servicename</option>";
             }
         ?>
   </select>
