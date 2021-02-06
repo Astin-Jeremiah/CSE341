@@ -5,6 +5,8 @@ $db = get_db();
 
 $serid = htmlspecialchars($_GET['value']);
 
+echo $serid;
+
 if ($serid = 1) {
   $query =  'SELECT * FROM content WHERE service_id = 1 ORDER BY content_name ASC';
 } elseif ($serid = 2) {
