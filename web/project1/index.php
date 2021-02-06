@@ -77,7 +77,7 @@ $serv = $stmt2->fetchAll(PDO::FETCH_ASSOC);
 <div class="container">
    <form name="filter" action="" method="get">
   <select class="form-select" name="service" id="service" onchange="submitform();">
-      <option value=''disabled selected>Filter By Streaming Service</option>
+      <option selected>Filter By Streaming Service</option>
       <option value='0'<?php if($_GET['service'] == 0) {
                     echo "selected=selected";
                 } ?>>All</option>
