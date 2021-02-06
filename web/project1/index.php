@@ -76,8 +76,8 @@ $serv = $stmt2->fetchAll(PDO::FETCH_ASSOC);
 <div class="album">      
 <div class="container">
    <form name="filter" action="" method="get">
-    <label class="form-label">Filter By Streaming Service:</label>
   <select class="form-select" name="service" id="service" onchange="submitform();">
+      <option value=''>Filter By Streaming Service</option>
       <option value='0'>All</option>
       <?php
             foreach ($serv as $service)
