@@ -77,7 +77,7 @@ $serv = $stmt2->fetchAll(PDO::FETCH_ASSOC);
 <div class="container">
    <form name="filter" action="" method="get">
        <div class="row mb-3">
-           <label for="select" class="col-sm-3 col-form-label"><h3>Filter By Streaming Service</h3></label>
+           <label for="select" class="col-sm-3 col-form-label"><h4>Filter By Streaming Service</h4></label>
            <div class="col-sm-9">
             <select class="form-select" name="service" id="service" onchange="submitform();">
       <option disabled selected hidden>Filter By Streaming Service</option>
