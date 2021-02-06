@@ -3,7 +3,7 @@
 require $_SERVER['DOCUMENT_ROOT'] . '/modules/dbConnect.php';
 $db = get_db();
 
-$serid = htmlspecialchars($_POST['value']);
+$serid = htmlspecialchars($_GET['value']);
 
 if ($serid = "1") {
   $query =  'SELECT * FROM content WHERE service_id = 1 ORDER BY content_name ASC';
@@ -70,7 +70,7 @@ $serv = $stmt2->fetchAll(PDO::FETCH_ASSOC);
     </div>      
 <div class="album">      
 <div class="container">
-   <form action="" method="post">
+   <form action="" method="get">
     <label for="cars">Filter By Streaming Service:</label>
   <select name="service" id="service">
       <option value=''>All</option>
