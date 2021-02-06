@@ -85,7 +85,7 @@ $serv = $stmt2->fetchAll(PDO::FETCH_ASSOC);
                 $id2 = $service['id'];
                 $servicename = $service['service_name'];
                 echo "<option value='$id2'";
-                if(isset($_GET['service']) && $_GET['service'] == '$id2') {
+                if(isset($serid) && $serid == '$id2') {
                     echo 'selected= "selected"';
                 }
                 echo ">$servicename</option>";
