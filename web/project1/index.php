@@ -108,7 +108,7 @@ $serv = $stmt2->fetchAll(PDO::FETCH_ASSOC);
                 $name = $con['content_name'];
                 $sn = $con['service_id'];
                 echo "<div class='col'> <div class='card shadow-sm bg-secondary text-center'>
-            <a href='programdetails.php?id=$id'><img class='img-fluid card-img-top' src='$image' alt='$name'></a>
+            <a href='programdetails.php?id=$id'><img class='card-img-top' src='$image' alt='$name'></a>
           </div>
         </div>";
             }
