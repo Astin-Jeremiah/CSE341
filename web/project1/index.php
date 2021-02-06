@@ -3,9 +3,7 @@
 require $_SERVER['DOCUMENT_ROOT'] . '/modules/dbConnect.php';
 $db = get_db();
 
-$serid = htmlspecialchars($_GET['value']);
-
-echo $serid;
+$serid = intval($_GET['value']);
 
 if ($serid == 1) {
   $query =  'SELECT * FROM content WHERE service_id = 1 ORDER BY content_name ASC';
