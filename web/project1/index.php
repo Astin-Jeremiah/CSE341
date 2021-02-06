@@ -66,7 +66,7 @@ $serv = $stmt2->fetchAll(PDO::FETCH_ASSOC);
       <img class="img-fluid" src="../../images/logo.png" alt="Stream Central Logo">
         <h3>Find Something New To Watch</h3>
         <br>
-      <h1>Popular Shows</h1>
+      <h1><?php echo $serid ?></h1>
     </div>      
 <div class="album">      
 <div class="container">
