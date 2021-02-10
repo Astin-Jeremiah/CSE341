@@ -30,7 +30,7 @@ $db = get_db();
       <img class="img-fluid" src="../../images/logo.png" alt="Stream Central Logo">
     </div>
     
-      <div class="card col-md-6 offset-md-3">
+      <div class="card col-md-6 offset-md-3 p-2">
                 <h4 class="mb-3">Login Information:</h4>
                 <form class="needs-validation" action="" method="" novalidate>
                     <div class="row g-3">
