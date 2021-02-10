@@ -32,7 +32,7 @@ $db = get_db();
     
       <div class="col-md-6 offset-md-3">
                 <h4 class="mb-3">Login Information:</h4>
-                <form class="needs-validation" action="" method="" novalidate>
+                <form class="needs-validation bg-light" action="" method="" novalidate>
                     <div class="row g-3">
                         <div class="col-12">
                             <label for="email" class="form-label">Email</label>
@@ -47,9 +47,10 @@ $db = get_db();
                         </div>  
                     </div><br>
                         <input type="submit" class="btn btn-dark" value="Login">
-                </form><br>
+                <br>
                 <h4 class="mb-3">Not Registered Yet?</h4>
                 <a class="btn btn-dark" href="register.php" role="button">Register For New Account</a>
+            </form>    
           </div>   
       </main>
     </div>      
