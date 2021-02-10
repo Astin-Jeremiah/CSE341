@@ -46,7 +46,6 @@ $db = get_db();
                             <input type="password" class="form-control" id="password" name="password" required>
                         </div>  
                     </div>
-                    <br><br>
                         <input type="submit" class="btn btn-dark" value="Login">
                 </form>
                 <h4 class="mb-3">Not Registered Yet?</h4>
