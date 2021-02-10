@@ -31,8 +31,8 @@ $db = get_db();
     </div>
     
       <div class="card col-md-6 offset-md-3 p-2">
-                <h4 class="mb-3">Login Information:</h4>
-                <form class="needs-validation" action="" method="" novalidate>
+                <h4 class="mb-3">Create New Account</h4>
+                <form class="needs-validation" action="insertuser.php" method="post" novalidate>
                     <div class="row g-3">
                         <div class="col-md-6">
                             <label for="username" class="form-label">User Name</label>
