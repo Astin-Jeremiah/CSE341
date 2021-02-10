@@ -24,6 +24,7 @@ $db = get_db();
       </a>
   </div>
 </header>
+      <div class="container">
       <main>
 <div class="py-3 text-center">
       <img class="img-fluid" src="../../images/logo.png" alt="Stream Central Logo">
@@ -46,14 +47,12 @@ $db = get_db();
                         </div>  
                     </div>
                     <br><br>
-                    <div class="text-center">
-                        <a class="btn btn-outline-danger btn-lgy" href="cart.php" role="button">Return To Cart</a>
-                        <input type="submit" class="btn btn-dark" value="Process Order">
-                    </div>
+                        <input type="submit" class="btn btn-dark" value="Login">
                 </form>
                 <h4 class="mb-3">Not Registered Yet?</h4>
                 <a class="btn btn-dark" href="register.php" role="button">Register For New Account</a>
           </div>   
       </main>
+    </div>      
   </body>
 </html>
