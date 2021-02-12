@@ -18,11 +18,7 @@ $db = get_db();
     </head>
   <body class="bg-secondary">
  <header>
-    <div class="container text-end">
-      <a href="login.php">
-        <i class="bi bi-person-circle" id="login"></i>
-      </a>
-  </div>
+    <?php include $_SERVER['DOCUMENT_ROOT'].'/project1/header.php'; ?>
 </header>
       <div class="container">
       <main>

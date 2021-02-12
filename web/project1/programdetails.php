@@ -39,11 +39,7 @@ $review = $stmt2->fetchAll(PDO::FETCH_ASSOC);
 
 <body class="bg-secondary">
 <header>
-    <div class="container text-end">
-      <a href="login.php">
-        <i class="bi bi-person-circle" id="login"></i>
-      </a>
-  </div>
+    <?php include $_SERVER['DOCUMENT_ROOT'].'/project1/header.php'; ?>
 </header>
 <main>
     <div class="py-3 text-center">
