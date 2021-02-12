@@ -19,10 +19,11 @@ if (isset($_POST['user']) && isset($_POST['pw']))
 	{
 		$row = $statement->fetch();
 		$hash = $row['password'];
+        $hash = substr( $hash, 0, 60 );
         echo $hash;
         echo $password;
         
-        if (password_verify('Emma1985!', $hash)) {
+        if (password_verify($password, $hash)) {
         echo 'Password is valid!';
         } else {
             echo 'Invalid password.';
