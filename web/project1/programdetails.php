@@ -27,12 +27,12 @@ echo var_dump($_SESSION);
 if (isset($_POST['review']) && isset ($_SESSION['userid'])){
     $rev = htmlspecialchars($_POST['review']);
     $user = $_SESSION['userid'];
-    
+    $pid = htmlspecialchars($_GET['id']);
     require $_SERVER['DOCUMENT_ROOT'] . '/modules/dbConnect.php';
     $db = get_db();
     $stmt3 = $db->prepare('INSERT INTO reviews (account_id, content_id, note) VALUES (:acid, :conid, :rev);');
     $stmt3->bindValue(':acid', $user);
-    $stmt3->bindValue(':conid', $sid);
+    $stmt3->bindValue(':conid', $pid);
     $stmt3->bindValue(':rev', $rev);
     $stmt3->execute();
     header("Refresh:0");
