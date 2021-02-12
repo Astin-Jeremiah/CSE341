@@ -21,24 +21,12 @@ if (isset($_POST['user']) && isset($_POST['pw']))
 		$hash = $row['password'];
         echo $hash;
         echo $password;
+        
+        $verify = (password_verify($password, $hash);
+                   
+        echo $verify;
 
-		if (password_verify($password, $hash))
-		{
-
-			$_SESSION['username'] = $username;
-			header("Location: index.php");
-			die(); 
-		}
-		else
-		{
-			$badLogin = true;
-		}
-
-	}
-	else
-	{
-		$badLogin = true;
-	}
+		
 }
 
 
