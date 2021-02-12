@@ -23,6 +23,21 @@ $review = $stmt2->fetchAll(PDO::FETCH_ASSOC);
 
 echo var_dump($_SESSION);
 
+if (isset($_POST['review']) && isset ($_SESSION['userid'])){
+    $rev = htmlspecialchars($_POST['review']);
+    $user = $_SESSION['userid'];
+    
+    require $_SERVER['DOCUMENT_ROOT'] . '/modules/dbConnect.php';
+    $db = get_db();
+    $stmt3 = $db->prepare('INSERT INTO reviews (account_id, content_id, note) VALUES (:acid, :conid, :rev);');
+    $stmt3->bindValue(':acid', $user);
+    $stmt3->bindValue(':conid', $email);
+    $stmt3->bindValue(':password', $sid);
+    $stmt3->execute();
+    header("Refresh:0");
+    die();
+}
+
 
 ?>
 <!doctype html>
