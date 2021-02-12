@@ -22,7 +22,7 @@ if (isset($_POST['user']) && isset($_POST['pw']))
         echo $hash;
         echo $password;
         
-        if (password_verify($password, $hash)) {
+        if (password_verify('Emma1985!', $hash)) {
         echo 'Password is valid!';
         } else {
             echo 'Invalid password.';
