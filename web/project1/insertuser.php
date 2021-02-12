@@ -46,11 +46,13 @@ function checkExistingEmail($email) {
 
 if($existingemail){
         $message = '<p class="message">That email address already exists.</p>';
+        include 'register.php';
     exit;
     }
 
 if($existinguname){
         $message = '<p class="message">That username already exists.</p>';
+        include 'register.php';
     exit;
     }
 
