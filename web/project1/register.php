@@ -45,8 +45,7 @@ $db = get_db();
                             </div>
                         </div>
                       <div class="col-12">
-                            <label for="password" class="form-label">Password</label>
-                            <span>Must be at least 8 characters and contain at least 1 number, 1 capital letter and 1 special character.</span>
+                            <label for="password" class="form-label">Password - Must be at least 8 characters and contain 1 number, 1 capital letter and 1 special character.</label>
                             <input type="password" class="form-control" id="password" name="password" required pattern="(?=^.{8,}$)(?=.*\d)(?=.*\W+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$">
                           <div class="invalid-feedback">
                                 Password is required.
@@ -57,6 +56,7 @@ $db = get_db();
             </form>    
           </div>   
       </main>
-    </div>      
+    </div> 
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script> 
   </body>
 </html>
