@@ -22,19 +22,8 @@ $stmt2->execute();
 $review = $stmt2->fetchAll(PDO::FETCH_ASSOC);
 
 echo var_dump($_SESSION);
-
-
-if (isset($_POST['review']) && isset ($_GET['id']) && isset ($_SESSION['userid'])){
-    $user = $_SESSION['userid'];
+$user = $_SESSION['userid'];
     $pid = htmlspecialchars($_GET['id']);
-    $rev = htmlspecialchars($_POST['review']);
-    
-    echo $rev;
-    echo $user;
-    echo $pid;
-    
-}
-
 
 ?>
 <!doctype html>
@@ -116,7 +105,9 @@ if (isset($_POST['review']) && isset ($_GET['id']) && isset ($_SESSION['userid']
                 </div>
                 <div class='col-md-8'>
                 <div class='card-body'>
-                <form action="programdetails.php" method="post">
+                <form action="insertreview.php" method="POST">
+                        <input type="hidden" id="userid" name="userid" value="<?php echo $_SESSION['userid']; ?>">
+                        <input type="hidden" id="programid" name="program" value="<?php echo $sid; ?>">
                         <textarea class="form-control" placeholder="Review" id="review" name="review"></textarea>
                         <br>
                         <input type="submit" class="btn btn-dark" value="Submit Review">
