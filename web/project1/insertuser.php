@@ -7,8 +7,8 @@ $uname = htmlspecialchars($_POST['username']);
 $email = htmlspecialchars($_POST['email']);
 $pword = password_hash($password, PASSWORD_DEFAULT);
 $existinguname = checkExistinguname($uname);
-
-
+$existingemail = checkExistingEmail($email);
+$regOutcome = regClient($uname, $email, $pword);
 
 function checkExistinguname($uname) {
  $db = get_db();
@@ -19,10 +19,8 @@ function checkExistinguname($uname) {
  if($matchname >= 1){
  $pageerror = "register.php?success=1";    
  header("Location: $pageerror");
-     exit;
-} else {
-    $existingemail = checkExistingEmail($email);
- }
+exit;
+}
 }
 
 function checkExistingEmail($email) {
@@ -35,9 +33,7 @@ $stmt3 = $db->prepare('SELECT email FROM account WHERE email = :email');
  $pageerror = "register.php?success=2";    
  header("Location: $pageerror");
      exit;
-} else {
-     $regOutcome = regClient($uname, $email, $pword); 
- }
+}
 }
 
 
