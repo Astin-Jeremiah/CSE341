@@ -5,8 +5,8 @@ $badLogin = false;
 
 if (isset($_POST['user']) && isset($_POST['pw']))
 {
-    $username = $_POST['user'];
-    $password = $_POST['pw'];
+    $username = htmlspecialchars($_POST['user']);
+    $password = htmlspecialchars($_POST['pw']);
     
     require $_SERVER['DOCUMENT_ROOT'] . '/modules/dbConnect.php';
     $db = get_db();
@@ -14,7 +14,7 @@ if (isset($_POST['user']) && isset($_POST['pw']))
     $statement = $db->prepare($query);
 	$statement->bindValue(':uname', $username);
     $result = $statement->execute();
-    
+    echo $result;
     if ($result)
 	{
 		$row = $statement->fetch();
