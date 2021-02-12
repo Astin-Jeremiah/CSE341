@@ -31,7 +31,9 @@ $stmt->bindValue(':email', $email, PDO::PARAM_STR);
 $stmt->bindValue(':password', $pword);
 $stmt->execute();
     
+$new_page = "login.php";    
 header("Location: $new_page");
+    
 die();
 
 }
