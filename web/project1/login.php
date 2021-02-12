@@ -24,9 +24,11 @@ if (isset($_POST['user']) && isset($_POST['pw']))
         echo $password;
         
         if ($hash = $password) {
-        echo 'Password is valid!';
+            $_SESSION['username'] = $username;
+			header("Location: index.php");
+			die(); 
         } else {
-            echo 'Invalid password.';
+            $badLogin = true;
         }
                    }}
 
