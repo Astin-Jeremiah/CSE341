@@ -2,6 +2,7 @@
 
 require $_SERVER['DOCUMENT_ROOT'] . '/modules/dbConnect.php';
 
+if(isset($_POST['SubmitButton'])){
 $uname = htmlspecialchars($_POST['username']);
 $email = htmlspecialchars($_POST['email']);
 $pword = password_hash($password, PASSWORD_DEFAULT);
@@ -35,6 +36,7 @@ header("Location: $new_page");
     
 die();
 
+}
 }
 
 ?>
