@@ -94,6 +94,24 @@ $review = $stmt2->fetchAll(PDO::FETCH_ASSOC);
                 </div>
                 </div>
             </div>
+        
+        <div class='card col-md-6 offset-md-3'>
+        
+                <div class='row p-2 g-0'>
+                <div class='col-md-4'>
+                <h3>Add A Review</h3>
+                </div>
+                <div class='col-md-8'>
+                <div class='card-body'>
+                <form action="programdetails.php" method="post">
+                        <textarea class="form-control" placeholder="Review" id="review"></textarea>
+                        <label for="review">Review</label>
+                        <input type="submit" class="btn btn-dark" value="Submit Review">
+                </form>
+                </div>
+                </div>
+                </div>
+    </div>
     </div>
     </main>
     </body>
