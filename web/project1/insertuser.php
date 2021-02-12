@@ -19,7 +19,7 @@ function checkExistinguname($uname) {
  if($matchname >= 1){
  $pageerror = "register.php?success=1";    
  header("Location: $pageerror");
-exit;
+die();
 }
 }
 
@@ -32,7 +32,7 @@ $stmt3 = $db->prepare('SELECT email FROM account WHERE email = :email');
  if($matchEmail >= 1){
  $pageerror = "register.php?success=2";    
  header("Location: $pageerror");
-     exit;
+     die();
 }
 }
 

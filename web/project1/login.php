@@ -24,7 +24,7 @@ if (isset($_POST['email']) && isset($_POST['password']))
 		if (password_verify($pword, $password))
 		{
 
-			$_SESSION['email'] = $sessionemail;
+			$_SESSION['email'] = $email;
 			header("Location: index.php");
 			die(); 
 		}
