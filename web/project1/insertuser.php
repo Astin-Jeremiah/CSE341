@@ -14,13 +14,9 @@ function checkExistinguname($uname) {
  $stmt2 = $db->prepare('SELECT user_name FROM account WHERE user_name = :uname');
  $stmt2->bindValue(':uname', $uname, PDO::PARAM_STR);
  $stmt2->execute();
- $matchname = $stmt2->fetchAll(PDO::FETCH_ASSOC);
- if(empty($matchname)){
- return 0;
-
-} else {
-     echo "User Name Taken";
-}
+ $matchname = $stmt2->fetch(PDO::FETCH_NUM);
+ if($matchname >= 1)){
+ echo "User Name Taken";
 }
 
 
