@@ -32,21 +32,22 @@ $db = get_db();
                     <div class="row g-3">
                         <div class="col-md-6">
                             <label for="username" class="form-label">User Name</label>
-                            <input type="text" class="form-control" id="username" name="username" required>
+                            <input type="text" class="form-control" id="username" name="username" required <?php if(isset($username)){echo "value='$username'";}  ?>>
                             <div class="invalid-feedback">
                                 User Name is required.
                             </div>
                         </div>
                         <div class="col-12">
                             <label for="email" class="form-label">Email</label>
-                            <input type="email" class="form-control" id="email" name="email" required>
+                            <input type="email" class="form-control" id="email" name="email" required <?php if(isset($email)){echo "value='$email'";}  ?>>
                             <div class="invalid-feedback">
                                 Please enter a valid email address.
                             </div>
                         </div>
                       <div class="col-12">
                             <label for="password" class="form-label">Password</label>
-                            <input type="password" class="form-control" id="password" name="password" required>
+                            <span>Must be at least 8 characters and contain at least 1 number, 1 capital letter and 1 special character.</span>
+                            <input type="password" class="form-control" id="password" name="password" required pattern="(?=^.{8,}$)(?=.*\d)(?=.*\W+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$">
                           <div class="invalid-feedback">
                                 Password is required.
                             </div>
