@@ -21,7 +21,7 @@ $stmt2->bindValue(':id', $sid, PDO::PARAM_INT);
 $stmt2->execute();
 $review = $stmt2->fetchAll(PDO::FETCH_ASSOC);
 
-echo var_dump($_SESSION['username']);
+echo $username;
 
 ?>
 <!doctype html>
