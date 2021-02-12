@@ -107,7 +107,7 @@ $user = $_SESSION['userid'];
                 <div class='card-body'>
                 <form action="insertreview.php" method="POST">
                         <input type="hidden" id="userid" name="userid" value="<?php echo $_SESSION['userid']; ?>">
-                        <input type="hidden" id="programid" name="program" value="<?php echo $sid; ?>">
+                        <input type="hidden" id="programid" name="program" value="<?php echo $_GET['id']; ?>">
                         <textarea class="form-control" placeholder="Review" id="review" name="review"></textarea>
                         <br>
                         <input type="submit" class="btn btn-dark" value="Submit Review">
