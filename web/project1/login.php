@@ -10,12 +10,12 @@ if (isset($_POST['user']) && isset($_POST['pw']))
     
     require $_SERVER['DOCUMENT_ROOT'] . '/modules/dbConnect.php';
     $db = get_db();
-    $query = 'SELECT password FROM account WHERE user_name =:uname';
+    $query = 'SELECT * FROM account WHERE user_name =:uname';
     $statement = $db->prepare($query);
 	$statement->bindValue(':uname', $username);
     $statement->execute();
     $result = $statement->fetchAll(PDO::FETCH_ASSOC);
-    echo $result;
+    echo $result['password'];
     if ($result)
 	{
 		$row = $statement->fetch();
