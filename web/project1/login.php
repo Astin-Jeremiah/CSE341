@@ -26,7 +26,6 @@ if (isset($_POST['user']) && isset($_POST['pw']))
                    
         if(!$verify) {
         $badLogin = true;
-        exit;
         }
                    }}
 
