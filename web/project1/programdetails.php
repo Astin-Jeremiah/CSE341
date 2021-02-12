@@ -22,6 +22,8 @@ $stmt2->execute();
 $review = $stmt2->fetchAll(PDO::FETCH_ASSOC);
 
 echo var_dump($_SESSION);
+$tom = $_SESSION['userid'];
+echo $tom;
 
 if (isset($_POST['review']) && isset ($_SESSION['userid'])){
     $rev = htmlspecialchars($_POST['review']);
