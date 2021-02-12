@@ -7,7 +7,7 @@ $uname = htmlspecialchars($_POST['username']);
 $email = htmlspecialchars($_POST['email']);
 $pword = password_hash($password, PASSWORD_DEFAULT);
 $existinguname = checkExistinguname($uname);
-$existingemail = checkExistingEmail($email);
+
 $regOutcome = regClient($uname, $email, $pword);
 
 function checkExistinguname($uname) {
@@ -21,24 +21,8 @@ function checkExistinguname($uname) {
 
 } else {
  $message = '<p class="message">That username already exists.</p>';
-        include 'register.php';
-    exit;
 }
 }
-
-
-
-if($existingemail){
-        $message = '<p class="message">That email address already exists.</p>';
-        include 'register.php';
-    exit;
-    }
-
-if($existinguname){
-        $message = '<p class="message">That username already exists.</p>';
-        include 'register.php';
-    exit;
-    }
 
 
 function regClient($uname, $email, $pword) {
@@ -49,11 +33,9 @@ $stmt->bindValue(':email', $email, PDO::PARAM_STR);
 $stmt->bindValue(':password', $pword);
 $stmt->execute();
 
-
-$new_page = "login.php";
+}
 
 header("Location: $new_page");
 die();
-}
 
 ?>
