@@ -22,8 +22,7 @@ $stmt2->execute();
 $review = $stmt2->fetchAll(PDO::FETCH_ASSOC);
 
 echo var_dump($_SESSION);
-$tom = $_SESSION['userid'];
-echo $tom;
+
 
 if (isset($_POST['review']) && isset ($_SESSION['userid'])){
     $rev = htmlspecialchars($_POST['review']);
@@ -33,8 +32,8 @@ if (isset($_POST['review']) && isset ($_SESSION['userid'])){
     $db = get_db();
     $stmt3 = $db->prepare('INSERT INTO reviews (account_id, content_id, note) VALUES (:acid, :conid, :rev);');
     $stmt3->bindValue(':acid', $user);
-    $stmt3->bindValue(':conid', $email);
-    $stmt3->bindValue(':password', $sid);
+    $stmt3->bindValue(':conid', $sid);
+    $stmt3->bindValue(':rev', $rev);
     $stmt3->execute();
     header("Refresh:0");
     die();
