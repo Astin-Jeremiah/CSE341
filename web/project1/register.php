@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 require $_SERVER['DOCUMENT_ROOT'] . '/modules/dbConnect.php';
 $db = get_db();
 
