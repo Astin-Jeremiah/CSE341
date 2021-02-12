@@ -6,6 +6,9 @@
 #out {
     text-decoration: none;
     color: black; 
+}
+
+#logout h4 {
     display: inline;
 }
 
