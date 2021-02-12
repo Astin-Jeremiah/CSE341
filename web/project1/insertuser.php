@@ -9,7 +9,7 @@ $pword = htmlspecialchars($_POST['password']);
 //$hash =  password_hash($pword, PASSWORD_DEFAULT);
 $existinguname = checkExistinguname($uname);
 $existingemail = checkExistingEmail($email);
-$regOutcome = regClient($uname, $email, $hash);
+$regOutcome = regClient($uname, $email, $pword);
 
 function checkExistinguname($uname) {
  $db = get_db();
@@ -38,7 +38,7 @@ $stmt3 = $db->prepare('SELECT email FROM account WHERE email = :email');
 }
 
 
-function regClient($uname, $email, $hash) {
+function regClient($uname, $email, $pword) {
 $db = get_db();
 $stmt = $db->prepare('INSERT INTO account (user_name, email, password) VALUES (:user_name, :email, :password);');
 $stmt->bindValue(':user_name', $uname);
