@@ -10,24 +10,37 @@ if (isset($_POST['user']) && isset($_POST['pw']))
     
     require $_SERVER['DOCUMENT_ROOT'] . '/modules/dbConnect.php';
     $db = get_db();
-    $query = 'SELECT * FROM account WHERE user_name =:uname';
+    $query = 'SELECT password FROM account WHERE user_name =:uname';
     $statement = $db->prepare($query);
 	$statement->bindValue(':uname', $username);
-    $statement->execute();
-    $result = $statement->fetchAll(PDO::FETCH_ASSOC);
-    echo $result['password'];
-    
-    $hashcheck = password_verify ($password, $result['passwrod']);
-    
-    if(!$hashCheck) {
-        $badLogin = true;
-        exit;
-    }
+    $result = $statement->execute();
 
-    $_SESSION['username'] = $username;
-    header("Location: index.php");
-			exit; 
+    if ($result)
+	{
+		$row = $statement->fetch();
+		$hash = $row['password'];
+        echo $hash;
+        echo $password;
+
+		if (password_verify($password, $hash))
+		{
+
+			$_SESSION['username'] = $username;
+			header("Location: index.php");
+			die(); 
+		}
+		else
+		{
+			$badLogin = true;
+		}
+
+	}
+	else
+	{
+		$badLogin = true;
+	}
 }
+
 
 ?>
 <!doctype html>
