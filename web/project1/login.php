@@ -13,7 +13,8 @@ if (isset($_POST['user']) && isset($_POST['pw']))
     $query = 'SELECT password FROM account WHERE user_name =:uname';
     $statement = $db->prepare($query);
 	$statement->bindValue(':uname', $username);
-    $result = $statement->execute();
+    $statement->execute();
+    $result = $statement->fetchAll(PDO::FETCH_ASSOC);
     echo $result;
     if ($result)
 	{
