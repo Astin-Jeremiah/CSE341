@@ -23,6 +23,7 @@ $review = $stmt2->fetchAll(PDO::FETCH_ASSOC);
 
 echo var_dump($_SESSION);
 
+
 ?>
 <!doctype html>
 <html lang="en">
