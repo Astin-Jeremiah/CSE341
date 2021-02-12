@@ -24,7 +24,10 @@ if (isset($_POST['user']) && isset($_POST['pw']))
         
         $verify = (password_verify($password, $hash));
                    
-        echo $verify;
+        if(!$verify) {
+        $badLogin = true;
+        exit;
+        }
                    }}
 
 ?>
