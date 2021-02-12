@@ -16,31 +16,18 @@ if (isset($_POST['user']) && isset($_POST['pw']))
     $statement->execute();
     $result = $statement->fetchAll(PDO::FETCH_ASSOC);
     echo $result['password'];
-    if ($result)
-	{
-		$row = $statement->fetch();
-		$hash = $row['password'];
+    
+    $hashcheck = password_verify ($password, $result['passwrod']);
+    
+    if(!$hashCheck) {
+        $badLogin = true;
+        exit;
+    }
 
-
-		if (password_verify($password, $hash))
-		{
-
-			$_SESSION['username'] = $username;
-			header("Location: index.php");
-			die(); 
-		}
-		else
-		{
-			$badLogin = true;
-		}
-
-	}
-	else
-	{
-		$badLogin = true;
-	}
+    $_SESSION['username'] = $username;
+    header("Location: index.php");
+			exit; 
 }
-
 
 ?>
 <!doctype html>
