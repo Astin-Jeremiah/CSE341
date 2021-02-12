@@ -19,6 +19,7 @@ if (isset($_POST['user']) && isset($_POST['pw']))
 	{
 		$row = $statement->fetch();
 		$hash = $row['password'];
+        $hash = substr( $hash, 0, 60 );
         echo $hash;
         echo $password;
         
