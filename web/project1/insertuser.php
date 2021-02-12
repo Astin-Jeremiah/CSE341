@@ -20,7 +20,7 @@ function checkExistinguname($uname) {
  return 0;
 
 } else {
- $message = '<p class="message">That username already exists.</p>';
+     echo "User Name Taken";
 }
 }
 
