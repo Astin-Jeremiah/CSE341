@@ -30,8 +30,8 @@ $db = get_db();
                 <h4 class="mb-3">Create New Account</h4>
                 <div class="message">
                 <?php
-                    if ( isset($_GET['success']) && $_GET['success'] == 1 ){
-                     echo "<h6>Username Already Exists</h6>"
+                    if (isset($_GET['success']) && $_GET['success'] == 1 ){
+                     echo "<h6>Username Already Exists</h6>";
                     }
                 ?>
                 </div>
