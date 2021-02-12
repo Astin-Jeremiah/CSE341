@@ -18,8 +18,9 @@ function checkExistinguname($uname) {
  $matchname = $stmt2->fetch(PDO::FETCH_NUM);
  if($matchname >= 1){
  $message = '<p class="message">Username already exists</p>';
-        include 'register.php';
-       exit; 
+        $new_page = "register.php";    
+     header("Location: $new_page");
+    die(); 
 }
 }
 
