@@ -1,11 +1,7 @@
-#login, #header, #home {
+#login, #out, #home {
  font-size: 35px; 
  color: black;   
 }
 
-#out {
-    text-decoration: none;
-    color: black; 
-}
 
 
