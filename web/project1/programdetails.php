@@ -24,10 +24,13 @@ $review = $stmt2->fetchAll(PDO::FETCH_ASSOC);
 echo var_dump($_SESSION);
 
 
-if (isset($_POST['review']) && isset ($_SESSION['userid'])){
+if (isset($_POST['review']) && isset ($_GET['id']) && isset ($_SESSION['userid'])){
     $rev = htmlspecialchars($_POST['review']);
     $user = $_SESSION['userid'];
     $pid = htmlspecialchars($_GET['id']);
+    echo $rev;
+    echo $user;
+    echo $pid;
     require $_SERVER['DOCUMENT_ROOT'] . '/modules/dbConnect.php';
     $db = get_db();
     $stmt3 = $db->prepare('INSERT INTO reviews (account_id, content_id, note) VALUES (:acid, :conid, :rev);');
