@@ -3,10 +3,10 @@ session_start();
 
 $badLogin = false;
 
-if (isset($_POST['uname']) && isset($_POST['password']))
+if (isset($_POST['uname']) && isset($_POST['pword']))
 {
     $name = $_POST['uname'];
-    $pword = $_POST['password'];
+    $pword = $_POST['pword'];
     
     require $_SERVER['DOCUMENT_ROOT'] . '/modules/dbConnect.php';
     $db = get_db();
@@ -79,8 +79,8 @@ if (isset($_POST['uname']) && isset($_POST['password']))
                             <input type="text" class="form-control" id="uname" name="uname" required>
                         </div>
                       <div class="col-12">
-                            <label for="password" class="form-label">Password</label>
-                            <input type="password" class="form-control" id="password" name="password" required>
+                            <label for="pword" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="pword" name="pword" required>
                         </div>  
                     </div><br>
                         <input type="submit" class="btn btn-dark" value="Login">
