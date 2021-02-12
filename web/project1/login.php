@@ -22,13 +22,10 @@ if (isset($_POST['user']) && isset($_POST['pw']))
         echo $hash;
         echo $password;
         
-        $verify = (password_verify($password, $hash);
+        $verify = (password_verify($password, $hash));
                    
         echo $verify;
-
-		
-}
-
+                   }}
 
 ?>
 <!doctype html>
