@@ -1,7 +1,45 @@
 <?php
+session_start();
 
-require $_SERVER['DOCUMENT_ROOT'] . '/modules/dbConnect.php';
-$db = get_db();
+$badLogin = false;
+
+if (isset($_POST['txtUser']) && isset($_POST['txtPassword']))
+{
+    $email = $_POST['email'];
+    $pword = $_POST['password'];
+    
+    require $_SERVER['DOCUMENT_ROOT'] . '/modules/dbConnect.php';
+    $db = get_db();
+    $query = 'SELECT password FROM account WHERE email =:email';
+    $statement = $db->prepare($query);
+	$statement->bindValue(':email', $email);
+    $result = $statement->execute();
+    
+    if ($result)
+	{
+		$row = $statement->fetch();
+		$password = $row['password'];
+
+
+		if (password_verify($pword, $password))
+		{
+
+			$_SESSION['email'] = $sessionemail;
+			header("Location: index.php");
+			die(); 
+		}
+		else
+		{
+			$badLogin = true;
+		}
+
+	}
+	else
+	{
+		$badLogin = true;
+	}
+}
+
 
 ?>
 <!doctype html>
@@ -28,14 +66,11 @@ $db = get_db();
     
       <div class="card col-md-6 offset-md-3 p-2">
                 <h4 class="mb-3">Login Information:</h4>
-                <form class="needs-validation" action="" method="" novalidate>
+                <form  action="login.php" method="post">
                     <div class="row g-3">
                         <div class="col-12">
                             <label for="email" class="form-label">Email</label>
                             <input type="email" class="form-control" id="email" name="email" required>
-                            <div class="invalid-feedback">
-                                Please enter a valid email address for shipping updates.
-                            </div>
                         </div>
                       <div class="col-12">
                             <label for="password" class="form-label">Password</label>
