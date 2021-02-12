@@ -5,7 +5,8 @@ require $_SERVER['DOCUMENT_ROOT'] . '/modules/dbConnect.php';
 
 $uname = htmlspecialchars($_POST['username']);
 $email = htmlspecialchars($_POST['email']);
-$pword = password_hash($password, PASSWORD_DEFAULT);
+$pword = htmlspecialchars($_POST['password']);
+$hash =  password_hash($pword, PASSWORD_DEFAULT);
 $existinguname = checkExistinguname($uname);
 $existingemail = checkExistingEmail($email);
 $regOutcome = regClient($uname, $email, $pword);
@@ -40,9 +41,9 @@ $stmt3 = $db->prepare('SELECT email FROM account WHERE email = :email');
 function regClient($uname, $email, $pword) {
 $db = get_db();
 $stmt = $db->prepare('INSERT INTO account (user_name, email, password) VALUES (:user_name, :email, :password);');
-$stmt->bindValue(':user_name', $uname, PDO::PARAM_STR);
-$stmt->bindValue(':email', $email, PDO::PARAM_STR);
-$stmt->bindValue(':password', $pword);
+$stmt->bindValue(':user_name', $uname);
+$stmt->bindValue(':email', $email);
+$stmt->bindValue(':password', $hash);
 $stmt->execute();
     
 $new_page = "login.php";    
