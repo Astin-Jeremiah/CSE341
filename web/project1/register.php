@@ -69,7 +69,7 @@ die();
                     }
                 ?>
                 </div>
-                <form action="register.php" method="post">
+                <form action="" method="post">
                     <div class="row g-3">
                         <div class="col-md-6">
                             <label for="username" class="form-label">User Name</label>
