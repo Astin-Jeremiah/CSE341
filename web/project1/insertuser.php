@@ -11,38 +11,21 @@ $existingemail = checkExistingEmail($email);
 $regOutcome = regClient($uname, $email, $pword);
 
 function checkExistinguname($uname) {
- $db = get_db();
- $sql = 'SELECT user_name FROM account WHERE user_name = :user_name';
- $stmt = $db->prepare($sql);
- $stmt->bindValue(':user_name', $uname, PDO::PARAM_STR);
- $stmt->execute();
+ $stmt2 = $db->prepare('SELECT user_name FROM account WHERE user_name = :uname');
+ $stmt2->bindValue(':uname', $uname, PDO::PARAM_STR);
+ $stmt2->execute();
  $matchname = $stmt->fetch(PDO::FETCH_NUM);
- $stmt->closeCursor();
+ $stmt2->closeCursor();
  if(empty($matchname)){
  return 0;
 
 } else {
- return 1;
-
+ $message = '<p class="message">That username already exists.</p>';
+        include 'register.php';
+    exit;
 }
 }
 
-function checkExistingEmail($email) {
- $db = get_db();
- $sql = 'SELECT email FROM account WHERE email = :email';
- $stmt = $db->prepare($sql);
- $stmt->bindValue(':email', $email, PDO::PARAM_STR);
- $stmt->execute();
- $matchEmail = $stmt->fetch(PDO::FETCH_NUM);
- $stmt->closeCursor();
- if(empty($matchEmail)){
- return 0;
-
-} else {
- return 1;
-
-}
-}
 
 
 if($existingemail){
