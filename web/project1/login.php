@@ -66,10 +66,16 @@ if (isset($_POST['uname']) && isset($_POST['password']))
     
       <div class="card col-md-6 offset-md-3 p-2">
                 <h4 class="mb-3">Login Information:</h4>
+                <?php
+                if ($badLogin)
+                    {
+	                   echo "<h6>Incorrect username or password!</h6>";
+                    }
+                ?>
                 <form  action="login.php" method="POST">
                     <div class="row g-3">
                         <div class="col-12">
-                            <label for="uname" class="form-label">Email</label>
+                            <label for="uname" class="form-label">Username</label>
                             <input type="text" class="form-control" id="uname" name="uname" required>
                         </div>
                       <div class="col-12">
