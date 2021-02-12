@@ -8,6 +8,7 @@ $email = htmlspecialchars($_POST['email']);
 $pword = password_hash($password, PASSWORD_DEFAULT);
 $existinguname = checkExistinguname($uname);
 $existingemail = checkExistingEmail($email);
+$regOutcome = regClient($uname, $email, $pword);
 
 function checkExistinguname($uname) {
  $db = get_db();
@@ -57,7 +58,7 @@ if($existinguname){
     }
 
 
-
+function regClient($uname, $email, $pword) {
 $db = get_db();
 $stmt = $db->prepare('INSERT INTO account (user_name, email, password) VALUES (:user_name, :email, :password);');
 $stmt->bindValue(':user_name', $uname, PDO::PARAM_STR);
@@ -70,10 +71,6 @@ $new_page = "login.php";
 
 header("Location: $new_page");
 die();
-
-// Check for an existing email address
-
-
-
+}
 
 ?>
