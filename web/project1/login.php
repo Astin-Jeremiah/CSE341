@@ -66,7 +66,7 @@ if (isset($_POST['txtUser']) && isset($_POST['txtPassword']))
     
       <div class="card col-md-6 offset-md-3 p-2">
                 <h4 class="mb-3">Login Information:</h4>
-                <form  action="login.php" method="post">
+                <form  action="login.php" method="POST">
                     <div class="row g-3">
                         <div class="col-12">
                             <label for="email" class="form-label">Email</label>
