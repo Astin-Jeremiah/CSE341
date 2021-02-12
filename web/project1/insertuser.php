@@ -7,7 +7,7 @@ $uname = htmlspecialchars($_POST['username']);
 $email = htmlspecialchars($_POST['email']);
 $pword = password_hash($password, PASSWORD_DEFAULT);
 $existinguname = checkExistinguname($uname);
-
+$existingemail = checkExistingEmail($email);
 $regOutcome = regClient($uname, $email, $pword);
 
 function checkExistinguname($uname) {
@@ -18,6 +18,18 @@ function checkExistinguname($uname) {
  $matchname = $stmt2->fetch(PDO::FETCH_NUM);
  if($matchname >= 1){
  $pageerror = "register.php?success=1";    
+ header("Location: $pageerror");
+}
+}
+
+function checkExistingEmail($email) {
+ $db = get_db();
+$stmt3 = $db->prepare('SELECT email FROM account WHERE email = :email');
+ $stmt3->bindValue(':email', $email, PDO::PARAM_STR);
+ $stmt3->execute();
+ $matchEmail = $stmt3->fetch(PDO::FETCH_NUM);
+ if($matchEmail >= 1){
+ $pageerror = "register.php?success=2";    
  header("Location: $pageerror");
 }
 }
