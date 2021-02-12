@@ -3,16 +3,16 @@ session_start();
 
 $badLogin = false;
 
-if (isset($_POST['email']) && isset($_POST['password']))
+if (isset($_POST['uname']) && isset($_POST['password']))
 {
-    $email = $_POST['email'];
+    $name = $_POST['uname'];
     $pword = $_POST['password'];
     
     require $_SERVER['DOCUMENT_ROOT'] . '/modules/dbConnect.php';
     $db = get_db();
-    $query = 'SELECT password FROM account WHERE email =:email';
+    $query = 'SELECT password FROM account WHERE user_name =:uname';
     $statement = $db->prepare($query);
-	$statement->bindValue(':email', $email);
+	$statement->bindValue(':uname', $name);
     $result = $statement->execute();
     
     if ($result)
@@ -24,7 +24,7 @@ if (isset($_POST['email']) && isset($_POST['password']))
 		if (password_verify($pword, $password))
 		{
 
-			$_SESSION['email'] = $email;
+			$_SESSION['uname'] = $name;
 			header("Location: index.php");
 			die(); 
 		}
@@ -69,8 +69,8 @@ if (isset($_POST['email']) && isset($_POST['password']))
                 <form  action="login.php" method="POST">
                     <div class="row g-3">
                         <div class="col-12">
-                            <label for="email" class="form-label">Email</label>
-                            <input type="email" class="form-control" id="email" name="email" required>
+                            <label for="uname" class="form-label">Email</label>
+                            <input type="text" class="form-control" id="uname" name="uname" required>
                         </div>
                       <div class="col-12">
                             <label for="password" class="form-label">Password</label>
