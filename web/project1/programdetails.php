@@ -31,8 +31,8 @@ if (isset($_POST['review']) && isset ($_SESSION['userid'])){
     require $_SERVER['DOCUMENT_ROOT'] . '/modules/dbConnect.php';
     $db = get_db();
     $stmt3 = $db->prepare('INSERT INTO reviews (account_id, content_id, note) VALUES (:acid, :conid, :rev);');
-    $stmt3->bindValue(':acid', $user);
-    $stmt3->bindValue(':conid', $pid);
+    $stmt3->bindValue(':acid', $user, PDO::PARAM_INT);
+    $stmt3->bindValue(':conid', $pid, PDO::PARAM_INT);
     $stmt3->bindValue(':rev', $rev);
     $stmt3->execute();
     header("Refresh:0");
@@ -121,7 +121,7 @@ if (isset($_POST['review']) && isset ($_SESSION['userid'])){
                 <div class='col-md-8'>
                 <div class='card-body'>
                 <form action="programdetails.php" method="post">
-                        <textarea class="form-control" placeholder="Review" id="review"></textarea>
+                        <textarea class="form-control" placeholder="Review" id="review" name="review"></textarea>
                         <br>
                         <input type="submit" class="btn btn-dark" value="Submit Review">
                 </form>
