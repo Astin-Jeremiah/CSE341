@@ -18,7 +18,7 @@ function checkExistinguname($uname) {
  $matchname = $stmt2->fetch(PDO::FETCH_NUM);
  if($matchname >= 1){
  $pageerror = "register.php?success=1";    
- header("Location: $new_page");
+ header("Location: $pageerror");
 }
 }
 
