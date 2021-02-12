@@ -28,6 +28,13 @@ $db = get_db();
     
       <div class="card col-md-6 offset-md-3 p-2">
                 <h4 class="mb-3">Create New Account</h4>
+                <div class="message">
+                <?php
+                    if (isset($message)) {
+                     echo $message;
+                    }
+                ?>
+                </div>
                 <form action="insertuser.php" method="post">
                     <div class="row g-3">
                         <div class="col-md-6">
