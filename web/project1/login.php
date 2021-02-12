@@ -3,28 +3,28 @@ session_start();
 
 $badLogin = false;
 
-if (isset($_POST['uname']) && isset($_POST['pword']))
+if (isset($_POST['user']) && isset($_POST['pw']))
 {
-    $name = $_POST['uname'];
-    $pword = $_POST['pword'];
+    $username = $_POST['user'];
+    $password = $_POST['pw'];
     
     require $_SERVER['DOCUMENT_ROOT'] . '/modules/dbConnect.php';
     $db = get_db();
     $query = 'SELECT password FROM account WHERE user_name =:uname';
     $statement = $db->prepare($query);
-	$statement->bindValue(':uname', $name);
+	$statement->bindValue(':uname', $username);
     $result = $statement->execute();
     
     if ($result)
 	{
 		$row = $statement->fetch();
-		$password = $row['password'];
+		$hash = $row['password'];
 
 
-		if (password_verify($pword, $password))
+		if (password_verify($password, $hash))
 		{
 
-			$_SESSION['uname'] = $name;
+			$_SESSION['username'] = $username;
 			header("Location: index.php");
 			die(); 
 		}
@@ -75,12 +75,12 @@ if (isset($_POST['uname']) && isset($_POST['pword']))
                 <form  action="login.php" method="POST">
                     <div class="row g-3">
                         <div class="col-12">
-                            <label for="uname" class="form-label">Username</label>
-                            <input type="text" class="form-control" id="uname" name="uname" required>
+                            <label for="user" class="form-label">Username</label>
+                            <input type="text" class="form-control" id="user" name="user" required>
                         </div>
                       <div class="col-12">
-                            <label for="pword" class="form-label">Password</label>
-                            <input type="password" class="form-control" id="pword" name="pword" required>
+                            <label for="pw" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="pw" name="pw" required>
                         </div>  
                     </div><br>
                         <input type="submit" class="btn btn-dark" value="Login">
