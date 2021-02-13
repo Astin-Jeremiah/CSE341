@@ -7,7 +7,7 @@ if (isset($_POST['user']) && isset($_POST['pw']))
     $username = htmlspecialchars($_POST['user']);
     $password = htmlspecialchars($_POST['pw']);
     $password =  password_hash($pword, PASSWORD_DEFAULT);
-    $sid = htmlspecialchars($_GET['id']);
+    
     
     require $_SERVER['DOCUMENT_ROOT'] . '/modules/dbConnect.php';
     $db = get_db();
@@ -29,12 +29,15 @@ if (isset($_POST['user']) && isset($_POST['pw']))
             die();
         }
                    }
-    if (isset($_GET['id'])){
-			     header("Location: programdetails.php?id=$sid");
-			     die();}else{
-                header("Location: index.php");
-			     die();
-            } 
+   
+    $sid = htmlspecialchars($_GET['id']);
+    if (!isset($_GET['id'])){
+	header("Location: index.php");
+    die();
+    }else {
+    header("Location: programdetails.php?id=$sid");
+    die();   
+    }
 }
 
 ?>
