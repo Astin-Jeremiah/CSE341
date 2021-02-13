@@ -1,12 +1,12 @@
 <?php
 
-$userid = htmlspecialchars($_POST['accountid']);
-$programid = htmlspecialchars($_POST['contentid']);
 $review = htmlspecialchars($_POST['review']); 
 
 if (isset($_POST['newreview']))
 {
     $nrev = htmlspecialchars($_POST['newreview']);
+    $userid = htmlspecialchars($_POST['accountid']);
+    $programid = htmlspecialchars($_POST['contentid']);
     require $_SERVER['DOCUMENT_ROOT'] . '/modules/dbConnect.php';
     $db = get_db();
     $stmt = $db->prepare('UPDATE reviews SET note = :review WHERE account_id = :userid AND content_id = :programid');
