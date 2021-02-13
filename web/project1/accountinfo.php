@@ -77,7 +77,7 @@ $reviews = $stmt3->fetchAll(PDO::FETCH_ASSOC);
                         <form action='removefromwatchlist.php' method='POST'>
                         <input type='hidden' id='accountid' name='accountid' value='$accid'>
                         <input type='hidden' id='contentid' name='contentid' value='$showid'>
-                        <input type='submit' id='special' value='<i class='bi bi-trash-fill' title='Remove From Watch List'></i>'></form>
+                        <input type='submit' id='special' value='submit'></form>
                         </li>";
                         }
                 ?>
