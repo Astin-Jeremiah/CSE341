@@ -30,19 +30,19 @@ $review = htmlspecialchars($_POST['review']);
                 <h4 class="mb-3">Edit Review:</h4>
                     <div class="row g-3">
                         <div class="col-12">
-                            <form  action="updatereview.php" method="POST">
+                            <form  id="specialform" action="updatereview.php" method="POST">
                             <input type='hidden' id='aid' name='aid' value='<?php echo $userid; ?>'>
                             <input type='hidden' id='cid' name='cid' value='<?php echo $programid; ?>'>
                             <textarea class='form-control' placeholder='Review' id='newreview' name='newreview'><?php echo $review; ?></textarea>
                             <br>
-                            <div class="col-lg-6">
+                            <div>
                             <input type='submit' class='btn btn-dark' value='Submit Review'>
                             </div>
                             </form><br>
-                            <form  action="deletereview.php" method="POST">
+                            <form  id="specialform" action="deletereview.php" method="POST">
                             <input type='hidden' id='aid' name='aid' value='<?php echo $userid; ?>'>
                             <input type='hidden' id='cid' name='cid' value='<?php echo $programid; ?>'>
-                            <div class="col-lg-6">
+                            <div>
                             <input type='submit' class='btn btn-dark' value='Delete Review'>
                             </div>
                             </form>    
