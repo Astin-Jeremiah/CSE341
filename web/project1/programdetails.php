@@ -34,22 +34,22 @@ $pid = htmlspecialchars($_GET['id']);
     <title>Program Details</title>
     <link href="../../bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-      <link href="style.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
     <script src="script.js"></script>
 </head>
 
 <body class="bg-secondary">
-<header>
-    <?php include $_SERVER['DOCUMENT_ROOT'].'/project1/header.php'; ?>
-</header>
-<main>
-    <div class="py-3 text-center">
-      <img class="img-fluid" src="../../images/logo.png" alt="Stream Central Logo">
-        <br>
-    </div>      
-    <div class="container">
-<div class='card col-md-6 offset-md-3'>
-        <?php
+    <header>
+        <?php include $_SERVER['DOCUMENT_ROOT'].'/project1/header.php'; ?>
+    </header>
+    <main>
+        <div class="py-3 text-center">
+            <img class="img-fluid" src="../../images/logo.png" alt="Stream Central Logo">
+            <br>
+        </div>
+        <div class="container">
+            <div class='card col-md-6 offset-md-3'>
+                <?php
             foreach ($details as $detail)
             {
                 $name = $detail['content_name'];
@@ -73,37 +73,37 @@ $pid = htmlspecialchars($_GET['id']);
                 </div>
                 ";
                 
-            user}
+            }
         ?>
-        
+
                 <div class='row p-2 g-0'>
-                <div class='col-md-4'>
-                <h3>&emsp;Reviews</h3>
-                </div>
-                <div class='col-md-8'>
-                <div class='card-body'>
-                <?php
+                    <div class='col-md-4'>
+                        <h3>&emsp;Reviews</h3>
+                    </div>
+                    <div class='col-md-8'>
+                        <div class='card-body'>
+                            <?php
                 foreach ($review as $reviews)
                 {
                 $uname = $reviews['user_name'];
                 $note = $reviews['note'];
                 echo "<p class='card-text'><b>$note</b> &#8212; $uname</p>";
                 }
-                ?> 
-                </div>
-                </div>
+                ?>
+                        </div>
+                    </div>
                 </div>
             </div>
-        <br>
-        <div class='card col-md-6 offset-md-3'>
-        
+            <br>
+            <div class='card col-md-6 offset-md-3'>
+
                 <div class='row p-2 g-0'>
-                <div class='col-md-4'>
-                <h3>Add A Review</h3>
-                </div>
-                <div class='col-md-8'>
-                <div class='card-body'>
-                <?php
+                    <div class='col-md-4'>
+                        <h3>Add A Review</h3>
+                    </div>
+                    <div class='col-md-8'>
+                        <div class='card-body'>
+                            <?php
                     if (isset ($_SESSION['userid'])){
                         echo "<form action='insertreview.php' method='POST'>
                         <input type='hidden' id='userid' name='userid' value='$user'>
@@ -113,13 +113,13 @@ $pid = htmlspecialchars($_GET['id']);
                         <input type='submit' class='btn btn-dark' value='Submit Review'>    
                         </form>";} else {
                         echo "<a href='login.php?id=$pid' class='btn btn-dark me-2' role='button'>Login To Write A Review</a>";}
-                ?>    
+                ?>
+                        </div>
+                    </div>
                 </div>
-                </div>
-                </div>
-    </div>
-    </div>
+            </div>
+        </div>
     </main>
-    </body>
+</body>
 
 </html>
