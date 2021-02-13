@@ -2,24 +2,6 @@
 $userid = htmlspecialchars($_POST['accountid']);
 $programid = htmlspecialchars($_POST['contentid']);
 $review = htmlspecialchars($_POST['review']); 
-
-if (isset($_POST['newreview']) && isset($_POST['aid']) && isset ($_POST['cid']))
-{
-    $nrev = htmlspecialchars($_POST['newreview']);
-    $userid2 = htmlspecialchars($_POST['aid']);
-    $programid2 = htmlspecialchars($_POST['cid']);
-    /*require $_SERVER['DOCUMENT_ROOT'] . '/modules/dbConnect.php';
-    $db = get_db();
-    $stmt = $db->prepare('UPDATE reviews SET note = :review WHERE account_id = :userid AND content_id = :programid;');
-    $stmt->bindValue(':review', $nrev);
-    $stmt->bindValue(':userid', $userid2);
-    $stmt->bindValue(':programid', $programid2);
-    $stmt->execute();
-
-    $new_page = "accountinfo.php";    
-    header("Location: $new_page");
-    die();   */
-}
 ?>
 
 <!doctype html>
@@ -46,7 +28,7 @@ if (isset($_POST['newreview']) && isset($_POST['aid']) && isset ($_POST['cid']))
     
       <div class="card col-md-6 offset-md-3 p-2">
                 <h4 class="mb-3">Edit Review:</h4>
-                <form  action="editreview.php" method="POST">
+                <form  action="updatereview.php" method="POST">
                     <div class="row g-3">
                         <div class="col-12">
                             <input type='hidden' id='aid' name='aid' value='$userid'>
