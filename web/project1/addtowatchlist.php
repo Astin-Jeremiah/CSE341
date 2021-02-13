@@ -11,7 +11,7 @@ $uid = $_SESSION['userid'];
 $date = date("m/d/Y");
 
 $db = get_db();
-$stmt = $db->prepare('INSERT INTO userq (account_id, content_id, date) VALUES (:acid, :conid, :date);');
+$stmt = $db->prepare('INSERT INTO userq (account_id, content_id, startdate) VALUES (:acid, :conid, :date);');
 $stmt->bindValue(':acid', $uid);
 $stmt->bindValue(':conid', $programid);
 $stmt->bindValue(':date', $date);
