@@ -63,7 +63,8 @@ $ques = $stmt2->fetchAll(PDO::FETCH_ASSOC);
                     foreach ($ques as $que)
                         {
                         $proname = $que['content_name'];
-                        echo "<li>$proname</li>";
+                        $showid = $que['content_id'];
+                        echo "<li><a href='programdetails.php?id=$showid'>$proname</a></li>";
                         }
                 ?>
                 </ul>
