@@ -12,7 +12,7 @@ $info = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 $user2 = $_SESSION['userid'];
 $db = get_db();
-$stmt2 = $db->prepare ('SELECT content_name FROM content INNER JOIN userq ON userq.content_id = content.id WHERE account_id = :id and enddate IS null');
+$stmt2 = $db->prepare ('SELECT content_id, content_name FROM content INNER JOIN userq ON userq.content_id = content.id WHERE account_id = :id and enddate IS null');
 $stmt2->bindValue(':id', $user2, PDO::PARAM_INT);
 $stmt2->execute();
 $ques = $stmt2->fetchAll(PDO::FETCH_ASSOC);
