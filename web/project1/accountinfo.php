@@ -15,9 +15,8 @@ $db = get_db();
 $stmt2 = $db->prepare ('SELECT content_name FROM content INNER JOIN userq ON userq.content_id = content.id WHERE account_id = :id and enddate IS null');
 $stmt2->bindValue(':id', $user2, PDO::PARAM_INT);
 $stmt2->execute();
-$ques = $stmt->fetchAll(PDO::FETCH_ASSOC);
+$ques = $stmt2->fetchAll(PDO::FETCH_ASSOC);
 
-echo $que;
 ?>
 <!doctype html>
 <html lang="en">
