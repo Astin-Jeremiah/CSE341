@@ -11,7 +11,7 @@ $sid = htmlspecialchars($_GET['id']);
 
 $db = get_db();
 
-$stmt = $db->prepare('SELECT content_name, description, service_name, picture FROM content INNER JOIN service ON service.id = content.service_id WHERE content.id = :id');
+$stmt = $db->prepare('SELECT content_name, description, service_id, service_name, picture FROM content INNER JOIN service ON service.id = content.service_id WHERE content.id = :id');
 $stmt->bindValue(':id', $sid, PDO::PARAM_INT);
 $stmt->execute();
 $details = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -56,6 +56,7 @@ $pid = htmlspecialchars($_GET['id']);
                 $desc = $detail['description'];
                 $service = $detail['service_name'];
                 $image = $detail['picture'];
+                $serviceid = $detail['service_id'];
                 echo "
                 <div class='row p-2 g-0'>
                 <div class='col-md-4'>
@@ -69,7 +70,7 @@ $pid = htmlspecialchars($_GET['id']);
                 <form action='addtowatchlist.php' method='POST'>
                 <input type='hidden' id='proid' name='proid' value='$sid'>
                 <input type='submit' class='btn btn-dark' value='Add To Watch List'>
-                <a href='index.php?service=$sid' class='btn btn-dark me-2' role='button'>Return To List</a>
+                <a href='index.php?service=$serviceid' class='btn btn-dark me-2' role='button'>Return To List</a>
                 </form>
                 </div>
                 </div>
