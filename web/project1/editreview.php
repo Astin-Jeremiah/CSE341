@@ -3,14 +3,14 @@ $userid = htmlspecialchars($_POST['accountid']);
 $programid = htmlspecialchars($_POST['contentid']);
 $review = htmlspecialchars($_POST['review']); 
 
-if (isset($_POST['newreview']))
+if (isset($_POST['newreview']) && isset($_POST['aid']) && isset ($_POST['cid']))
 {
     $nrev = htmlspecialchars($_POST['newreview']);
     $userid2 = htmlspecialchars($_POST['aid']);
     $programid2 = htmlspecialchars($_POST['cid']);
     require $_SERVER['DOCUMENT_ROOT'] . '/modules/dbConnect.php';
     $db = get_db();
-    $stmt = $db->prepare('UPDATE reviews SET note = :review WHERE account_id = :userid AND content_id = :programid');
+    $stmt = $db->prepare('UPDATE reviews SET note = :review WHERE account_id = :userid AND content_id = :programid;');
     $stmt->bindValue(':review', $nrev);
     $stmt->bindValue(':userid', $userid2);
     $stmt->bindValue(':programid', $programid2);
