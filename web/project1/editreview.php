@@ -1,18 +1,19 @@
 <?php
-
+$userid = htmlspecialchars($_POST['accountid']);
+$programid = htmlspecialchars($_POST['contentid']);
 $review = htmlspecialchars($_POST['review']); 
 
 if (isset($_POST['newreview']))
 {
     $nrev = htmlspecialchars($_POST['newreview']);
-    $userid = htmlspecialchars($_POST['accountid']);
-    $programid = htmlspecialchars($_POST['contentid']);
+    $userid2 = htmlspecialchars($_POST['aid']);
+    $programid2 = htmlspecialchars($_POST['cid']);
     require $_SERVER['DOCUMENT_ROOT'] . '/modules/dbConnect.php';
     $db = get_db();
     $stmt = $db->prepare('UPDATE reviews SET note = :review WHERE account_id = :userid AND content_id = :programid');
     $stmt->bindValue(':review', $nrev);
-    $stmt->bindValue(':userid', $userid);
-    $stmt->bindValue(':programid', $programid);
+    $stmt->bindValue(':userid', $userid2);
+    $stmt->bindValue(':programid', $programid2);
     $stmt->execute();
 
     $new_page = "accountinfo.php";    
@@ -48,6 +49,8 @@ if (isset($_POST['newreview']))
                 <form  action="editreview.php" method="POST">
                     <div class="row g-3">
                         <div class="col-12">
+                            <input type='hidden' id='aid' name='aid' value='$userid'>
+                            <input type='hidden' id='cid' name='cid' value='$programid'>
                             <textarea class='form-control' placeholder='Review' id='newreview' name='newreview'><?php echo $review; ?></textarea>
                             <br>
                             <input type='submit' class='btn btn-dark' value='Submit Review'>
