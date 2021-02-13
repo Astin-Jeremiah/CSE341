@@ -61,7 +61,7 @@ $reviews = $stmt3->fetchAll(PDO::FETCH_ASSOC);
                             <p class='fs-4'>Email: $email</p>";
                             }
                             ?>
-                            <form action="updateaccountinfo.pjp" method="POST">
+                            <form action="updateaccountinfo.php" method="POST">
                             <input type='hidden' id='username' name='username' value='<?php echo $uname; ?>'>
                             <input type='hidden' id='email' name='email' value='<?php echo $email; ?>'>
                             <input type='submit' class='btn btn-dark' value='Update Account Information'>
