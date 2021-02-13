@@ -4,26 +4,20 @@ $userid = htmlspecialchars($_POST['accountid']);
 $programid = htmlspecialchars($_POST['contentid']);
 $review = htmlspecialchars($_POST['review']); 
 
-echo $userid;
-echo $programid;
-echo $review;
+if (isset($_POST['nrev']))
+{
+    $nrev = htmlspecialchars($_POST['newreview']);
+    require $_SERVER['DOCUMENT_ROOT'] . '/modules/dbConnect.php';
+    $db = get_db();
+    $stmt = $db->prepare('UPDATE reviews SET note = :review WHERE account_id = :userid AND content_id = :programid');
+    $stmt->bindValue(':review', $nrev);
+    $stmt->bindValue(':userid', $userid);
+    $stmt->bindValue(':programid', $programid);
+    $stmt->execute();
 
-/*
-require $_SERVER['DOCUMENT_ROOT'] . '/modules/dbConnect.php';
-
-$db = get_db();
-$stmt = $db->prepare('UPDATE userq SET enddate = :date WHERE account_id = :userid and content_id = :contentid;');
-$stmt->bindValue(':date', $date);
-$stmt->bindValue(':userid', $userid);
-$stmt->bindValue(':contentid', $programid);
-$stmt->execute();
-    
-$new_page = "accountinfo.php";    
-header("Location: $new_page");
-    
-die();
-*/
-
+    $new_page = "accountinfo.php";    
+    header("Location: $new_page");
+    die();   
 ?>
 
 <!doctype html>
@@ -50,27 +44,16 @@ die();
     
       <div class="card col-md-6 offset-md-3 p-2">
                 <h4 class="mb-3">Edit Review:</h4>
-                <form  action="login.php" method="POST">
+                <form  action="editreview.php" method="POST">
                     <div class="row g-3">
                         <div class="col-12">
-                            <input type='hidden' id='userid' name='userid' value='$user'>
-                            <input type='hidden' id='programid' name='programid' value='$pid'>
-                            <textarea class='form-control' placeholder='Review' id='review' name='review'><?php echo $review; ?></textarea>
+                            <textarea class='form-control' placeholder='Review' id='newreview' name='newreview'><?php echo $review; ?></textarea>
                             <br>
-                            <input type='submit' class='btn btn-dark' value='Submit Review'>  
+                            <input type='submit' class='btn btn-dark' value='Submit Review'>
+                            <a href='#' class='btn btn-dark me-2' role='button'>Delete Review</a>
                         </div>
-                      <div class="col-12">
-                            <label for="pw" class="form-label">Password</label>
-                            <input type="password" class="form-control" id="pw" name="pw" required>
-                        </div>  
                     </div>
-                </form>
-                    <br>
-                        <input type="submit" class="btn btn-dark" value="Login">
-                <br><br>
-                <h4 class="mb-3">Not Registered Yet?</h4>
-                <a class="btn btn-dark" href="register.php" role="button">Register For New Account</a>
-            </form>    
+                </form>   
           </div>   
       </main>
     </div>      
