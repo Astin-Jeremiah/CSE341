@@ -50,7 +50,6 @@ echo $info;
                             <a class="btn btn-dark" href="#" role="button">Update Account Information</a>
                         </div>  
                     </div>
-                <br><br>
                 <hr>
                 <h4 class="mb-3">Watch List</h4>
                 <p class="fs-4">Watch Item #1</p>
