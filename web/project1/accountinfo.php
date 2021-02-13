@@ -4,12 +4,7 @@ $badLogin = false;
 
 $user = $_SESSION['userid'];
 
-require $_SERVER['DOCUMENT_ROOT'] . '/modules/dbConnect.php';
-
-stmt2 = $db->prepare('SELECT user_name, email FROM account WHERE id = :id');
-$stmt2->bindValue(':id', $user, PDO::PARAM_INT);
-$stmt2->execute();
-$accountinfo = $stmt2->fetchAll(PDO::FETCH_ASSOC);
+echo $user;
 
 ?>
 <!doctype html>
