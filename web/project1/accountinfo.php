@@ -103,7 +103,7 @@ $reviews = $stmt3->fetchAll(PDO::FETCH_ASSOC);
                         echo "<li>
                         <form id='specialform' action='editreview.php' method='POST'>
                         <div>
-                        <b>$showname</b> - $review</li>
+                        <b>$showname</b> - $review
                         <input type='hidden' id='accountid' name='accountid' value='$accid'>
                         <input type='hidden' id='contentid' name='contentid' value='$conid'>
                         <input type='hidden' id='contentid' name='review' value='$review'>
