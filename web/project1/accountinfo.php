@@ -17,6 +17,13 @@ $stmt2->bindValue(':id', $user2, PDO::PARAM_INT);
 $stmt2->execute();
 $ques = $stmt2->fetchAll(PDO::FETCH_ASSOC);
 
+$user3 = $_SESSION['userid'];
+$db = get_db();
+$stmt3 = $db->prepare ('SELECT content_id, content_name, note FROM content INNER JOIN reviews ON reviews.content_id = content.id WHERE account_id = :id');
+$stmt3->bindValue(':id', $user3, PDO::PARAM_INT);
+$stmt3->execute();
+$reviews = $stmt3->fetchAll(PDO::FETCH_ASSOC);
+
 ?>
 <!doctype html>
 <html lang="en">
@@ -57,6 +64,7 @@ $ques = $stmt2->fetchAll(PDO::FETCH_ASSOC);
                         </div>  
                     </div>
                 <hr>
+                <div>
                 <h4 class="mb-3">Watch List</h4>
                 <ul>
                 <?php
@@ -68,6 +76,21 @@ $ques = $stmt2->fetchAll(PDO::FETCH_ASSOC);
                         }
                 ?>
                 </ul>
+                </div>
+                <hr>
+                <div>
+                <h4 class="mb-3">My Reviews</h4>
+                <ul>
+                <?php
+                    foreach ($reviews as $rev)
+                        {
+                        $showname = $rev['content_name'];
+                        $review = $rev['note'];
+                        echo "<li><b>$showname<b> - $review</li>";
+                        }
+                ?>
+                </ul>
+                </div>
           </div>   
       </main>
     </div>      
