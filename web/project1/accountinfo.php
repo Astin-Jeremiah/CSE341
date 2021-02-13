@@ -19,7 +19,7 @@ $ques = $stmt2->fetchAll(PDO::FETCH_ASSOC);
 
 $user3 = $_SESSION['userid'];
 $db = get_db();
-$stmt3 = $db->prepare ('SELECT content_id, content_name, note FROM content INNER JOIN reviews ON reviews.content_id = content.id WHERE account_id = :id');
+$stmt3 = $db->prepare ('SELECT account_id, content_id, content_name, note FROM content INNER JOIN reviews ON reviews.content_id = content.id WHERE account_id = :id');
 $stmt3->bindValue(':id', $user3, PDO::PARAM_INT);
 $stmt3->execute();
 $reviews = $stmt3->fetchAll(PDO::FETCH_ASSOC);
@@ -81,7 +81,7 @@ $reviews = $stmt3->fetchAll(PDO::FETCH_ASSOC);
                         <input type='hidden' id='contentid' name='contentid' value='$showid'>
                         </div>
                         <div>
-                        <button type='submit' id='special'><i class='bi bi-trash-fill'></i></button>
+                        <button type='submit' id='special'><i class='bi bi-trash-fill' title='Remove From Watch List'></i></button>
                         </div>
                         </form>
                         </li>";
@@ -96,9 +96,23 @@ $reviews = $stmt3->fetchAll(PDO::FETCH_ASSOC);
                 <?php
                     foreach ($reviews as $rev)
                         {
+                        $accid = $rev['account_id'];
+                        $conid = $rev['content_id'];
                         $showname = $rev['content_name'];
                         $review = $rev['note'];
-                        echo "<li><b>$showname</b> - $review</li>";
+                        echo "<li>
+                        <form id='specialform' action='editreview.php' method='POST'>
+                        <div>
+                        <b>$showname</b> - $review</li>
+                        <input type='hidden' id='accountid' name='accountid' value='$accid'>
+                        <input type='hidden' id='contentid' name='contentid' value='$conid'>
+                        <input type='hidden' id='contentid' name='review' value='$review'>
+                        </div>
+                        <div>
+                        <button type='submit' id='special'><i class='bi bi-pencil-fill' title='Edit Review'></i></button>
+                        </div>
+                        </form>
+                        </li>";
                         }
                 ?>
                 </ul>
