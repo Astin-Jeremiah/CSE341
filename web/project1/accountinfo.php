@@ -73,9 +73,10 @@ $reviews = $stmt3->fetchAll(PDO::FETCH_ASSOC);
                         $proname = $que['content_name'];
                         $showid = $que['content_id'];
                         $accid = $que['account_id'];
-                        echo "<li><a href='programdetails.php?id=$showid' class='link-dark'>$proname</a> 
+                        echo "<li> 
                         <form id='specialform' action='removefromwatchlist.php' method='POST'>
                         <div>
+                        <a href='programdetails.php?id=$showid' class='link-dark'>$proname</a>
                         <input type='hidden' id='accountid' name='accountid' value='$accid'>
                         <input type='hidden' id='contentid' name='contentid' value='$showid'>
                         </div>
