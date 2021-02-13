@@ -9,11 +9,16 @@ echo $uname;
 echo $pword;
 echo $newhash;
 
+$db = get_db();
+$stmt = $db->prepare('UPDATE account SET password = :npass WHERE user_name = :username');
+$stmt->bindValue(':npass', $newhash);
+$stmt->bindValue(':username', $uname);
+$stmt->execute();
 
-/*$hash =  password_hash($pword, PASSWORD_DEFAULT);
-$existinguname = checkExistinguname($uname);
-$existingemail = checkExistingEmail($email);
-$regOutcome = regClient($uname, $email, $hash);*/
 
+$new_page = "updateaccountinfo.php?success=1";    
+header("Location: $new_page");
+    
+die();
 
 ?>

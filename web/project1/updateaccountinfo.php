@@ -33,7 +33,7 @@ $email = htmlspecialchars($_POST['email']);
                 <div class="message">
                 <?php
                     if (isset($_GET['success']) && $_GET['success'] == 1 ){
-                     echo "<h6>Username Already Exists</h6>";
+                     echo "<h6>Password Reset</h6>";
                     } else if (isset($_GET['success']) && $_GET['success'] == 2 ){
                      echo "<h6>Email Already Exists Please <a href='login.php'>Login</a>.</h6>";
                     }
