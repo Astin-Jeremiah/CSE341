@@ -9,7 +9,7 @@ require $_SERVER['DOCUMENT_ROOT'] . '/modules/dbConnect.php';
 stmt2 = $db->prepare('SELECT * FROM account WHERE id = :id');
 $stmt2->bindValue(':id', $user, PDO::PARAM_INT);
 $stmt2->execute();
-$accountinf = $stmt2->fetchAll(PDO::FETCH_ASSOC);
+$accountinfo = $stmt2->fetchAll(PDO::FETCH_ASSOC);
 
 ?>
 <!doctype html>
@@ -39,10 +39,10 @@ $accountinf = $stmt2->fetchAll(PDO::FETCH_ASSOC);
                     <div class="row g-3">
                         <div class="col-12">
                             <?php
-                            foreach ($accountinf as $account)
+                            foreach ($accountinfo as $account)
                             {
-                                $uname = $service['user_name'];
-                                $email = $service['email'];
+                                $uname = $account['user_name'];
+                                $email = $account['email'];
                             echo "<p class='fs-4'>Username: $uname</p>
                             <br><br>
                             <p class='fs-4'>Email: $email</p>
