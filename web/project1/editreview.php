@@ -28,18 +28,23 @@ $review = htmlspecialchars($_POST['review']);
     
       <div class="card col-md-6 offset-md-3 p-2">
                 <h4 class="mb-3">Edit Review:</h4>
-                <form  action="updatereview.php" method="POST">
                     <div class="row g-3">
                         <div class="col-12">
+                            <form  action="updatereview.php" method="POST">
                             <input type='hidden' id='aid' name='aid' value='<?php echo $userid; ?>'>
                             <input type='hidden' id='cid' name='cid' value='<?php echo $programid; ?>'>
                             <textarea class='form-control' placeholder='Review' id='newreview' name='newreview'><?php echo $review; ?></textarea>
                             <br>
                             <input type='submit' class='btn btn-dark' value='Submit Review'>
-                            <a href='#' class='btn btn-dark me-2' role='button'>Delete Review</a>
+                            </form>
+                            <form  action="deletereview.php" method="POST">
+                            <input type='hidden' id='aid' name='aid' value='<?php echo $userid; ?>'>
+                            <input type='hidden' id='cid' name='cid' value='<?php echo $programid; ?>'>
+                            <input type='submit' class='btn btn-dark' value='Delete Review'>
+                            </form>    
                         </div>
                     </div>
-                </form>   
+                   
           </div>   
       </main>
     </div>      
