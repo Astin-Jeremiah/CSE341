@@ -38,7 +38,17 @@ echo $info;
                 <h4 class="mb-3">Account Information:</h4>
                     <div class="row g-3">
                         <div class="col-12">
-                            
+                            <?php
+                            foreach ($info as $inf)
+                            {
+                                $uname = $inf['user_name'];
+                                $email = $inf['email'];
+                            echo "<p class='fs-4'>Username: $uname</p>
+                            <br><br>
+                            <p class='fs-4'>Email: $email</p>
+                            <br><br>";
+                            }
+                            ?>
                             <a class="btn btn-dark" href="#" role="button">Update Account Information</a>
                         </div>  
                     </div>
