@@ -66,7 +66,10 @@ $pid = htmlspecialchars($_GET['id']);
                 <h3 class='card-title'>$name</h3>
                 <p class='card-text'><b>Description:</b> $desc</p>
                 <p class='card-text'><b>Streaming Service:</b> $service</p>
-                <a href='#' class='btn btn-dark' role='button'>Add To Watch List</a>
+                <form action='addtowatchlist.php' method='POST'>
+                <input type='hidden' id='proid' name='proid' value='$sid'>
+                <input type='submit' class='btn btn-dark' value='Add To Watch List'>
+                </form>
                 <button class='btn btn-dark' onclick='goBack()'>Return To List</button>
                 </div>
                 </div>
