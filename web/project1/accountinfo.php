@@ -14,7 +14,7 @@ $db = get_db();
 $stmt2 = $db->prepare ('SELECT content_name FROM content INNER JOIN userq ON userq.content_id = content.id WHERE account_id = :id and enddate IS null');
 $stmt2->bindValue(':id', $user, PDO::PARAM_INT);
 $stmt2->execute();
-$que = $stmt->fetchAll(PDO::FETCH_ASSOC);
+$ques = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 echo $que;
 ?>
@@ -60,12 +60,12 @@ echo $que;
                 <h4 class="mb-3">Watch List</h4>
                 <ul>
                 <?php
-                            foreach ($que as $q)
-                            {
-                            $proname = $q['content_name'];
-                            echo "<li>$proname</li>";
-                            }
-                            ?>
+                    foreach ($ques as $que)
+                        {
+                        $proname = $que['content_name'];
+                        echo "<li>$proname</li>";
+                        }
+                ?>
                 </ul>
           </div>   
       </main>
