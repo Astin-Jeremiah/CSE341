@@ -18,6 +18,7 @@ if (isset($_POST['nrev']))
     $new_page = "accountinfo.php";    
     header("Location: $new_page");
     die();   
+}
 ?>
 
 <!doctype html>
