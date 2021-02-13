@@ -24,16 +24,18 @@ if (isset($_POST['user']) && isset($_POST['pw']))
         
         if ($hash = $password) {
             $_SESSION['userid'] = $uid;
-            if (isset($_GET['id'])){
+        } else {
+            $badLogin = true;
+            die();
+        }
+                   }
+    if (isset($_GET['id'])){
 			     header("Location: programdetails.php?id=$sid");
 			     die();}else{
                 header("Location: index.php");
 			     die();
             } 
-        } else {
-            $badLogin = true;
-        }
-                   }}
+}
 
 ?>
 <!doctype html>
