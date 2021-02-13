@@ -7,7 +7,7 @@ $date = date("m/d/Y");
 require $_SERVER['DOCUMENT_ROOT'] . '/modules/dbConnect.php';
 
 $db = get_db();
-$stmt = $db->prepare('UPDATE userq SET enddate = :date WHERE user_id = :userid and content_id = :contentid;');
+$stmt = $db->prepare('UPDATE userq SET enddate = :date WHERE account_id = :userid and content_id = :contentid;');
 $stmt->bindValue(':date', $date);
 $stmt->bindValue(':userid', $userid);
 $stmt->bindValue(':contentid', $programid);
