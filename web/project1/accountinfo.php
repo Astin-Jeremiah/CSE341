@@ -44,9 +44,7 @@ echo $info;
                                 $uname = $inf['user_name'];
                                 $email = $inf['email'];
                             echo "<p class='fs-4'>Username: $uname</p>
-                            <br>
-                            <p class='fs-4'>Email: $email</p>
-                            <br>";
+                            <p class='fs-4'>Email: $email</p>";
                             }
                             ?>
                             <a class="btn btn-dark" href="#" role="button">Update Account Information</a>
