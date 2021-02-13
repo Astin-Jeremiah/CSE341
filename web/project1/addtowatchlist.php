@@ -4,7 +4,7 @@ if (!isset($_SESSION['userid']))
 {
 	header("Location: login.php");
     die();
-}
+} else {
 
 $programid = htmlspecialchars($_POST['proid']);
 $uid = $_SESSION['userid'];
@@ -35,5 +35,5 @@ $new_page = "programdetails.php?id=$programid";
 header("Location: $new_page");
     
 die();*/
-
+}
 ?>
