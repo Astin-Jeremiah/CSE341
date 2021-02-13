@@ -2,6 +2,14 @@
 session_start();
 $badLogin = false;
 
+$user = $_SESSION['userid'];
+
+require $_SERVER['DOCUMENT_ROOT'] . '/modules/dbConnect.php';
+
+stmt2 = $db->prepare('SELECT * FROM account WHERE id = :id');
+$stmt2->bindValue(':id', $user, PDO::PARAM_INT);
+$stmt2->execute();
+$accountinf = $stmt2->fetchAll(PDO::FETCH_ASSOC);
 
 ?>
 <!doctype html>
@@ -30,13 +38,20 @@ $badLogin = false;
                 <h4 class="mb-3">Account Information:</h4>
                     <div class="row g-3">
                         <div class="col-12">
-                            <p class="fs-4">Username:</p>
-                        </div>
-                      <div class="col-12">
-                            <p class="fs-4">Email:</p>
+                            <?php
+                            foreach ($accountinf as $account)
+                            {
+                                $uname = $service['user_name'];
+                                $email = $service['email'];
+                            echo "<p class='fs-4'>Username: $uname</p>
+                            <br><br>
+                            <p class='fs-4'>Email: $email</p>
+                            <br><br>";
+                            }
+                            ?>
+                            <a class="btn btn-dark" href="#" role="button">Update Account Information</a>
                         </div>  
-                    </div><br>
-                        <a class="btn btn-dark" href="#" role="button">Update Account Information</a>
+                    </div>
                 <br><br>
                 <hr>
                 <h4 class="mb-3">Watch List</h4>
