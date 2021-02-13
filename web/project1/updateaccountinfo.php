@@ -36,6 +36,8 @@ $email = htmlspecialchars($_POST['email']);
                      echo "<h6>Password Reset</h6>";
                     } else if (isset($_GET['success']) && $_GET['success'] == 2 ){
                      echo "<h6>Username Already Taken</h6>";
+                    } else if (isset($_GET['success']) && $_GET['success'] == 3 ){
+                     echo "<h6>User Name Updated</h6>";
                     }
                 ?>
                 </div>

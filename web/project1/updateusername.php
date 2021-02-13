@@ -6,6 +6,8 @@ $email = htmlspecialchars($_POST['email']);
 
 $existinguname = checkExistinguname($uname);
 
+$regOutcome = updateuser($uname, $email);
+
 function checkExistinguname($uname) {
  $db = get_db();
  $stmt2 = $db->prepare('SELECT user_name FROM account WHERE user_name = :uname');
@@ -20,17 +22,19 @@ die();
 }
 }
 
-
-/*$db = get_db();
-$stmt = $db->prepare('UPDATE account SET password = :npass WHERE user_name = :username');
-$stmt->bindValue(':npass', $newhash);
-$stmt->bindValue(':username', $uname);
+function updateuser($uname, $email) {
+$db = get_db();
+$stmt = $db->prepare('UPDATE account SET user_name = :newname WHERE email = "email');
+$stmt->bindValue(':newname', $uname);
+$stmt->bindValue(':email', $email);
 $stmt->execute();
-
-
-$new_page = "updateaccountinfo.php?success=1";    
+    
+$new_page = "updateaccountinfo.php?success=3";    
 header("Location: $new_page");
     
-die();*/
+die();;
+
+}
+
 
 ?>
