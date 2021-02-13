@@ -72,7 +72,7 @@ $reviews = $stmt3->fetchAll(PDO::FETCH_ASSOC);
                         {
                         $proname = $que['content_name'];
                         $showid = $que['content_id'];
-                        echo "<li><a href='programdetails.php?id=$showid'>$proname</a> <i class='bi bi-trash-fill' title='Remove From Watch List'></i></li>";
+                        echo "<li><a href='programdetails.php?id=$showid' class='link-dark'>$proname</a> <i class='bi bi-trash-fill' title='Remove From Watch List'></i></li>";
                         }
                 ?>
                 </ul>
