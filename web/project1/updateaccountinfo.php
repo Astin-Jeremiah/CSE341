@@ -44,7 +44,7 @@ $email = htmlspecialchars($_POST['email']);
                             <form action="updateusername.php" method="post">
                             <label for="username" class="form-label">User Name</label>
                             <input type="text" class="form-control" id="username" name="username" required <?php if(isset($username)){echo "value='$username'";}  ?>>
-                            <br>
+                            <br><br>
                             <input type='submit' class='btn btn-dark' value='Update User Name'>
                             </form>    
                         </div>
@@ -52,15 +52,16 @@ $email = htmlspecialchars($_POST['email']);
                             <form action="updateemail.php" method="post">
                             <label for="email" class="form-label">Email</label>
                             <input type="email" class="form-control" id="email" name="email" required <?php if(isset($email)){echo "value='$email'";}  ?>>
-                            <br>
+                            <br><br>
                             <input type='submit' class='btn btn-dark' value='Update Email'>
                             </form>
                         </div>
                       <div class="col-12">
                             <form action="updatepword.php" method="post">
+                            <input type='hidden' id='uname' name='uname' value='<?php echo $username; ?>'>
                             <label for="password" class="form-label">Password - At least 8 characters containing 1 number, 1 capital letter and 1 special character.</label>
                             <input type="password" class="form-control" id="password" name="password" required pattern="(?=^.{8,}$)(?=.*\d)(?=.*\W+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$">
-                                <br>
+                                <br><br>
                             <input type='submit' class='btn btn-dark' value='Update Password'>
                           </form>
                         </div>  
