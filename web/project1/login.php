@@ -23,6 +23,7 @@ if (isset($_POST['user']) && isset($_POST['pw']))
         
         if ($hash = $password) {
             $_SESSION['userid'] = $uid;
+            if ()
 			header("Location: index.php");
 			die(); 
         } else {

@@ -112,7 +112,7 @@ $pid = htmlspecialchars($_GET['id']);
                         <br>
                         <input type='submit' class='btn btn-dark' value='Submit Review'>    
                         </form>";} else {
-                        echo "<a href='login.php' class='btn btn-dark me-2' role='button'>Login To Write A Review</a>";}
+                        echo "<a href='login.php?id=$pid' class='btn btn-dark me-2' role='button'>Login To Write A Review</a>";}
                 ?>    
                 </div>
                 </div>
