@@ -66,13 +66,13 @@ $reviews = $stmt3->fetchAll(PDO::FETCH_ASSOC);
                 <hr>
                 <div>
                 <h4 class="mb-3">Watch List</h4>
-                <ul class="list-unstyled">
+                <ul>
                 <?php
                     foreach ($ques as $que)
                         {
                         $proname = $que['content_name'];
                         $showid = $que['content_id'];
-                        echo "<li><i class='bi bi-play-fill'></i> <a href='programdetails.php?id=$showid'>$proname</a> <i class='bi bi-trash-fill' title='Remove From Watch List'></i></li>";
+                        echo "<li><a href='programdetails.php?id=$showid'>$proname</a> <i class='bi bi-trash-fill' title='Remove From Watch List'></i></li>";
                         }
                 ?>
                 </ul>
