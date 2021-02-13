@@ -69,8 +69,8 @@ $pid = htmlspecialchars($_GET['id']);
                 <form action='addtowatchlist.php' method='POST'>
                 <input type='hidden' id='proid' name='proid' value='$sid'>
                 <input type='submit' class='btn btn-dark' value='Add To Watch List'>
-                </form>
                 <button class='btn btn-dark' onclick='goBack()'>Return To List</button>
+                </form>
                 </div>
                 </div>
                 </div>
