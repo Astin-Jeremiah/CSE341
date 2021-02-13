@@ -12,7 +12,7 @@ $info = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 $user2 = $_SESSION['userid'];
 $db = get_db();
-$stmt2 = $db->prepare ('SELECT content_id, content_name FROM content INNER JOIN userq ON userq.content_id = content.id WHERE account_id = :id and enddate IS null');
+$stmt2 = $db->prepare ('SELECT content_id, content_name, account_id FROM content INNER JOIN userq ON userq.content_id = content.id WHERE account_id = :id and enddate IS null');
 $stmt2->bindValue(':id', $user2, PDO::PARAM_INT);
 $stmt2->execute();
 $ques = $stmt2->fetchAll(PDO::FETCH_ASSOC);
@@ -72,7 +72,13 @@ $reviews = $stmt3->fetchAll(PDO::FETCH_ASSOC);
                         {
                         $proname = $que['content_name'];
                         $showid = $que['content_id'];
-                        echo "<li><a href='programdetails.php?id=$showid' class='link-dark'>$proname</a> <i class='bi bi-trash-fill' title='Remove From Watch List'></i></li>";
+                        $accid = $que['account_id'];
+                        echo "<li><a href='programdetails.php?id=$showid' class='link-dark'>$proname</a> 
+                        <form action='removefromwatchlist.php' method='POST'>
+                        <input type='hidden' id='accountid' name='accountid' value='$accid'>
+                        <input type='hidden' id='contentid' name='contentid' value='$showid'>
+                        <input type='submit' id='special' value='<i class='bi bi-trash-fill' title='Remove From Watch List'></i>'></form>
+                        </li>";
                         }
                 ?>
                 </ul>
