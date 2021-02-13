@@ -5,10 +5,6 @@ $db = get_db();
 
 $username = htmlspecialchars($_POST['username']);
 $email = htmlspecialchars($_POST['email']);
-
-echo $username;
-echo $email;
-
 ?>
 <!doctype html>
 <html lang="en">
@@ -33,7 +29,7 @@ echo $email;
     </div>
     
       <div class="card col-md-6 offset-md-3 p-2">
-                <h4 class="mb-3">Create New Account</h4>
+                <h4 class="mb-3">Update Account Information</h4>
                 <div class="message">
                 <?php
                     if (isset($_GET['success']) && $_GET['success'] == 1 ){
@@ -43,23 +39,29 @@ echo $email;
                     }
                 ?>
                 </div>
-                <form action="insertuser.php" method="post">
                     <div class="row g-3">
                         <div class="col-md-6">
+                            <form action="updateusername.php" method="post">
                             <label for="username" class="form-label">User Name</label>
                             <input type="text" class="form-control" id="username" name="username" required <?php if(isset($username)){echo "value='$username'";}  ?>>
+                            <input type='submit' class='btn btn-dark' value='Update User Name'>
+                            </form>    
                         </div>
                         <div class="col-12">
+                            <form action="updateemail.php" method="post">
                             <label for="email" class="form-label">Email</label>
                             <input type="email" class="form-control" id="email" name="email" required <?php if(isset($email)){echo "value='$email'";}  ?>>
+                            <input type='submit' class='btn btn-dark' value='Update Email'>
+                            </form>
                         </div>
                       <div class="col-12">
+                            <form action="updatepword.php" method="post">
                             <label for="password" class="form-label">Password - At least 8 characters containing 1 number, 1 capital letter and 1 special character.</label>
                             <input type="password" class="form-control" id="password" name="password" required pattern="(?=^.{8,}$)(?=.*\d)(?=.*\W+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$">
+                            <input type='submit' class='btn btn-dark' value='Update Password'>
+                          </form>
                         </div>  
                     </div><br>
-                        <input type="submit" class="btn btn-dark" value="Create Account">
-            </form>    
           </div>   
       </main>
     </div> 
