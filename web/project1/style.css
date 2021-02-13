@@ -3,5 +3,11 @@
  color: black;   
 }
 
+.special {
+  background: none;
+  padding: 0px;
+  border: none;  
+}
+
 
 
