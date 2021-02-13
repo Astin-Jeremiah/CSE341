@@ -10,6 +10,12 @@ $stmt->bindValue(':id', $user, PDO::PARAM_INT);
 $stmt->execute();
 $info = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
+$db = get_db();
+$stmt2 = $db->prepare ('SELECT content_name FROM content INNER JOIN userq ON userq.content_id = content.id WHERE account_id = :id and enddate IS null');
+$stmt2->bindValue(':id', $user, PDO::PARAM_INT);
+$stmt2->execute();
+$que = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
 echo $info;
 ?>
 <!doctype html>
@@ -52,7 +58,15 @@ echo $info;
                     </div>
                 <hr>
                 <h4 class="mb-3">Watch List</h4>
-                <p class="fs-4">Watch Item #1</p>
+                <ul>
+                <?php
+                            foreach ($que as $q)
+                            {
+                                $proname = $q['content_name'];
+                            echo "<li>$proname</li>";
+                            }
+                            ?>
+                </ul>
           </div>   
       </main>
     </div>      
