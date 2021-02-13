@@ -23,7 +23,7 @@ $review = $stmt2->fetchAll(PDO::FETCH_ASSOC);
 
 echo var_dump($_SESSION);
 $user = $_SESSION['userid'];
-    $pid = htmlspecialchars($_GET['id']);
+$pid = htmlspecialchars($_GET['id']);
 
 ?>
 <!doctype html>
@@ -91,7 +91,6 @@ $user = $_SESSION['userid'];
                 echo "<p class='card-text'><b>$note</b> &#8212; $uname</p>";
                 }
                 ?> 
-                <a href='login.php' class='btn btn-dark me-2' role='button'>Login To Write A Review</a>
                 </div>
                 </div>
                 </div>
@@ -105,13 +104,17 @@ $user = $_SESSION['userid'];
                 </div>
                 <div class='col-md-8'>
                 <div class='card-body'>
-                <form action="insertreview.php" method="POST">
-                        <input type="hidden" id="userid" name="userid" value="<?php echo $_SESSION['userid']; ?>">
-                        <input type="hidden" id="programid" name="programid" value="<?php echo $_GET['id']; ?>">
-                        <textarea class="form-control" placeholder="Review" id="review" name="review"></textarea>
+                <?php
+                    if (isset ($_SESSION['userid'])){
+                        echo "<form action='insertreview.php' method='POST'>
+                        <input type='hidden' id='userid' name='userid' value='$user'>
+                        <input type='hidden' id='programid' name='programid' value='$pid'>
+                        <textarea class='form-control' placeholder='Review' id='review' name='review'></textarea>
                         <br>
-                        <input type="submit" class="btn btn-dark" value="Submit Review">
-                </form>
+                        <input type='submit' class='btn btn-dark' value='Submit Review'>    
+                        </form>";} else {
+                        echo "<a href='login.php' class='btn btn-dark me-2' role='button'>Login To Write A Review</a>";}
+                ?>    
                 </div>
                 </div>
                 </div>
