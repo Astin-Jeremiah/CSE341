@@ -4,7 +4,7 @@ $userid = htmlspecialchars($_POST['accountid']);
 $programid = htmlspecialchars($_POST['contentid']);
 $review = htmlspecialchars($_POST['review']); 
 
-if (isset($_POST['nrev']))
+if (isset($_POST['newreview']))
 {
     $nrev = htmlspecialchars($_POST['newreview']);
     require $_SERVER['DOCUMENT_ROOT'] . '/modules/dbConnect.php';
