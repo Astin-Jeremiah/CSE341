@@ -69,6 +69,7 @@ $pid = htmlspecialchars($_GET['id']);
                 <p class='card-text'><b>Streaming Service:</b> $service</p>
                 <form action='addtowatchlist.php' method='POST'>
                 <input type='hidden' id='proid' name='proid' value='$sid'>
+                <input type='hidden' id='uid' name='uid' value='$user'>
                 <input type='submit' class='btn btn-dark' value='Add To Watch List'>
                 <a href='index.php?service=$serviceid' class='btn btn-dark me-2' role='button'>Return To List</a>
                 </form>

@@ -1,6 +1,6 @@
 <?php
 session_start();
-require $_SERVER['DOCUMENT_ROOT'] . '/modules/dbConnect.php';
+
 if (!isset($_SESSION['userid']))
 {
 	header("Location: login.php");
@@ -8,16 +8,12 @@ if (!isset($_SESSION['userid']))
 } else {
 
 $programid = htmlspecialchars($_POST['proid']);
-$uid = $_SESSION['userid'];
+$uid = htmlspecialchars($_POST['uid']);
 $date = date("m/d/Y");
+    
+echo $programid;
+echo $uid;
+echo $date;
 
-$db = get_db();
-$stmt = $db->prepare('INSERT INTO userq (account_id, content_id, startdate) VALUES (:acid, :conid, :date);');
-$stmt->bindValue(':acid', $uid);
-$stmt->bindValue(':conid', $programid);
-$stmt->bindValue(':date', $date);
-$stmt->execute();
-header("Refresh:0");
-die();    
 }
 ?>
