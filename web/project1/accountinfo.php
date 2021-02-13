@@ -16,7 +16,7 @@ $stmt2->bindValue(':id', $user, PDO::PARAM_INT);
 $stmt2->execute();
 $que = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-echo $info;
+echo $que;
 ?>
 <!doctype html>
 <html lang="en">
@@ -62,7 +62,7 @@ echo $info;
                 <?php
                             foreach ($que as $q)
                             {
-                                $proname = $q['content_name'];
+                            $proname = $q['content_name'];
                             echo "<li>$proname</li>";
                             }
                             ?>
