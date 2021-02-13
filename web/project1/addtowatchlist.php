@@ -1,5 +1,6 @@
 <?php
 session_start();
+require $_SERVER['DOCUMENT_ROOT'] . '/modules/dbConnect.php';
 if (!isset($_SESSION['userid']))
 {
 	header("Location: login.php");
@@ -16,5 +17,7 @@ $stmt->bindValue(':acid', $uid);
 $stmt->bindValue(':conid', $programid);
 $stmt->bindValue(':date', $date);
 $stmt->execute();
+header("Refresh:0");
+die();    
 }
 ?>
