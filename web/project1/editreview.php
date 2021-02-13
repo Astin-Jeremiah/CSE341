@@ -31,8 +31,8 @@ $review = htmlspecialchars($_POST['review']);
                 <form  action="updatereview.php" method="POST">
                     <div class="row g-3">
                         <div class="col-12">
-                            <input type='hidden' id='aid' name='aid' value='$userid'>
-                            <input type='hidden' id='cid' name='cid' value='$programid'>
+                            <input type='hidden' id='aid' name='aid' value='<?php echo $userid; ?>'>
+                            <input type='hidden' id='cid' name='cid' value='<?php echo $programid; ?>'>
                             <textarea class='form-control' placeholder='Review' id='newreview' name='newreview'><?php echo $review; ?></textarea>
                             <br>
                             <input type='submit' class='btn btn-dark' value='Submit Review'>
