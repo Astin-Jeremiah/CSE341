@@ -1,6 +1,6 @@
 <?php
 echo ($_POST["accountid"]);
-echo ($_POST["programid"]);
+echo ($_POST["contentid"]);
 
 
 /*require $_SERVER['DOCUMENT_ROOT'] . '/modules/dbConnect.php';
