@@ -38,17 +38,7 @@ $accountinfo = $stmt2->fetchAll(PDO::FETCH_ASSOC);
                 <h4 class="mb-3">Account Information:</h4>
                     <div class="row g-3">
                         <div class="col-12">
-                            <?php
-                            foreach ($accountinfo as $account)
-                            {
-                                $uname = $account['user_name'];
-                                $email = $account['email'];
-                            echo "<p class='fs-4'>Username: $uname</p>
-                            <br><br>
-                            <p class='fs-4'>Email: $email</p>
-                            <br><br>";
-                            }
-                            ?>
+                            
                             <a class="btn btn-dark" href="#" role="button">Update Account Information</a>
                         </div>  
                     </div>
