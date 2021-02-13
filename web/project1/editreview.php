@@ -35,12 +35,16 @@ $review = htmlspecialchars($_POST['review']);
                             <input type='hidden' id='cid' name='cid' value='<?php echo $programid; ?>'>
                             <textarea class='form-control' placeholder='Review' id='newreview' name='newreview'><?php echo $review; ?></textarea>
                             <br>
+                            <div class="col-lg-6">
                             <input type='submit' class='btn btn-dark' value='Submit Review'>
-                            </form>
+                            </div>
+                            </form><br>
                             <form  action="deletereview.php" method="POST">
                             <input type='hidden' id='aid' name='aid' value='<?php echo $userid; ?>'>
                             <input type='hidden' id='cid' name='cid' value='<?php echo $programid; ?>'>
+                            <div class="col-lg-6">
                             <input type='submit' class='btn btn-dark' value='Delete Review'>
+                            </div>
                             </form>    
                         </div>
                     </div>
