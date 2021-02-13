@@ -20,7 +20,8 @@ $stmt->bindValue(':conid', $programid);
 $stmt->bindValue(':date', $date);
 $stmt->execute();
     
-header("Refresh:0");
+$new_page = "programdetails.php?id=$programid";    
+header("Location: $new_page");
 die();    
 
 }
