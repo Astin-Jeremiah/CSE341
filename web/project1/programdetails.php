@@ -73,7 +73,7 @@ $pid = htmlspecialchars($_GET['id']);
                 </div>
                 ";
                 
-            }
+            user}
         ?>
         
                 <div class='row p-2 g-0'>
