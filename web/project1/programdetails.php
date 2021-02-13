@@ -69,7 +69,7 @@ $pid = htmlspecialchars($_GET['id']);
                 <form action='addtowatchlist.php' method='POST'>
                 <input type='hidden' id='proid' name='proid' value='$sid'>
                 <input type='submit' class='btn btn-dark' value='Add To Watch List'>
-                <button class='btn btn-dark' onclick='goBack()'>Return To List</button>
+                <a href='index.php?service=$sid' class='btn btn-dark me-2' role='button'>Return To List</a>
                 </form>
                 </div>
                 </div>
