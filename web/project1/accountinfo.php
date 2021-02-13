@@ -5,7 +5,7 @@ require $_SERVER['DOCUMENT_ROOT'] . '/modules/dbConnect.php';
 $user = $_SESSION['userid'];
 
 $db = get_db();
-$stmt = $db->prepare('SELECT user_name, email FROM account WHERE id = :id');
+$stmt = $db->prepare('SELECT user_name, email, password  FROM account WHERE id = :id');
 $stmt->bindValue(':id', $user, PDO::PARAM_INT);
 $stmt->execute();
 $info = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -56,11 +56,16 @@ $reviews = $stmt3->fetchAll(PDO::FETCH_ASSOC);
                             {
                                 $uname = $inf['user_name'];
                                 $email = $inf['email'];
+                                $pw = $inf['password'];
                             echo "<p class='fs-4'>Username: $uname</p>
                             <p class='fs-4'>Email: $email</p>";
                             }
                             ?>
-                            <a class="btn btn-dark" href="#" role="button">Update Account Information</a>
+                            <form action="updateaccountinfo.pjp" method="POST">
+                            <input type='hidden' id='username' name='username' value='<?php echo $uname; ?>'>
+                            <input type='hidden' id='email' name='email' value='<?php echo $email; ?>'>
+                            <input type='submit' class='btn btn-dark' value='Update Account Information'>
+                            </form>
                         </div>  
                     </div>
                 <hr>
