@@ -24,7 +24,7 @@ die();
 
 function updateuser($uname, $email) {
 $db = get_db();
-$stmt = $db->prepare('UPDATE account SET user_name = :newname WHERE email = "email');
+$stmt = $db->prepare('UPDATE account SET user_name = :newname WHERE email = :email');
 $stmt->bindValue(':newname', $uname);
 $stmt->bindValue(':email', $email);
 $stmt->execute();
