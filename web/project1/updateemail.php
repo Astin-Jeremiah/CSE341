@@ -1,7 +1,7 @@
 <?php
 require $_SERVER['DOCUMENT_ROOT'] . '/modules/dbConnect.php';
 
-$uname = htmlspecialchars($_POST['username']);
+$uname = htmlspecialchars($_POST['uname']);
 $email = htmlspecialchars($_POST['email']);
 
 echo $uname;
