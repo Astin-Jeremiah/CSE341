@@ -22,7 +22,7 @@ function checkexistingtitle($programid, $uid) {
  $stmt2->execute();
  $matchname = $stmt2->fetch(PDO::FETCH_NUM);
  if($matchname >= 1){
- $new_page = "progradetails.php?id=$programid?success=1";    
+ $new_page = "programdetails.php?id=$programid?success=1";    
 header("Location: $new_page");
     
 die();
