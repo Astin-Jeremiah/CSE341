@@ -7,7 +7,7 @@ if (!isset($_SESSION['userid']))
 	header("Location: login.php");
     die();
 } else {
-
+require $_SERVER['DOCUMENT_ROOT'] . '/modules/dbConnect.php'; 
 $programid = htmlspecialchars($_POST['proid']);
 $uid = htmlspecialchars($_POST['uid']);
 $date = date("m/d/Y");
