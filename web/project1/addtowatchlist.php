@@ -1,6 +1,5 @@
 <?php
 session_start();
-require $_SERVER['DOCUMENT_ROOT'] . '/modules/dbConnect.php';  
 
 if (!isset($_SESSION['userid']))
 {
