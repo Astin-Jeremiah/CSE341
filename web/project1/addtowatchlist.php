@@ -10,12 +10,9 @@ require $_SERVER['DOCUMENT_ROOT'] . '/modules/dbConnect.php';
 $programid = htmlspecialchars($_POST['proid']);
 $uid = htmlspecialchars($_POST['uid']);
 $date = date("m/d/Y");
-    
-echo $programid;
-echo $uid;
-echo $date;
 
-/*$exists = checkexistingtitle($programid, $uid);
+
+$exists = checkexistingtitle($programid, $uid);
     
 function checkexistingtitle($programid, $uid) {
  $db = get_db();
@@ -30,7 +27,7 @@ header("Location: $new_page");
     
 die();
 }
-}*/
+}
    
 
 }
