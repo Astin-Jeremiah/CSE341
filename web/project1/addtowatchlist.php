@@ -17,8 +17,8 @@ $exists = checkexistingtitle($programid, $uid);
 function checkexistingtitle($programid, $uid) {
  $db = get_db();
  $stmt2 = $db->prepare('SELECT content_id FROM userq WHERE account_id = :uid AND content_id = :contentid AND enddate IS null');
- $stmt2->bindValue(':uid', $uid, PDO::PARAM_STR);
- $stmt2->bindValue(':contentid', $programid, PDO::PARAM_STR);
+ $stmt2->bindValue(':uid', $uid);
+ $stmt2->bindValue(':contentid', $programid);
  $stmt2->execute();
  $matchname = $stmt2->fetch(PDO::FETCH_NUM);
  if($matchname >= 1){
