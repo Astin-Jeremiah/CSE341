@@ -6,15 +6,16 @@ if (!isset($_SESSION['userid']))
 	header("Location: login.php");
     die();
 } else {
-require $_SERVER['DOCUMENT_ROOT'] . '/modules/dbConnect.php'; 
+
 $programid = htmlspecialchars($_POST['proid']);
 $uid = htmlspecialchars($_POST['uid']);
 $date = date("m/d/Y");
 
 
-$exists = checkexistingtitle($programid, $uid);
+$exists = checktitle($uid, $programid);
     
-function checkexistingtitle($programid, $uid) {
+function checktitle($uid, $programid) {
+ require $_SERVER['DOCUMENT_ROOT'] . '/modules/dbConnect.php'; 
  $db = get_db();
  $stmt2 = $db->prepare('SELECT content_id FROM userq WHERE account_id = :uid AND content_id = :contentid AND enddate IS null');
  $stmt2->bindValue(':uid', $uid);
