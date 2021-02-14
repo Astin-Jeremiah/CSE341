@@ -14,6 +14,10 @@ $date = date("m/d/Y");
 
 $exists = checkExists($uid, $programid);
     
+
+
+}
+
 function checkExists($uid, $programid) {
  require $_SERVER['DOCUMENT_ROOT'] . '/modules/dbConnect.php'; 
  $db = get_db();
@@ -28,8 +32,5 @@ header("Location: $new_page");
     
 die();
 }
-}
-   
-
 }
 ?>
