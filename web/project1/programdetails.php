@@ -76,7 +76,9 @@ $pid = htmlspecialchars($_GET['id']);
                 </div>";
                 if (isset($_GET['success']) && $_GET['success'] == 1 ){
                      echo "<h6>Already On Your Watch List</h6>";
-                    } 
+                    } else if (isset($_GET['success']) && $_GET['success'] == 2 ){
+                     echo "<h6>Title Added To Watch List</h6>";
+                    }
                 echo "
                 </div>
                 </div>
