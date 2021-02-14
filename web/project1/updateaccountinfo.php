@@ -40,7 +40,7 @@ $email = htmlspecialchars($_POST['email']);
                      echo "<h6>User Name Updated</h6>";
                     } else if (isset($_GET['success']) && $_GET['success'] == 4 ){
                      echo "<h6>Email Already Used</h6>";
-                    } else if (isset($_GET['success']) && $_GET['success'] ==  ){
+                    } else if (isset($_GET['success']) && $_GET['success'] == 5){
                      echo "<h6>Email Address Updated</h6>";
                     }
                 ?>
