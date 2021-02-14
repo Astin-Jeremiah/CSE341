@@ -11,8 +11,12 @@ require $_SERVER['DOCUMENT_ROOT'] . '/modules/dbConnect.php';
 $programid = htmlspecialchars($_POST['proid']);
 $uid = htmlspecialchars($_POST['uid']);
 $date = date("m/d/Y");
+    
+echo $programid;
+echo $uid;
+echo $date;
 
-$exists = checkexistingtitle($programid, $uid);
+/*$exists = checkexistingtitle($programid, $uid);
     
 function checkexistingtitle($programid, $uid) {
  $db = get_db();
@@ -20,26 +24,15 @@ function checkexistingtitle($programid, $uid) {
  $stmt2->bindValue(':uid', $uid);
  $stmt2->bindValue(':contentid', $programid);
  $stmt2->execute();
- $matchname = $stmt2->fetch(PDO::FETCH_NUM);
+ $matchname = $stmt2->fetch(PDO::FETCH_NUM);git s
  if($matchname >= 1){
  $new_page = "programdetails.php?id=$programid&success=1";    
 header("Location: $new_page");
     
 die();
 }
-}
-    
-    
-/*$db = get_db();
-$stmt = $db->prepare('INSERT INTO userq (account_id, content_id, startdate) VALUES (:acid, :conid, :date);');
-$stmt->bindValue(':acid', $uid);
-$stmt->bindValue(':conid', $programid);
-$stmt->bindValue(':date', $date);
-$stmt->execute();
-    
-$new_page = "programdetails.php?id=$programid";    
-header("Location: $new_page");
-die(); */   
+}*/
+   
 
 }
 ?>
