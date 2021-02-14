@@ -73,7 +73,11 @@ $pid = htmlspecialchars($_GET['id']);
                 <input type='submit' class='btn btn-dark' value='Add To Watch List'>
                 <a href='index.php?service=$serviceid' class='btn btn-dark me-2' role='button'>Return To List</a>
                 </form>
-                </div>
+                </div>";
+                if (isset($_GET['success']) && $_GET['success'] == 1 ){
+                     echo "<h6>Already On Your Watch List</h6>";
+                    } 
+                echo "
                 </div>
                 </div>
                 ";
