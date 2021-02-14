@@ -12,9 +12,9 @@ $uid = htmlspecialchars($_POST['uid']);
 $date = date("m/d/Y");
 
 
-$exists = checktitle($uid, $programid);
+$exists = checkExists($uid, $programid);
     
-function checktitle($uid, $programid) {
+function checkExists($uid, $programid) {
  require $_SERVER['DOCUMENT_ROOT'] . '/modules/dbConnect.php'; 
  $db = get_db();
  $stmt2 = $db->prepare('SELECT id FROM userq WHERE account_id = :uid AND content_id = :contentid AND enddate IS null');
