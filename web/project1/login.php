@@ -65,6 +65,11 @@ if (isset($_POST['user']) && isset($_POST['pw']))
 	                   echo "<h6>Incorrect username or password!</h6>";
                     }
                 ?>
+                <?php
+                    if (isset($_GET['success']) && $_GET['success'] == 1 ){
+                     echo "<h6>Thank You For Creating An Account Please Log In</h6>";
+                    } 
+                ?>
                 <form  action="login.php" method="POST">
                     <div class="row g-3">
                         <div class="col-12">

@@ -46,7 +46,7 @@ $stmt->bindValue(':email', $email);
 $stmt->bindValue(':password', $hash);
 $stmt->execute();
     
-$new_page = "login.php";    
+$new_page = "login.php?success=1";    
 header("Location: $new_page");
     
 die();
