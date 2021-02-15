@@ -86,7 +86,7 @@ $reviews = $stmt3->fetchAll(PDO::FETCH_ASSOC);
                         <input type='hidden' id='contentid' name='contentid' value='$showid'>
                         </div>
                         <div>
-                        <button type='submit' id='special'><i class='bi bi-trash-fill' title='Remove From Watch List'></i></button>
+                        <button type='submit' id='special'><i class='bi bi-trash-fill' id='trash' title='Remove From Watch List'></i></button>
                         </div>
                         </form>
                         </li>";

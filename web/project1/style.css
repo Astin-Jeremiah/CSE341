@@ -13,8 +13,12 @@
   display: inline-block; 
 }
 
-i:hover {
+#login:hover, #home:hover, #out:hover{
     color:white;
+}
+
+i:hover {
+    color: #6c757d;
 }
 
 
