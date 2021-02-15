@@ -6,6 +6,7 @@ if (isset($_POST['user']) && isset($_POST['pw']))
 {
     $username = htmlspecialchars($_POST['user']);
     $password = htmlspecialchars($_POST['pw']);
+    $id = htmlspecialchars($_GET['id']);
     
     
     require $_SERVER['DOCUMENT_ROOT'] . '/modules/dbConnect.php';
@@ -61,6 +62,7 @@ if (isset($_POST['user']) && isset($_POST['pw']))
                 if ($badLogin)
                     {
 	                   echo "<h6>Incorrect username or password!</h6>";
+                        echo $id;
                     }
                 ?>
                 <?php
