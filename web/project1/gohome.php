@@ -5,7 +5,7 @@ if (isset($_SESSION['url2'])) {
             header("Location: $url");
              die();
 } else {
-    header("Location: login.php");
+    header("Location: index.php");
              die();
 }
 ?>
