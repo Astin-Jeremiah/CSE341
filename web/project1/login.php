@@ -6,7 +6,6 @@ if (isset($_POST['user']) && isset($_POST['pw']))
 {
     $username = htmlspecialchars($_POST['user']);
     $password = htmlspecialchars($_POST['pw']);
-    $password =  password_hash($pword, PASSWORD_DEFAULT);
     
     
     require $_SERVER['DOCUMENT_ROOT'] . '/modules/dbConnect.php';
@@ -22,7 +21,7 @@ if (isset($_POST['user']) && isset($_POST['pw']))
 		$hash = $row['password'];
         $uid = $row['id'];
         
-        if ($hash = $password) {
+        if (password_verify($password, $hash)) return true {
             $_SESSION['userid'] = $uid;
             header("Location: index.php");
              die();
