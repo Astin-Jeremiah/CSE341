@@ -138,7 +138,7 @@ $suggestion = $stmt4->fetchAll(PDO::FETCH_ASSOC);
                         <h4 class='mb-3'>Admin: User Suggestions</h4>
                         <ul>";
                         foreach ($suggestion as $sug){
-                            $sname = $sug['suggested_content-name'];
+                            $sname = $sug['suggested_content_name'];
                             $desc = $sug['suggested_description'];
                             $serv = $sug['service_id'];
                             echo "<li>
