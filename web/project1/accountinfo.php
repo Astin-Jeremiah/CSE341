@@ -3,8 +3,6 @@ session_start();
 require $_SERVER['DOCUMENT_ROOT'] . '/modules/dbConnect.php';
 
 $user = $_SESSION['userid'];
-$level = $_SESSION['userlevel'];
-echo $level;
 
 $db = get_db();
 $stmt = $db->prepare('SELECT user_name, email, password FROM account WHERE id = :id');
@@ -134,7 +132,7 @@ $suggestion = $stmt4->fetchAll(PDO::FETCH_ASSOC);
           
                 <?php 
 
-                    if ($level == 3) {
+                    if (isset ($_SESSION['userid']) && $_SESSION['userid'] == 3){
                         echo "
                         <hr>
                         <div>
