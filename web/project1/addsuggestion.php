@@ -8,7 +8,7 @@ $service = htmlspecialchars($_POST['service']);
 
 $existinguname = checkExistinguname($name);
 
-/*$regOutcome = updateuser($uname, $email);*/
+$addsugestion = addsuggestion($name, $about, $service);
 
 function checkExistinguname($name) {
  $db = get_db();
@@ -17,26 +17,27 @@ function checkExistinguname($name) {
  $stmt2->execute();
  $matchname = $stmt2->fetch(PDO::FETCH_NUM);
  if($matchname >= 1){
- $new_page = "updateaccountinfo.php?success=2";    
+ $new_page = "suggestion.php?success=2";    
 header("Location: $new_page");
     
 die();
 }
 }
 
-/*function updateuser($uname, $email) {
+function addsuggestion($name, $about, $service) {
 $db = get_db();
-$stmt = $db->prepare('UPDATE account SET user_name = :newname WHERE email = :email');
-$stmt->bindValue(':newname', $uname);
-$stmt->bindValue(':email', $email);
+$stmt = $db->prepare('INSERT INTO suggested_content (suggested_content_name, suggested_description, service_id) VALUES (:name, :description, :service)');
+$stmt->bindValue(':name', $name);
+$stmt->bindValue(':description', $about);
+$stmt->bindValue(':service', $service);    
 $stmt->execute();
     
-$new_page = "updateaccountinfo.php?success=3";    
+$new_page = "suggestion.php?success=1";    
 header("Location: $new_page");
     
 die();;
 
-}*/
+}
 
 
 ?>
