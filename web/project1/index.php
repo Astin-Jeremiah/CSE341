@@ -86,10 +86,13 @@ $serv = $stmt2->fetchAll(PDO::FETCH_ASSOC);
                 echo ">$servicename</option>";
             }
         ?>
-  </select>  
+  </select><br>  
        <?php
             if (isset ($_SESSION['userid'])){
-                echo"<a href='suggestion.php' class='btn btn-dark me-2' role='button'>Suggest New Content</a>";
+                echo"
+                <div class='d-grid gap-2'>
+                <a href='suggestion.php' class='btn btn-dark me-2' role='button'>Suggest New Content</a>
+                </div>";
             }
        ?>
   
