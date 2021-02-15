@@ -61,8 +61,8 @@ if (isset($_POST['user']) && isset($_POST['pw']))
                 <?php
                 if ($badLogin)
                     {
-	                   echo "<h6>Incorrect username or password!</h6>";
-                        echo $id;
+	                   echo "<h6>Incorrect username or password! $id</h6>";
+
                     }
                 ?>
                 <?php
