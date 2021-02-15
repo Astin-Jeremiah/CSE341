@@ -8,6 +8,8 @@ if (!isset($_GET['id']))
              die();
 }
 
+$_SESSION['url'] = $_SERVER['REQUEST_URI']; 
+
 $sid = htmlspecialchars($_GET['id']);
 
 $db = get_db();
