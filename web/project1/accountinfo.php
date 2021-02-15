@@ -138,7 +138,7 @@ $suggestion = $stmt4->fetchAll(PDO::FETCH_ASSOC);
                         <h4 class='mb-3'>Admin: User Suggestions</h4>
                         <ul>";
                         foreach ($suggestion as $sug){
-                            $sname = $sug['suggested_content_name'];
+                            $sname = $sug['suggested_content_ sname'];
                             $desc = $sug['suggested_description'];
                             $serv = $sug['service_id'];
                             echo "<li>
@@ -150,7 +150,7 @@ $suggestion = $stmt4->fetchAll(PDO::FETCH_ASSOC);
                             <input type='hidden' id='service' name='service' value='$serv'>
                             </div>
                             <div>
-                            <button type='submit' id='check'><i class='bi bi-check2-square'></i></button>
+                            <button type='submit' id='special'><i class='bi bi-check2-square'></i></button>
                             </div>
                             </form>
                             </li>";
