@@ -3,6 +3,8 @@ session_start();
 require $_SERVER['DOCUMENT_ROOT'] . '/modules/dbConnect.php';
 $db = get_db();
 
+$_SESSION['url2'] = $_SERVER['REQUEST_URI']; 
+
 $serid = htmlspecialchars($_GET['service']);
 
 if ($serid == 1) {

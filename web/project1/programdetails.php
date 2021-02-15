@@ -76,9 +76,9 @@ $pid = htmlspecialchars($_GET['id']);
                 <input type='hidden' id='proid' name='proid' value='$sid'>
                 <input type='hidden' id='uid' name='uid' value='$user'>
                 <input type='submit' class='btn btn-dark' value='Add To Watch List'>
-                <a href='index.php?service=$serviceid' class='btn btn-dark me-2' role='button'>Return To List</a>
+                <a href='gohome.php' class='btn btn-dark me-2' role='button'>Return To List</a>
                 </form>";} else {
-                    echo "<a href='login.php?id=$pid' class='btn btn-dark me-2' role='button'>Login To Add To Watch List</a>
+                    echo "<a href='login.php' class='btn btn-dark me-2' role='button'>Login To Add To Watch List</a>
                     <a href='index.php?service=$serviceid' class='btn btn-dark me-2' role='button'>Return To List</a>
                 </form>";}
                 echo "</div>";
@@ -131,7 +131,7 @@ $pid = htmlspecialchars($_GET['id']);
                         <br>
                         <input type='submit' class='btn btn-dark' value='Submit Review'>    
                         </form>";} else {
-                        echo "<a href='login.php?id=$pid' class='btn btn-dark me-2' role='button'>Login To Write A Review</a>";}
+                        echo "<a href='login.php' class='btn btn-dark me-2' role='button'>Login To Write A Review</a>";}
                 ?>
                         </div>
                     </div>
