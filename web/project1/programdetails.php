@@ -75,7 +75,9 @@ $pid = htmlspecialchars($_GET['id']);
                 <input type='submit' class='btn btn-dark' value='Add To Watch List'>
                 <a href='index.php?service=$serviceid' class='btn btn-dark me-2' role='button'>Return To List</a>
                 </form>";} else {
-                    echo "<a href='login.php?id=$pid' class='btn btn-dark me-2' role='button'>Login To Add To Watch List</a>";}
+                    echo "<a href='login.php?id=$pid' class='btn btn-dark me-2' role='button'>Login To Add To Watch List</a>
+                    <a href='index.php?service=$serviceid' class='btn btn-dark me-2' role='button'>Return To List</a>
+                </form>";}
                 echo "</div>";
 
                 if (isset($_GET['success']) && $_GET['success'] == 1 ){
