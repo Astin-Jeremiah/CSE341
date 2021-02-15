@@ -3,9 +3,10 @@ session_start();
 require $_SERVER['DOCUMENT_ROOT'] . '/modules/dbConnect.php';
 
 $user = $_SESSION['userid'];
+$level = $_SESSION['userlevel'];
 
 $db = get_db();
-$stmt = $db->prepare('SELECT user_name, email, password, level FROM account WHERE id = :id');
+$stmt = $db->prepare('SELECT user_name, email, password FROM account WHERE id = :id');
 $stmt->bindValue(':id', $user, PDO::PARAM_INT);
 $stmt->execute();
 $info = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -131,6 +132,7 @@ $suggestion = $stmt4->fetchAll(PDO::FETCH_ASSOC);
             
           
                 <?php 
+
                     if ($level == 3) {
                         echo "
                         <hr>

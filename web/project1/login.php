@@ -11,7 +11,7 @@ if (isset($_POST['user']) && isset($_POST['pw']))
     
     require $_SERVER['DOCUMENT_ROOT'] . '/modules/dbConnect.php';
     $db = get_db();
-    $query = 'SELECT id, password FROM account WHERE user_name =:uname';
+    $query = 'SELECT id, password, level FROM account WHERE user_name =:uname';
     $statement = $db->prepare($query);
 	$statement->bindValue(':uname', $username);
     $result = $statement->execute();
@@ -21,14 +21,17 @@ if (isset($_POST['user']) && isset($_POST['pw']))
 		$row = $statement->fetch();
 		$hash = $row['password'];
         $uid = $row['id'];
+        $level = $row['level'];
         
         if (isset($_SESSION['url']) && (password_verify($password, $hash))) {
             $url = $_SESSION['url'];
             $_SESSION['userid'] = $uid;
+            $_SESSION['userlevel'] = $level;
             header("Location: $url");
              die();
         } else if (password_verify($password, $hash)) {
             $_SESSION['userid'] = $uid;
+            $_SESSION['userlevel'] = $level;
             header("Location: index.php");
              die();
         }else {
