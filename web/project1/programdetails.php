@@ -79,7 +79,7 @@ $pid = htmlspecialchars($_GET['id']);
                 <a href='gohome.php' class='btn btn-dark me-2' role='button'>Return To List</a>
                 </form>";} else {
                     echo "<a href='login.php' class='btn btn-dark me-2' role='button'>Login To Add To Watch List</a>
-                    <a href='index.php?service=$serviceid' class='btn btn-dark me-2' role='button'>Return To List</a>
+                    <a href='gohome.php' class='btn btn-dark me-2' role='button'>Return To List</a>
                 </form>";}
                 echo "</div>";
 
