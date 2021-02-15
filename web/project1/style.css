@@ -13,5 +13,8 @@
   display: inline-block; 
 }
 
+i:hover {
+    color:white;
+}
 
 
