@@ -12,14 +12,14 @@ $info = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 $user2 = $_SESSION['userid'];
 $db = get_db();
-$stmt2 = $db->prepare ('SELECT content_id, content_name, account_id FROM content INNER JOIN userq ON userq.content_id = content.id WHERE account_id = :id and enddate IS null');
+$stmt2 = $db->prepare ('SELECT content_id, content_name, account_id FROM content INNER JOIN userq ON userq.content_id = content.id WHERE account_id = :id and enddate IS null ORDER BY content_name ASC');
 $stmt2->bindValue(':id', $user2, PDO::PARAM_INT);
 $stmt2->execute();
 $ques = $stmt2->fetchAll(PDO::FETCH_ASSOC);
 
 $user3 = $_SESSION['userid'];
 $db = get_db();
-$stmt3 = $db->prepare ('SELECT account_id, content_id, content_name, note FROM content INNER JOIN reviews ON reviews.content_id = content.id WHERE account_id = :id');
+$stmt3 = $db->prepare ('SELECT account_id, content_id, content_name, note FROM content INNER JOIN reviews ON reviews.content_id = content.id WHERE account_id = :id ORDER BY content_name ASC');
 $stmt3->bindValue(':id', $user3, PDO::PARAM_INT);
 $stmt3->execute();
 $reviews = $stmt3->fetchAll(PDO::FETCH_ASSOC);
