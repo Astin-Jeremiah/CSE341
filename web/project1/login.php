@@ -27,7 +27,6 @@ if (isset($_POST['user']) && isset($_POST['pw']))
              die();
         } else {
             $badLogin = true;
-            die();
         }
                    }
 
