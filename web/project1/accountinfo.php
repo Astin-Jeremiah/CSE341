@@ -5,7 +5,7 @@ require $_SERVER['DOCUMENT_ROOT'] . '/modules/dbConnect.php';
 $user = $_SESSION['userid'];
 
 $db = get_db();
-$stmt = $db->prepare('SELECT user_name, email, password  FROM account WHERE id = :id');
+$stmt = $db->prepare('SELECT user_name, email, password, level FROM account WHERE id = :id');
 $stmt->bindValue(':id', $user, PDO::PARAM_INT);
 $stmt->execute();
 $info = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -23,6 +23,11 @@ $stmt3 = $db->prepare ('SELECT account_id, content_id, content_name, note FROM c
 $stmt3->bindValue(':id', $user3, PDO::PARAM_INT);
 $stmt3->execute();
 $reviews = $stmt3->fetchAll(PDO::FETCH_ASSOC);
+
+$db = get_db();
+$stmt4 = $db->prepare ('SELECT suggested_content_name, suggested_description, service_id FROM suggested_content WHERE sinked IS null ORDER BY suggested_content_name ASC');
+$stmt4->execute();
+$suggestion = $stmt4->fetchAll(PDO::FETCH_ASSOC);
 
 ?>
 <!doctype html>
@@ -57,6 +62,7 @@ $reviews = $stmt3->fetchAll(PDO::FETCH_ASSOC);
                                 $uname = $inf['user_name'];
                                 $email = $inf['email'];
                                 $pw = $inf['password'];
+                                $level = inf['level'];
                             echo "<p class='fs-4'>Username: $uname</p>
                             <p class='fs-4'>Email: $email</p>";
                             }
@@ -122,6 +128,40 @@ $reviews = $stmt3->fetchAll(PDO::FETCH_ASSOC);
                 ?>
                 </ul>
                 </div>
+            
+          
+                <?php 
+                    if ($level == 3) {
+                        echo "
+                        <hr>
+                        <div>
+                        <h4 class='mb-3'>Admin: User Suggestions</h4>
+                        <ul>";
+                        for each ($suggestion as $sug){
+                            $name = $sug['suggested_content-name'];
+                            $desc = $sug['suggested_description'];
+                            $serv = $sug['service_id'];
+                            echo "<li>
+                            <form id='specialform' action='sendtodb.php' method='POST'>
+                            <div>
+                            <b>$name</b> - $desc
+                            <input type='hidden' id='showname' name='showname' value='$name'>
+                            <input type='hidden' id='description' name='description' value='$desc'>
+                            <input type='hidden' id='service' name='service' value='$serv'>
+                            </div>
+                            <div>
+                            <button type='submit' id='check'><i class="bi bi-check2-square"></i></button>
+                            </div>
+                            </form>
+                            </li>";
+                        }
+                        echo "
+                        </ul>
+                        </div>
+                        ";
+                    }
+                ?>
+
           </div>   
       </main>
     </div>      
