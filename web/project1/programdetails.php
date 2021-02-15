@@ -4,7 +4,8 @@ require $_SERVER['DOCUMENT_ROOT'] . '/modules/dbConnect.php';
 
 if (!isset($_GET['id']))
 {
-	die("Error, id not specified...");
+	header("Location: index.php");
+             die();
 }
 
 $sid = htmlspecialchars($_GET['id']);
