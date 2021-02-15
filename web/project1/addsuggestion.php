@@ -5,18 +5,15 @@ $name = htmlspecialchars($_POST['showname']);
 $about = htmlspecialchars($_POST['description']);
 $service = htmlspecialchars($_POST['service']);
 
-echo $name;
-echo $about;
-echo $service;
 
-/*$existinguname = checkExistinguname($uname);
+$existinguname = checkExistinguname($name);
 
-$regOutcome = updateuser($uname, $email);
+/*$regOutcome = updateuser($uname, $email);*/
 
-function checkExistinguname($uname) {
+function checkExistinguname($name) {
  $db = get_db();
- $stmt2 = $db->prepare('SELECT user_name FROM account WHERE user_name = :uname');
- $stmt2->bindValue(':uname', $uname, PDO::PARAM_STR);
+ $stmt2 = $db->prepare('SELECT content_name FROM content WHERE content_name = :name');
+ $stmt2->bindValue(':name', $name, PDO::PARAM_STR);
  $stmt2->execute();
  $matchname = $stmt2->fetch(PDO::FETCH_NUM);
  if($matchname >= 1){
@@ -27,7 +24,7 @@ die();
 }
 }
 
-function updateuser($uname, $email) {
+/*function updateuser($uname, $email) {
 $db = get_db();
 $stmt = $db->prepare('UPDATE account SET user_name = :newname WHERE email = :email');
 $stmt->bindValue(':newname', $uname);

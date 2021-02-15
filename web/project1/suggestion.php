@@ -32,7 +32,7 @@ $serv = $stmt2->fetchAll(PDO::FETCH_ASSOC);
     </div>
     
       <div class="card col-md-6 offset-md-3 p-2">
-                <h4 class="mb-3">Suggest New Account</h4>
+                <h4 class="mb-3">Suggest New Content</h4>
                 <p>Suggest your favorite streaming movie or television series to be added to our site.</p>
                 <div class="message">
                 <?php
@@ -67,7 +67,7 @@ $serv = $stmt2->fetchAll(PDO::FETCH_ASSOC);
                             </select>
                         </div>  
                     </div><br>
-                        <input type="submit" class="btn btn-dark" value="Create Account">
+                        <input type="submit" class="btn btn-dark" value="Submit Suggestion">
             </form>    
           </div>   
       </main>
