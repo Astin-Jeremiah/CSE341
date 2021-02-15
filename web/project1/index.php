@@ -87,7 +87,11 @@ $serv = $stmt2->fetchAll(PDO::FETCH_ASSOC);
             }
         ?>
   </select>  
-  
+       <?php
+            if (isset ($_SESSION['userid'])){
+                echo"<a href='suggestion.php' class='btn btn-dark me-2' role='button'>Suggest New Content</a>";
+            }
+       ?>
   
     
 </form>
