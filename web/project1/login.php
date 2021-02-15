@@ -6,8 +6,6 @@ if (isset($_POST['user']) && isset($_POST['pw']))
 {
     $username = htmlspecialchars($_POST['user']);
     $password = htmlspecialchars($_POST['pw']);
-    $return = htmlspecialchars($_GIT['id']);
-    echo $return;
     $password =  password_hash($pword, PASSWORD_DEFAULT);
     
     
