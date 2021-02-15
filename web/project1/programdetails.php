@@ -44,7 +44,7 @@ $pid = htmlspecialchars($_GET['id']);
     </header>
     <main>
         <div class="py-3 text-center">
-            <img class="img-fluid" src="../../images/logo.png" alt="Stream Central Logo">
+            <a href="index.php"><img class="img-fluid" src="../../images/logo.png" alt="Stream Central Logo"></a>
             <br>
         </div>
         <div class="container">

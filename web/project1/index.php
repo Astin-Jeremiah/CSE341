@@ -59,7 +59,7 @@ $serv = $stmt2->fetchAll(PDO::FETCH_ASSOC);
 
       <main>
 <div class="py-3 text-center">
-      <img class="img-fluid" src="../../images/logo.png" alt="Stream Central Logo">
+      <a href="index.php"><img class="img-fluid" src="../../images/logo.png" alt="Stream Central Logo"></a>
         <h3>Find Something New To Watch</h3>
         <br>
       <h1>Popular Shows</h1>

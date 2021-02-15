@@ -44,7 +44,7 @@ $reviews = $stmt3->fetchAll(PDO::FETCH_ASSOC);
       <div class="container">
       <main>
 <div class="py-3 text-center">
-      <img class="img-fluid" src="../../images/logo.png" alt="Stream Central Logo">
+      <a href="index.php"><img class="img-fluid" src="../../images/logo.png" alt="Stream Central Logo"></a>
     </div>
     
       <div class="card col-md-6 offset-md-3 p-2">
