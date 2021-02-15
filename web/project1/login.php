@@ -21,7 +21,7 @@ if (isset($_POST['user']) && isset($_POST['pw']))
 		$hash = $row['password'];
         $uid = $row['id'];
         
-        if (password_verify($password, $hash)) return true {
+        if (password_verify($password, $hash)) {
             $_SESSION['userid'] = $uid;
             header("Location: index.php");
              die();
