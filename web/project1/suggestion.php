@@ -43,15 +43,15 @@ $serv = $stmt2->fetchAll(PDO::FETCH_ASSOC);
                     }
                 ?>
                 </div>
-                <form action="suggestcontent.php" method="post">
+                <form action="addsuggestion.php" method="post">
                     <div class="row g-3">
                         <div class="col-md-6">
                             <label for="showname" class="form-label">Show/Move Name</label>
-                            <input type="text" class="form-control" id="showname" name="showname" required <?php if(isset($username)){echo "value='$username'";}  ?>>
+                            <input type="text" class="form-control" id="showname" name="showname" required>
                         </div>
                         <div class="col-12">
                             <label for="description" class="form-label">Description</label>
-                            <textarea class='form-control' id='description' name='description'><?php if(isset($email)){echo "value='$email'";}  ?></textarea>
+                            <textarea class='form-control' id='description' name='description'></textarea>
                         </div>
                       <div class="col-12">
                             <label for="select">Streaming Service</label>
