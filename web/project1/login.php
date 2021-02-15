@@ -22,10 +22,10 @@ if (isset($_POST['user']) && isset($_POST['pw']))
 		$hash = $row['password'];
         $uid = $row['id'];
         
-        if (isset($_GET['id']) && (password_verify($password, $hash))) {
-            $id = htmlspecialchars($_GET['id']);
+        if (isset($_SESSION['url']) && (password_verify($password, $hash))) {
+            $url = $_SESSION['url'];
             $_SESSION['userid'] = $uid;
-            header("Location: programdetails.php?id=$id");
+            header("Location: $url");
              die();
         } else if (password_verify($password, $hash)) {
             $_SESSION['userid'] = $uid;
