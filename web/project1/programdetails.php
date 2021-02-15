@@ -10,8 +10,6 @@ if (!isset($_GET['id']))
 
 $sid = htmlspecialchars($_GET['id']);
 
-$_SESSION['url'] = $_SERVER['REQUEST_URI']; 
-
 $db = get_db();
 
 $stmt = $db->prepare('SELECT content_name, description, service_id, service_name, picture FROM content INNER JOIN service ON service.id = content.service_id WHERE content.id = :id');
