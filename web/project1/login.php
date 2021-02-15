@@ -22,7 +22,7 @@ if (isset($_POST['user']) && isset($_POST['pw']))
 		$hash = $row['password'];
         $uid = $row['id'];
         
-        if (isset($_GET['id']) && (password_verify($password, $hash)) {
+        if (isset($_GET['id']) && (password_verify($password, $hash))) {
             $_SESSION['userid'] = $uid;
             header("Location: programdetails.php?id=$id");
              die();
@@ -30,12 +30,11 @@ if (isset($_POST['user']) && isset($_POST['pw']))
             $_SESSION['userid'] = $uid;
             header("Location: index.php");
              die();
-        else {
+        }else {
             $badLogin = true;
         }
                    }
 
-}
 }
 
 ?>
