@@ -150,7 +150,7 @@ $suggestion = $stmt4->fetchAll(PDO::FETCH_ASSOC);
                             <input type='hidden' id='service' name='service' value='$serv'>
                             </div>
                             <div>
-                            <button type='submit' id='check'><i class="bi bi-check2-square"></i></button>
+                            <button type='submit' id='check'><i class='bi bi-check2-square'></i></button>
                             </div>
                             </form>
                             </li>";
