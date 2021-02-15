@@ -129,10 +129,9 @@ $suggestion = $stmt4->fetchAll(PDO::FETCH_ASSOC);
                 </ul>
                 </div>
             
-          
                 <?php 
 
-                    if (isset ($_SESSION['userid']) && $_SESSION['userid'] == 3){
+                    if (isset ($_SESSION['userlevel']) && $_SESSION['userlevel'] == 3){
                         echo "
                         <hr>
                         <div>
