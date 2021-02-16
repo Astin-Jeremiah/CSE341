@@ -11,15 +11,7 @@ $showname = htmlspecialchars($_POST['showname']);
 $desc = htmlspecialchars($_POST['description']);
 $service = htmlspecialchars($_POST['service']);
 $link = '../images/';
-
-
-/*$db = get_db();
-$query2 = 'SELECT * FROM service';
-$stmt2 = $db->prepare($query2);
-$stmt2->execute();
-$serv = $stmt2->fetchAll(PDO::FETCH_ASSOC);*/
 }
-
 ?>
 <!doctype html>
 <html lang="en">
@@ -63,15 +55,15 @@ $serv = $stmt2->fetchAll(PDO::FETCH_ASSOC);*/
                         </div>
                         <div class="col-12">
                             <label for="description" class="form-label">Description</label>
-                            <textarea class='form-control' id='description' name='description'></textarea>
+                            <textarea class='form-control' id='description' name='description'><?php echo $desc; ?></textarea>
                         </div>
                       <div class="col-md-6">
                             <label for="service" class="form-label">Streaming Service</label>
-                            <input type="text" class="form-control" id="service" name="service" required <?php echo $service; ?>>
+                            <input type="text" class="form-control" id="service" name="service" value="<?php echo $service; ?>" required>
                         </div>
                         <div class="col-md-6">
                             <label for="link" class="form-label">Image Link (Add File Extension)</label>
-                            <input type="text" class="form-control" id="link" name="link" required <?php echo $link; ?>>
+                            <input type="text" class="form-control" id="link" name="link" value="<?php echo $link; ?>"required>
                         </div>
                     </div><br>
                         <input type="submit" class="btn btn-dark" value="Write To Database">
