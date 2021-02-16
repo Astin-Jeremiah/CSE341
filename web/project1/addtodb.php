@@ -1,7 +1,8 @@
 <?php
 require $_SERVER['DOCUMENT_ROOT'] . '/modules/dbConnect.php';
 
-$name = htmlspecialchars($_POST['showname']);
+$sugname = htmlspecialchars($_POST['showname']);
+$name = htmlspecialchars($_POST['newshowname']);
 $about = htmlspecialchars($_POST['description']);
 $service = htmlspecialchars($_POST['service']);
 $link = htmlspecialchars($_POST['link']);
@@ -16,7 +17,7 @@ $stmt->bindValue(':link', $link);
 $stmt->bindValue(':service', $service);    
 $stmt->execute();
 
-$marksinked = markedsinked($yes, $name);
+$marksinked = markedsinked($yes, $sugname);
     
 $new_page = "index.php";    
 header("Location: $new_page");
@@ -28,7 +29,7 @@ function markedsinked($yes, $name) {
 $db = get_db();
 $stmt2 = $db->prepare('UPDATE suggested_content SET sinked = :true WHERE suggested_content_name = :name');
 $stmt2->bindValue(':true', $yes);
-$stmt2->bindValue(':name', $name);   
+$stmt2->bindValue(':name', $sugname);   
 $stmt2->execute();
     
 }

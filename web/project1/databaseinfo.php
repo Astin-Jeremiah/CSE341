@@ -42,7 +42,7 @@ $link = '../images/';
                     <div class="row g-3">
                         <div class="col-md-6">
                             <label for="showname" class="form-label">Show/Move Name</label>
-                            <input type="text" class="form-control" id="showname" name="showname" value="<?php echo $showname; ?>" required>
+                            <input type="text" class="form-control" id="newshowname" name="newshowname" value="<?php echo $showname; ?>" required>
                         </div>
                         <div class="col-12">
                             <label for="description" class="form-label">Description</label>
@@ -57,6 +57,7 @@ $link = '../images/';
                             <input type="text" class="form-control" id="link" name="link" value="<?php echo $link; ?>"required>
                         </div>
                     </div><br>
+                        <input type='hidden' id='showname' name='showname' value='<?php echo $showname; ?>'>
                         <input type="submit" class="btn btn-dark" value="Write To Database">
             </form>    
           </div>   
