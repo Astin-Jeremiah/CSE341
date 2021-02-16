@@ -59,7 +59,7 @@ $serv = $stmt2->fetchAll(PDO::FETCH_ASSOC);*/
                     <div class="row g-3">
                         <div class="col-md-6">
                             <label for="showname" class="form-label">Show/Move Name</label>
-                            <input type="text" class="form-control" id="showname" name="showname" required><?php echo $showname; ?>
+                            <input type="text" class="form-control" id="showname" name="showname" required <?php echo $showname; ?>>
                         </div>
                         <div class="col-12">
                             <label for="description" class="form-label">Description</label>
@@ -67,11 +67,11 @@ $serv = $stmt2->fetchAll(PDO::FETCH_ASSOC);*/
                         </div>
                       <div class="col-md-6">
                             <label for="service" class="form-label">Streaming Service</label>
-                            <input type="text" class="form-control" id="service" name="service" required><?php echo $service; ?>
+                            <input type="text" class="form-control" id="service" name="service" required <?php echo $service; ?>>
                         </div>
                         <div class="col-md-6">
                             <label for="link" class="form-label">Image Link (Add File Extension)</label>
-                            <input type="text" class="form-control" id="link" name="link" required><?php echo $link; ?>
+                            <input type="text" class="form-control" id="link" name="link" required <?php echo $link; ?>>
                         </div>
                     </div><br>
                         <input type="submit" class="btn btn-dark" value="Write To Database">
