@@ -5,7 +5,7 @@ $name = htmlspecialchars($_POST['showname']);
 $about = htmlspecialchars($_POST['description']);
 $service = htmlspecialchars($_POST['service']);
 $link = htmlspecialchars($_POST['link']);
-$yes = true;
+$yes = 'yes';
 
 
 $db = get_db();
