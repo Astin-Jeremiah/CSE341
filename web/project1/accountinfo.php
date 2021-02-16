@@ -86,11 +86,10 @@ $suggestion = $stmt4->fetchAll(PDO::FETCH_ASSOC);
                         $accid = $que['account_id'];
                         echo "
                         <form id='specialform' action='removefromwatchlist.php' method='POST'>
-                        <li class='text-white'><span class='text-dark'><i class='bi bi-circle-fill' id='bullet'></i>
-                        <a href='programdetails.php?id=$showid' class='link-dark'> $proname</a>
+                        <li><a href='programdetails.php?id=$showid' class='link-dark'> $proname</a>
                         <input type='hidden' id='accountid' name='accountid' value='$accid'>
                         <input type='hidden' id='contentid' name='contentid' value='$showid'>
-                        <button type='submit' id='special'><i class='bi bi-trash-fill' id='trash' title='Remove From Watch List'></i></button>
+                        <button type='submit' id='special'><i class='bi bi-trash-fill' id='trash' title='Remove From Watch List'></button>
                         </form></span>
                         </li>";
                         }
@@ -110,7 +109,7 @@ $suggestion = $stmt4->fetchAll(PDO::FETCH_ASSOC);
                         $review = $rev['note'];
                         echo "
                         <form id='specialform2' action='editreview.php' method='POST'>
-                        <li class='text-white'><span class='text-dark'><button type='submit' id='special' title='Edit Review'><i class='bi bi-pencil-fill'></i><b> $showname</b> - $review</button></span></li>
+                        <li><button type='submit' id='special' title='Edit Review'><b>$showname</b> - $review </button><i class='bi bi-pencil-fill'></i></li>
                         <input type='hidden' id='accountid' name='accountid' value='$accid'>
                         <input type='hidden' id='contentid' name='contentid' value='$conid'>
                         <input type='hidden' id='contentid' name='review' value='$review'>
@@ -134,7 +133,7 @@ $suggestion = $stmt4->fetchAll(PDO::FETCH_ASSOC);
                             $serv = $sug['service_id'];
                             echo "
                             <form id='specialform' action='sendtodb.php' method='POST'>
-                            <li class='text-white'><span class='text-dark'><button type='submit' id='special'><i class='bi bi-check2-square'></i><b> $sname</b> - $desc</span></button></li>
+                            <li><button type='submit' id='special'><b> $sname</b> - $desc <i class='bi bi-check2-square'></i></button></li>
                             <input type='hidden' id='showname' name='showname' value='$sname'>
                             <input type='hidden' id='description' name='description' value='$desc'>
                             <input type='hidden' id='service' name='service' value='$serv'>
@@ -147,7 +146,8 @@ $suggestion = $stmt4->fetchAll(PDO::FETCH_ASSOC);
                     }
                 ?>
 
-          </div>   
+          </div> 
+          <br><br>
       </main>
     </div>      
   </body>
