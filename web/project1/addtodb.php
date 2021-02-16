@@ -6,47 +6,17 @@ $about = htmlspecialchars($_POST['description']);
 $service = htmlspecialchars($_POST['service']);
 $link = htmlspecialchars($_POST['link']);
 
-
-echo $name;
-echo $about;
-echo $service;
-echo $link;
-
-
-/*
-$existinguname = checkExistinguname($name);
-
-$addsugestion = addsuggestion($name, $about, $service);
-
-function checkExistinguname($name) {
- $db = get_db();
- $stmt2 = $db->prepare('SELECT content_name FROM content WHERE content_name = :name');
- $stmt2->bindValue(':name', $name, PDO::PARAM_STR);
- $stmt2->execute();
- $matchname = $stmt2->fetch(PDO::FETCH_NUM);
- if($matchname >= 1){
- $new_page = "suggestion.php?success=2";    
-header("Location: $new_page");
-    
-die();
-}
-}
-
-function addsuggestion($name, $about, $service) {
 $db = get_db();
-$stmt = $db->prepare('INSERT INTO suggested_content (suggested_content_name, suggested_description, service_id) VALUES (:name, :description, :service)');
+$stmt = $db->prepare('INSERT INTO content (content_name, description, picture, service_id) VALUES (:name, :description, :link, :service)');
 $stmt->bindValue(':name', $name);
 $stmt->bindValue(':description', $about);
+$stmt->bindValue(':link', $link);  
 $stmt->bindValue(':service', $service);    
 $stmt->execute();
     
-$new_page = "suggestion.php?success=1";    
+$new_page = "index.php";    
 header("Location: $new_page");
     
 die();;
-
-}
-*/
-
 
 ?>

@@ -38,15 +38,6 @@ $link = '../images/';
       <div class="card col-md-6 offset-md-3 p-2">
                 <h4 class="mb-3">Write To Database</h4>
 
-                <div class="message">
-                <?php
-                    if (isset($_GET['success']) && $_GET['success'] == 1 ){
-                     echo "<h6>Suggestion Submitted</h6>";
-                    } else if (isset($_GET['success']) && $_GET['success'] == 2 ){
-                     echo "<h6>Title Already In Database</a>.</h6>";
-                    }
-                ?>
-                </div>
                 <form action="addtodb.php" method="post">
                     <div class="row g-3">
                         <div class="col-md-6">
