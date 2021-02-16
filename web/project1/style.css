@@ -3,13 +3,13 @@
  color: black;   
 }
 
-#special, #check {
+#special {
   background: none;
   padding: 0px;
   border: none;  
 }
 
-#special { 
+#specialform div, #test { 
   display: inline-block; 
 }
 
