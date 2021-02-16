@@ -2,7 +2,7 @@
 session_start();
 require $_SERVER['DOCUMENT_ROOT'] . '/modules/dbConnect.php';
 
-if (!isset (($_SESSION['userlevel']) && $_SESSION['userlevel'] == 3)){
+if (isset (($_SESSION['userlevel']) && $_SESSION['userlevel'] < 3)){
 	header("Location: index.php");
              die();
 }
