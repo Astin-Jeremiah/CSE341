@@ -77,7 +77,7 @@ $suggestion = $stmt4->fetchAll(PDO::FETCH_ASSOC);
                 <hr>
                 <div>
                 <h4 class="mb-3">Watch List</h4>
-                <ul id='speical'>
+                <ul class="list-unstyled">
                 <?php
                     foreach ($ques as $que)
                         {
