@@ -84,7 +84,7 @@ $suggestion = $stmt4->fetchAll(PDO::FETCH_ASSOC);
                         $proname = $que['content_name'];
                         $showid = $que['content_id'];
                         $accid = $que['account_id'];
-                        echo "<li> 
+                        echo "<li class='text-white'><span class='text-dark'><i class="bi bi-circle-fill"></i> 
                         <form id='specialform' action='removefromwatchlist.php' method='POST'>
                         <div>
                         <a href='programdetails.php?id=$showid' class='link-dark'>$proname</a>
@@ -94,7 +94,7 @@ $suggestion = $stmt4->fetchAll(PDO::FETCH_ASSOC);
                         <div>
                         <button type='submit' id='special'><i class='bi bi-trash-fill' id='trash' title='Remove From Watch List'></i></button>
                         </div>
-                        </form>
+                        </form></span>
                         </li>";
                         }
                 ?>
@@ -137,15 +137,10 @@ $suggestion = $stmt4->fetchAll(PDO::FETCH_ASSOC);
                             $serv = $sug['service_id'];
                             echo "
                             <form id='specialform' action='sendtodb.php' method='POST'>
-                            <div>
-                            <li><b>$sname</b> - $desc</li>
+                            <li class='text-white'><span class='text-dark'><button type='submit' id='special'><i class='bi bi-check2-square'></i></button><b> $sname</b> - $desc</span></li>
                             <input type='hidden' id='showname' name='showname' value='$sname'>
                             <input type='hidden' id='description' name='description' value='$desc'>
                             <input type='hidden' id='service' name='service' value='$serv'>
-                            </div>
-                            <div id='test'>
-                            <button type='submit' id='special'><i class='bi bi-check2-square'></i></button>
-                            </div>
                             </form>";
                         }
                         echo "
