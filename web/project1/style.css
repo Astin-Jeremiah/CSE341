@@ -17,15 +17,4 @@
     color:white;
 }
 
-ul#special {
-    list-style: none;
-}
-
-#specialform2 li::before {
-    content: "•"; color: white;
-    display: inline-block; width: 1em;
-    margin-left: -1em;
-}
-
-
 
