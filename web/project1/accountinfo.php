@@ -103,7 +103,7 @@ $suggestion = $stmt4->fetchAll(PDO::FETCH_ASSOC);
                 <hr>
                 <div>
                 <h4 class="mb-3">My Reviews</h4>
-                <ul "list-unstyled">
+                <ul class="list-unstyled">
                 <?php
                     foreach ($reviews as $rev)
                         {
@@ -113,7 +113,7 @@ $suggestion = $stmt4->fetchAll(PDO::FETCH_ASSOC);
                         $review = $rev['note'];
                         echo "
                         <form id='specialform' action='editreview.php' method='POST'>
-                        <li><button type='submit' id='special'><i class='bi bi-pencil-fill' title='Edit Review'></i></button><b>$showname</b> - $review</li>
+                        <li><button type='submit' id='special'><i class='bi bi-pencil-fill' title='Edit Review'></i><b> $showname</b> - $review</button></li>
                         <input type='hidden' id='accountid' name='accountid' value='$accid'>
                         <input type='hidden' id='contentid' name='contentid' value='$conid'>
                         <input type='hidden' id='contentid' name='review' value='$review'>
