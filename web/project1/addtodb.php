@@ -25,7 +25,7 @@ header("Location: $new_page");
 die();
 
 
-function markedsinked($yes, $name) {
+function markedsinked($yes, $sugname) {
 $db = get_db();
 $stmt2 = $db->prepare('UPDATE suggested_content SET sinked = :true WHERE suggested_content_name = :name');
 $stmt2->bindValue(':true', $yes);
