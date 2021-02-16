@@ -109,7 +109,7 @@ $suggestion = $stmt4->fetchAll(PDO::FETCH_ASSOC);
                         $review = $rev['note'];
                         echo "
                         <form id='specialform2' action='editreview.php' method='POST'>
-                        <li><button type='submit' id='special' title='Edit Review' class='text-norwap left'><b>$showname</b> - $review <i class='bi bi-pencil-fill'> </i></button></li>
+                        <li><button type='submit' id='special' title='Edit Review' class='text-norwap'><b>$showname</b> - $review <i class='bi bi-pencil-fill'> </i></button></li>
                         <input type='hidden' id='accountid' name='accountid' value='$accid'>
                         <input type='hidden' id='contentid' name='contentid' value='$conid'>
                         <input type='hidden' id='contentid' name='review' value='$review'>
@@ -133,7 +133,7 @@ $suggestion = $stmt4->fetchAll(PDO::FETCH_ASSOC);
                             $serv = $sug['service_id'];
                             echo "
                             <form id='specialform' action='sendtodb.php' method='POST'>
-                            <li><button type='submit' id='special'><b> $sname</b> - $desc <i class='bi bi-check2-square'> </i></button></li>
+                            <li><button type='submit' id='special' class='text-norwap'><b> $sname</b> - $desc <i class='bi bi-check2-square'> </i></button></li>
                             <input type='hidden' id='showname' name='showname' value='$sname'>
                             <input type='hidden' id='description' name='description' value='$desc'>
                             <input type='hidden' id='service' name='service' value='$serv'>
