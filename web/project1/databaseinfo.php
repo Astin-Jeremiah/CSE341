@@ -59,11 +59,11 @@ $serv = $stmt2->fetchAll(PDO::FETCH_ASSOC);*/
                     <div class="row g-3">
                         <div class="col-md-6">
                             <label for="showname" class="form-label">Show/Move Name</label>
-                            <input type="text" class="form-control" id="showname" name="showname" required <?php if(isset($showname)){echo "value='$snowname'";}  ?>/>>
+                            <input type="text" class="form-control" id="showname" name="showname" value="<?php echo $showname; ?>" required>
                         </div>
                         <div class="col-12">
                             <label for="description" class="form-label">Description</label>
-                            <textarea class='form-control' id='description' name='description'><?php echo $desc; ?></textarea>
+                            <textarea class='form-control' id='description' name='description'></textarea>
                         </div>
                       <div class="col-md-6">
                             <label for="service" class="form-label">Streaming Service</label>
