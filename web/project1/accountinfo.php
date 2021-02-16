@@ -141,10 +141,10 @@ $suggestion = $stmt4->fetchAll(PDO::FETCH_ASSOC);
                             $sname = $sug['suggested_content_name'];
                             $desc = $sug['suggested_description'];
                             $serv = $sug['service_id'];
-                            echo "<li>
+                            echo "
                             <form id='specialform' action='sendtodb.php' method='POST'>
                             <div>
-                            <b>$sname</b> - $desc
+                            <li><b>$sname</b> - $desc</li>
                             <input type='hidden' id='showname' name='showname' value='$sname'>
                             <input type='hidden' id='description' name='description' value='$desc'>
                             <input type='hidden' id='service' name='service' value='$serv'>
@@ -152,8 +152,7 @@ $suggestion = $stmt4->fetchAll(PDO::FETCH_ASSOC);
                             <div>
                             <button type='submit' id='special'><i class='bi bi-check2-square'></i></button>
                             </div>
-                            </form>
-                            </li>";
+                            </form>";
                         }
                         echo "
                         </ul>
