@@ -5,7 +5,7 @@ $name = htmlspecialchars($_POST['showname']);
 $about = htmlspecialchars($_POST['description']);
 $service = htmlspecialchars($_POST['service']);
 $link = htmlspecialchars($_POST['link']);
-$date = date("m/d/Y");
+$yes = 'true';
 
 
 $db = get_db();
@@ -16,7 +16,7 @@ $stmt->bindValue(':link', $link);
 $stmt->bindValue(':service', $service);    
 $stmt->execute();
 
-$marksinked = markedsinked($date);
+$marksinked = markedsinked($date, $name);
     
 $new_page = "index.php";    
 header("Location: $new_page");
@@ -24,10 +24,11 @@ header("Location: $new_page");
 die();
 
 
-function markedsinked($date) {
+function markedsinked($yes, $name) {
 $db = get_db();
-$stmt2 = $db->prepare('INSERT INTO suggested_content (sinked) VALUES (:date)');
-$stmt2->bindValue(':date', $date);   
+$stmt2 = $db->prepare('UPDATE suggested_content SET sinked = :true WHERE suggested_content_name = :name');
+$stmt2->bindValue(':true', $yes);
+$stmt2->bindValue(':name', $name);   
 $stmt2->execute();
     
 }
