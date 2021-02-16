@@ -77,14 +77,14 @@ $suggestion = $stmt4->fetchAll(PDO::FETCH_ASSOC);
                 <hr>
                 <div>
                 <h4 class="mb-3">Watch List</h4>
-                <ul class="list-unstyled">
+                <ul>
                 <?php
                     foreach ($ques as $que)
                         {
                         $proname = $que['content_name'];
                         $showid = $que['content_id'];
                         $accid = $que['account_id'];
-                        echo "<li id='special'> 
+                        echo "<li> 
                         <form id='specialform' action='removefromwatchlist.php' method='POST'>
                         <div>
                         <a href='programdetails.php?id=$showid' class='link-dark'>$proname</a>
@@ -103,7 +103,7 @@ $suggestion = $stmt4->fetchAll(PDO::FETCH_ASSOC);
                 <hr>
                 <div>
                 <h4 class="mb-3">My Reviews</h4>
-                <ul id="test">
+                <ul  class="list-unstyled">
                 <?php
                     foreach ($reviews as $rev)
                         {
@@ -113,7 +113,7 @@ $suggestion = $stmt4->fetchAll(PDO::FETCH_ASSOC);
                         $review = $rev['note'];
                         echo "
                         <form id='specialform' action='editreview.php' method='POST'>
-                        <li><button type='submit' id='special' title='Edit Review'><i class='bi bi-pencil-fill'></i><b> $showname</b> - $review</button></li>
+                        <li id='special'><button type='submit' id='special' title='Edit Review'><i class='bi bi-pencil-fill'></i><b> $showname</b> - $review</button></li>
                         <input type='hidden' id='accountid' name='accountid' value='$accid'>
                         <input type='hidden' id='contentid' name='contentid' value='$conid'>
                         <input type='hidden' id='contentid' name='review' value='$review'>
