@@ -114,11 +114,11 @@ $suggestion = $stmt4->fetchAll(PDO::FETCH_ASSOC);
                         echo "
                         <form id='specialform' action='editreview.php' method='POST'>
                         <div>
-                        <li><b>$showname</b> - $review</li>
+                        <li><b>$showname</b> - $review
                         </div>
                         <div>
                         <button type='submit' id='special'><i class='bi bi-pencil-fill' title='Edit Review'></i></button>
-                        </div>
+                        </div></li>
                         <input type='hidden' id='accountid' name='accountid' value='$accid'>
                         <input type='hidden' id='contentid' name='contentid' value='$conid'>
                         <input type='hidden' id='contentid' name='review' value='$review'>
