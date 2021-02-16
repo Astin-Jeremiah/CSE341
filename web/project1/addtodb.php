@@ -16,7 +16,7 @@ $stmt->bindValue(':link', $link);
 $stmt->bindValue(':service', $service);    
 $stmt->execute();
 
-$marksinked = markedsinked($date, $name);
+$marksinked = markedsinked($yes, $name);
     
 $new_page = "index.php";    
 header("Location: $new_page");
