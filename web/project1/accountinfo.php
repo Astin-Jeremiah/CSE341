@@ -112,7 +112,7 @@ $suggestion = $stmt4->fetchAll(PDO::FETCH_ASSOC);
                         $showname = $rev['content_name'];
                         $review = $rev['note'];
                         echo "
-                        <form id='specialform' action='editreview.php' method='POST'>
+                        <form id='specialform2' action='editreview.php' method='POST'>
                         <li id='special'><button type='submit' id='special' title='Edit Review'><i class='bi bi-pencil-fill'></i><b> $showname</b> - $review</button></li>
                         <input type='hidden' id='accountid' name='accountid' value='$accid'>
                         <input type='hidden' id='contentid' name='contentid' value='$conid'>
