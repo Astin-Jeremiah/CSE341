@@ -2,10 +2,10 @@
 session_start();
 require $_SERVER['DOCUMENT_ROOT'] . '/modules/dbConnect.php';
 
-if (isset (($_SESSION['userlevel']) && $_SESSION['userlevel'] < 3)){
+if ($_SESSION['userlevel'] < 3){
 	header("Location: index.php");
-             die();
-}
+    die();
+}else {
 
 $showname = htmlspecialchars($_POST['showname']);
 $desc = htmlspecialchars($_POST['description']);
@@ -18,6 +18,7 @@ $query2 = 'SELECT * FROM service';
 $stmt2 = $db->prepare($query2);
 $stmt2->execute();
 $serv = $stmt2->fetchAll(PDO::FETCH_ASSOC);*/
+}
 
 ?>
 <!doctype html>
