@@ -77,14 +77,14 @@ $suggestion = $stmt4->fetchAll(PDO::FETCH_ASSOC);
                 <hr>
                 <div>
                 <h4 class="mb-3">Watch List</h4>
-                <ul>
+                <ul class='speical'>
                 <?php
                     foreach ($ques as $que)
                         {
                         $proname = $que['content_name'];
                         $showid = $que['content_id'];
                         $accid = $que['account_id'];
-                        echo "<li> 
+                        echo "<li class='special'> 
                         <form id='specialform' action='removefromwatchlist.php' method='POST'>
                         <div>
                         <a href='programdetails.php?id=$showid' class='link-dark'>$proname</a>

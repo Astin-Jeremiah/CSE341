@@ -17,11 +17,11 @@
     color:white;
 }
 
-ul {
+ul.special {
     list-style: none;
 }
 
-li::before {
+li::before.special {
     content: "•"; color: white;
     display: inline-block; width: 1em;
     margin-left: -1em;
