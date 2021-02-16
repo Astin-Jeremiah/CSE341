@@ -84,7 +84,7 @@ $suggestion = $stmt4->fetchAll(PDO::FETCH_ASSOC);
                         $proname = $que['content_name'];
                         $showid = $que['content_id'];
                         $accid = $que['account_id'];
-                        echo "<li class='text-white'><span class='text-dark'><i class="bi bi-circle-fill"></i> 
+                        echo "<li class='text-white'><span class='text-dark'><i class='bi bi-circle-fill'></i> 
                         <form id='specialform' action='removefromwatchlist.php' method='POST'>
                         <div>
                         <a href='programdetails.php?id=$showid' class='link-dark'>$proname</a>
