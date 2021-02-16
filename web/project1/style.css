@@ -17,7 +17,15 @@
     color:white;
 }
 
-#test {
-   list-style-type: none;
+ul {
+    list-style: none;
 }
+
+li::before {
+    content: "•"; color: white;
+    display: inline-block; width: 1em;
+    margin-left: -1em;
+}
+
+
 
