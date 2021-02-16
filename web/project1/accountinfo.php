@@ -52,7 +52,7 @@ $suggestion = $stmt4->fetchAll(PDO::FETCH_ASSOC);
       <a href="index.php"><img class="img-fluid" src="../../images/logo.png" alt="Stream Central Logo"></a>
     </div>
     
-      <div class="card col-md-6 offset-md-3 p-2">
+      <div class="card col-md-6 offset-md-3 p-3">
                 <h4 class="mb-3">Account Information:</h4>
                     <div class="row g-3">
                         <div class="col-12">
@@ -109,7 +109,7 @@ $suggestion = $stmt4->fetchAll(PDO::FETCH_ASSOC);
                         $review = $rev['note'];
                         echo "
                         <form id='specialform2' action='editreview.php' method='POST'>
-                        <li><button type='submit' id='special' title='Edit Review'><b>$showname</b> - $review </button><i class='bi bi-pencil-fill'> </i></li>
+                        <li><button type='submit' id='special' title='Edit Review'><b>$showname</b> - $review <i class='bi bi-pencil-fill'> </i></button></li>
                         <input type='hidden' id='accountid' name='accountid' value='$accid'>
                         <input type='hidden' id='contentid' name='contentid' value='$conid'>
                         <input type='hidden' id='contentid' name='review' value='$review'>
