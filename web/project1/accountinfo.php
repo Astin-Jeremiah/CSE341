@@ -84,16 +84,13 @@ $suggestion = $stmt4->fetchAll(PDO::FETCH_ASSOC);
                         $proname = $que['content_name'];
                         $showid = $que['content_id'];
                         $accid = $que['account_id'];
-                        echo "<li class='text-white'><span class='text-dark'><i class='bi bi-circle-fill'></i> 
+                        echo "
                         <form id='specialform' action='removefromwatchlist.php' method='POST'>
-                        <div>
-                        <a href='programdetails.php?id=$showid' class='link-dark'>$proname</a>
+                        <li class='text-white'><span class='text-dark'><i class='bi bi-circle-fill' id='bullet'></i>
+                        <a href='programdetails.php?id=$showid' class='link-dark'> $proname</a>
                         <input type='hidden' id='accountid' name='accountid' value='$accid'>
                         <input type='hidden' id='contentid' name='contentid' value='$showid'>
-                        </div>
-                        <div>
                         <button type='submit' id='special'><i class='bi bi-trash-fill' id='trash' title='Remove From Watch List'></i></button>
-                        </div>
                         </form></span>
                         </li>";
                         }

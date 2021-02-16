@@ -9,12 +9,10 @@
   border: none;  
 }
 
-#specialform div { 
-  display: inline-block; 
-}
-
 #login:hover, #home:hover, #out:hover{
     color:white;
 }
 
-
+#bullet {
+    font-size: 8px;
+}
