@@ -37,7 +37,7 @@ $db = get_db();
                     }
                 ?>
                 </div>
-                <form action="insertuser.php" method="post">
+                <form action="insertuser.php" method="post" novalidate>
                     <div class="row g-3">
                         <div class="col-md-6">
                             <label for="username" class="form-label">User Name</label>
