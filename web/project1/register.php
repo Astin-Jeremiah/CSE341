@@ -37,28 +37,19 @@ $db = get_db();
                     }
                 ?>
                 </div>
-                <form action="insertuser.php" method="post" novalidate>
+                <form action="insertuser.php" method="post">
                     <div class="row g-3">
                         <div class="col-md-6">
                             <label for="username" class="form-label">User Name</label>
                             <input type="text" class="form-control" id="username" name="username" required <?php if(isset($username)){echo "value='$username'";}  ?>>
-                            <div class="invalid-feedback">
-                            Please enter a username.
-                            </div>
                         </div>
                         <div class="col-12">
                             <label for="email" class="form-label">Email</label>
                             <input type="email" class="form-control" id="email" name="email" required <?php if(isset($email)){echo "value='$email'";}  ?>>
-                            <div class="invalid-feedback">
-                            Please enter a valid email address.
-                            </div>
                         </div>
                       <div class="col-12">
                             <label for="password" class="form-label">Password - At least 8 characters containing 1 number, 1 capital letter and 1 special character.</label>
                             <input type="password" class="form-control" id="password" name="password" required pattern="(?=^.{8,}$)(?=.*\d)(?=.*\W+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$">
-                            <div class="invalid-feedback">
-                            Please enter a valid password.
-                            </div>
                         </div>  
                     </div><br>
                         <input type="submit" class="btn btn-dark" value="Create Account">
@@ -66,7 +57,5 @@ $db = get_db();
           </div>   
       </main>
     </div> 
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
-      <script src="form.js"></script>
   </body>
 </html>
