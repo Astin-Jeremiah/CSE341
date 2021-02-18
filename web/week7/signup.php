@@ -31,7 +31,7 @@ function checkpword($pword) {
         $pageerror = "signup.php?success=3";  
         header("Location: $pageerror");
         die();
-    } else if (!preg_match("#[0-9]+#",$password)){
+    } else if (!preg_match("#[0-9]+#",$pword)){
         $pageerror = "signup.php?success=4";  
         header("Location: $pageerror");
         die();
