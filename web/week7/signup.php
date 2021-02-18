@@ -34,6 +34,7 @@ $new_page = "login.php";
 header("Location: $new_page");
     
 die();
+}
 
 ?>
 <!doctype html>
