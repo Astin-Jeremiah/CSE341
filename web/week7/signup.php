@@ -5,9 +5,21 @@ if (isset($_POST['username']) && isset($_POST['password']))
 {
 $uname = htmlspecialchars($_POST['username']);
 $pword = htmlspecialchars($_POST['password']);
-$hash =  password_hash($pword, PASSWORD_DEFAULT);
+$pword2 = htmlspecialchars($_POST['password2']);
+$checkpword = checkpassword($pword, $pword2);     
+    
 $existinguname = checkExistinguname($uname);
 $regOutcome = regClient($uname, $hash);
+}
+
+function checkpassword($pword, $pword2) {
+    if ($pword == $pword2) {
+        $hash =  password_hash($pword, PASSWORD_DEFAULT);
+    } else {
+        $pageerror = "signin.php?success=2";  
+        header("Location: $pageerror");
+        die();
+    }
 }
 
 function checkExistinguname($uname) {
@@ -60,7 +72,8 @@ die();
                 <?php
                     if (isset($_GET['success']) && $_GET['success'] == 1 ){
                      echo "<h6>Username Already Exists</h6>";
-                    } 
+                    } else if (isset($_GET['success']) && $_GET['success'] == 2 ){
+                     echo "<h6 style='red'>Passwords Do Not Match</h6>";}
                 ?>
                 </div>
                 <form action="signup.php" method="post">
@@ -71,7 +84,13 @@ die();
                         </div>
                       <div class="col-12">
                             <label for="password" class="form-label">Password</label>
-                            <input type="password" class="form-control" id="password" name="password" required >
+                            <?php if (isset($_GET['success']) && $_GET['success'] == 2 ){
+                            echo "<span style='red'>*</span>";}?><input type="password" class="form-control" id="password" name="password" required >
+                        </div> 
+                        <div class="col-12">
+                            <label for="password" class="form-label">Retype Password</label>
+                            <?php if (isset($_GET['success']) && $_GET['success'] == 2 ){
+                            echo "<span style='red'>*</span>";}?<input type="password" class="form-control" id="password2" name="password2" required >
                         </div>  
                     </div><br>
                         <input type="submit" class="btn btn-dark" value="Create Account">
