@@ -84,8 +84,10 @@ die();
               
               if (p1 == p2) {
                   document.getElementById("message").innerHTML = "Passwords Match";
+                  document.getElementById("message").className = "text-success";
               } else {
                   document.getElementById("message").innerHTML = "Passwords Do Not Match";
+                  document.getElementById("message").className = "text-warning";
               }
           }
       </script>
@@ -108,7 +110,7 @@ die();
                     else if (isset($_GET['success']) && $_GET['success'] == 4 ){
                      echo "<h6 class='text-danger'>Passwords Must Contain A Number</h6>";}
                 ?>
-                <h6 class="text-danger" id="message"></h6>
+                <h6 class="" id="message"></h6>
                 </div>
                 <form action="signup.php" method="post">
                     <div class="row g-3">
