@@ -35,9 +35,7 @@ function checkpword($pword) {
         $pageerror = "signup.php?success=4";  
         header("Location: $pageerror");
         die();
-    } else {
-        
-    }
+    } 
 }
 
 function checkExistinguname($uname) {
