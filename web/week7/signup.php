@@ -16,7 +16,7 @@ function checkpassword($pword, $pword2) {
     if ($pword == $pword2) {
         $hash =  password_hash($pword, PASSWORD_DEFAULT);
     } else {
-        $pageerror = "signin.php?success=2";  
+        $pageerror = "signup.php?success=2";  
         header("Location: $pageerror");
         die();
     }
