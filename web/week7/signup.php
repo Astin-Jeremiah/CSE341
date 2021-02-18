@@ -26,13 +26,17 @@ function checkpassword($pword, $pword2) {
 }
 
 function checkpword($pword) {
-    $number = preg_match('@[0-9]@', $pword);
-    if ($number || strlen($pword) < 7){
-        
-    } else {
+   
+    if (strlen($pword) <= 7){
         $pageerror = "signup.php?success=3";  
         header("Location: $pageerror");
         die();
+    } else if (!preg_match("#[0-9]+#",$password)){
+        $pageerror = "signup.php?success=4";  
+        header("Location: $pageerror");
+        die();
+    } else {
+        
     }
 }
 
@@ -89,7 +93,9 @@ die();
                     } else if (isset($_GET['success']) && $_GET['success'] == 2 ){
                      echo "<h6 class='text-danger'>Passwords Do Not Match</h6>";}
                     else if (isset($_GET['success']) && $_GET['success'] == 3 ){
-                     echo "<h6 class='text-danger'>Passwords Must Be At Least 7 Characters With A Number</h6>";}
+                     echo "<h6 class='text-danger'>Passwords Must Be At Least 7 Characters </h6>";}
+                    else if (isset($_GET['success']) && $_GET['success'] == 4 ){
+                     echo "<h6 class='text-danger'>Passwords Must Contain A Number</h6>";}
                 ?>
                 </div>
                 <form action="signup.php" method="post">
