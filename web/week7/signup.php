@@ -1,11 +1,14 @@
 <?php
 require $_SERVER['DOCUMENT_ROOT'] . '/modules/dbConnect.php';
 
+if (isset($_POST['username']) && isset($_POST['password']))
+{
 $uname = htmlspecialchars($_POST['username']);
 $pword = htmlspecialchars($_POST['password']);
 $hash =  password_hash($pword, PASSWORD_DEFAULT);
 $existinguname = checkExistinguname($uname);
 $regOutcome = regClient($uname, $hash);
+}
 
 function checkExistinguname($uname) {
  $db = get_db();
@@ -59,7 +62,7 @@ die();
                     } 
                 ?>
                 </div>
-                <form action="" method="post">
+                <form action="signup.php" method="post">
                     <div class="row g-3">
                         <div class="col-md-6">
                             <label for="username" class="form-label">User Name</label>
