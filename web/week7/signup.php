@@ -90,7 +90,7 @@ die();
                         <div class="col-12">
                             <label for="password" class="form-label">Retype Password</label>
                             <?php if (isset($_GET['success']) && $_GET['success'] == 2 ){
-                            echo "<span style='red'>*</span>";}?<input type="password" class="form-control" id="password2" name="password2" required >
+                            echo "<span style='red'>*</span>";}?><input type="password" class="form-control" id="password2" name="password2" required >
                         </div>  
                     </div><br>
                         <input type="submit" class="btn btn-dark" value="Create Account">
