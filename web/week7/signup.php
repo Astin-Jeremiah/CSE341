@@ -29,7 +29,7 @@ function checkExistinguname($uname) {
  $stmt2->execute();
  $matchname = $stmt2->fetch(PDO::FETCH_NUM);
  if($matchname >= 1){
- $pageerror = "signin.php?success=1";    
+ $pageerror = "signup.php?success=2";    
  header("Location: $pageerror");
 die();
 }
