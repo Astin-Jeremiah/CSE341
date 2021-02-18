@@ -14,9 +14,20 @@ $regOutcome = regClient($uname, $hash);
 
 function checkpassword($pword, $pword2) {
     if ($pword == $pword2) {
-        $hash =  password_hash($pword, PASSWORD_DEFAULT);
+        $check2 = checkpword($pword);
     } else {
         $pageerror = "signup.php?success=2";  
+        header("Location: $pageerror");
+        die();
+    }
+}
+
+function checkpword($pword) {
+    $number = = preg_match('@[0-9]@', $pword);
+    if ($number || strlen($pword) < 7){
+        $hash =  password_hash($pword, PASSWORD_DEFAULT);
+    } else {
+        $pageerror = "signup.php?success=3";  
         header("Location: $pageerror");
         die();
     }
@@ -73,7 +84,9 @@ die();
                     if (isset($_GET['success']) && $_GET['success'] == 1 ){
                      echo "<h6>Username Already Exists</h6>";
                     } else if (isset($_GET['success']) && $_GET['success'] == 2 ){
-                     echo "<h6 style='red'>Passwords Do Not Match</h6>";}
+                     echo "<h6 class='text-danger'>Passwords Do Not Match</h6>";}
+                    else if (isset($_GET['success']) && $_GET['success'] == 3 ){
+                     echo "<h6 class='text-danger'>Passwords Must Be At Least 7 Characters With A Number</h6>";}
                 ?>
                 </div>
                 <form action="signup.php" method="post">
@@ -85,12 +98,12 @@ die();
                       <div class="col-12">
                             <label for="password" class="form-label">Password</label>
                             <?php if (isset($_GET['success']) && $_GET['success'] == 2 ){
-                            echo "<span style='red'>*</span>";}?><input type="password" class="form-control" id="password" name="password" required >
+                            echo "<span class='text-danger'>*</span>";}?><input type="password" class="form-control" id="password" name="password" required >
                         </div> 
                         <div class="col-12">
                             <label for="password" class="form-label">Retype Password</label>
                             <?php if (isset($_GET['success']) && $_GET['success'] == 2 ){
-                            echo "<span style='red'>*</span>";}?><input type="password" class="form-control" id="password2" name="password2" required >
+                            echo "<span class='text-danger'>*</span>";}?><input type="password" class="form-control" id="password2" name="password2" required >
                         </div>  
                     </div><br>
                         <input type="submit" class="btn btn-dark" value="Create Account">
