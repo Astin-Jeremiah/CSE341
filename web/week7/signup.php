@@ -79,8 +79,8 @@ die();
         <script>
           
           function check() {
-              let p1 = document.getElementById("password");
-              let p2 = document.getElementById("password2");
+              let p1 = document.getElementById("password").value;
+              let p2 = document.getElementById("password2").value;
               
               if (p1 == p2) {
                   document.getElementById("message").innerHTML = "Passwords Match";
