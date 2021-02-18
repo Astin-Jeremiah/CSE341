@@ -95,6 +95,7 @@ die();
                     else if (isset($_GET['success']) && $_GET['success'] == 4 ){
                      echo "<h6 class='text-danger'>Passwords Must Contain A Number</h6>";}
                 ?>
+                <h6 class="text-danger" id="message"></h6>
                 </div>
                 <form action="signup.php" method="post">
                     <div class="row g-3">
@@ -110,13 +111,27 @@ die();
                         <div class="col-12">
                             <label for="password" class="form-label">Retype Password</label>
                             <?php if (isset($_GET['success']) && $_GET['success'] == 2 ){
-                            echo "<span class='text-danger'>*</span>";}?><input type="password" class="form-control" id="password2" name="password2" required >
+                            echo "<span class='text-danger'>*</span>";}?><input type="password" class="form-control" id="password2" name="password2" required pattern="(?=^.{7,}$)(?=.*\d)(?=.*\W+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$">
                         </div>  
                     </div><br>
-                        <input type="submit" class="btn btn-dark" value="Create Account">
+                        <input type="submit" id="button" class="btn btn-dark" value="Create Account">
             </form>    
           </div>   
       </main>
     </div> 
+      <script>
+        document.getElementById("button").addEventListener("click", checkinput);
+          
+          function checkinput {
+              let p1 = document.getElementById("password");
+              let p2 = document.getElementById("password2");
+              
+              if p1 == p2 {
+                  document.getElementById("message").innerHTML = "Match";
+              } else {
+                  document.getElementById("message").innerHTML = "Passwords Do Not Match";
+              }
+          }
+      </script>
   </body>
 </html>
