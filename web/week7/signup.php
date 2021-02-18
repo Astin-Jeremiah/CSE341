@@ -6,15 +6,18 @@ if (isset($_POST['username']) && isset($_POST['password']))
 $uname = htmlspecialchars($_POST['username']);
 $pword = htmlspecialchars($_POST['password']);
 $pword2 = htmlspecialchars($_POST['password2']);
-$checkpword = checkpassword($pword, $pword2);     
+$checkpword = checkpassword($pword, $pword2);  
+$check2 =  checkpword($pword);  
+$hash =  password_hash($pword, PASSWORD_DEFAULT);
+$regOutcome = regClient($uname, $hash);
     
 $existinguname = checkExistinguname($uname);
-$regOutcome = regClient($uname, $hash);
+
 }
 
 function checkpassword($pword, $pword2) {
     if ($pword == $pword2) {
-        $check2 = checkpword($pword);
+        
     } else {
         $pageerror = "signup.php?success=2";  
         header("Location: $pageerror");
@@ -25,7 +28,7 @@ function checkpassword($pword, $pword2) {
 function checkpword($pword) {
     $number = preg_match('@[0-9]@', $pword);
     if ($number || strlen($pword) < 7){
-        $hash =  password_hash($pword, PASSWORD_DEFAULT);
+        
     } else {
         $pageerror = "signup.php?success=3";  
         header("Location: $pageerror");
