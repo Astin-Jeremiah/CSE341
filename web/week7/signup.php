@@ -76,6 +76,20 @@ die();
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
       <link href="style.css" rel="stylesheet">
       <script src="script.js"></script>
+        <script>
+        document.getElementById("button").addEventListener("click", checkinput);
+          
+          function checkinput {
+              let p1 = document.getElementById("password");
+              let p2 = document.getElementById("password2");
+              
+              if p1 == p2 {
+                  document.getElementById("message").innerHTML = "Match";
+              } else {
+                  document.getElementById("message").innerHTML = "Passwords Do Not Match";
+              }
+          }
+      </script>
     </head>
   <body class="bg-light">
  
@@ -119,19 +133,5 @@ die();
           </div>   
       </main>
     </div> 
-      <script>
-        document.getElementById("button").addEventListener("click", checkinput);
-          
-          function checkinput {
-              let p1 = document.getElementById("password");
-              let p2 = document.getElementById("password2");
-              
-              if p1 == p2 {
-                  document.getElementById("message").innerHTML = "Match";
-              } else {
-                  document.getElementById("message").innerHTML = "Passwords Do Not Match";
-              }
-          }
-      </script>
   </body>
 </html>
