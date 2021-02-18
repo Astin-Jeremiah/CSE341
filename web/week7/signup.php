@@ -77,14 +77,13 @@ die();
       <link href="style.css" rel="stylesheet">
       <script src="script.js"></script>
         <script>
-        document.getElementById("button").addEventListener("click", checkinput);
           
-          function checkinput {
+          function check() {
               let p1 = document.getElementById("password");
               let p2 = document.getElementById("password2");
               
-              if p1 == p2 {
-                  document.getElementById("message").innerHTML = "Match";
+              if (p1 == p2) {
+                  document.getElementById("message").innerHTML = "Passwords Match";
               } else {
                   document.getElementById("message").innerHTML = "Passwords Do Not Match";
               }
@@ -120,12 +119,12 @@ die();
                       <div class="col-12">
                             <label for="password" class="form-label">Password</label>
                             <?php if (isset($_GET['success']) && $_GET['success'] == 2 ){
-                            echo "<span class='text-danger'>*</span>";}?><input type="password" class="form-control" id="password" name="password" required >
+                            echo "<span class='text-danger'>*</span>";}?><input type="password" class="form-control" id="password" name="password" onkeyup="check()" required >
                         </div> 
                         <div class="col-12">
                             <label for="password" class="form-label">Retype Password</label>
                             <?php if (isset($_GET['success']) && $_GET['success'] == 2 ){
-                            echo "<span class='text-danger'>*</span>";}?><input type="password" class="form-control" id="password2" name="password2" required pattern="(?=^.{7,}$)(?=.*\d)(?=.*\W+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$">
+                            echo "<span class='text-danger'>*</span>";}?><input type="password" class="form-control" id="password2" name="password2" onkeyup="check()" required pattern="(?=^.{7,}$)(?=.*\d)(?=.*\W+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$">
                         </div>  
                     </div><br>
                         <input type="submit" id="button" class="btn btn-dark" value="Create Account">
