@@ -23,7 +23,7 @@ function checkpassword($pword, $pword2) {
 }
 
 function checkpword($pword) {
-    $number = = preg_match('@[0-9]@', $pword);
+    $number = preg_match('@[0-9]@', $pword);
     if ($number || strlen($pword) < 7){
         $hash =  password_hash($pword, PASSWORD_DEFAULT);
     } else {
