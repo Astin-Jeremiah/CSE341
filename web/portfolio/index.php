@@ -44,6 +44,18 @@
                     <li><a class="dropdown-item" href="../week5/teamstretch.php">Week 5 Team Activity Stretch</a></li>
                     <li><a class="dropdown-item" href="../project1/index.php">Week 5 Database Access</a></li>
                     </ul>
+                <button type="button" class="btn btn-info dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                    Week 7
+                </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <li><a class="dropdown-item" href="../week7/signup.php">Week 7 Team Activity</a></li>
+                    </ul>
+                <button type="button" class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                    Week 7
+                </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <li><a class="dropdown-item" href="../project1/index.php">Project 1</a></li>
+                    </ul>
             </div>
         </div>
     </main>
