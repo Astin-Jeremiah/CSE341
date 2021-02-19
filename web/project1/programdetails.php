@@ -19,7 +19,7 @@ $stmt->bindValue(':id', $sid, PDO::PARAM_INT);
 $stmt->execute();
 $details = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-stmt3 = $db->prepare('SELECT content_name FROM content WHERE content.id = :id');
+$stmt3 = $db->prepare('SELECT content_name FROM content WHERE content.id = :id');
 $stmt3->bindValue(':id', $sid, PDO::PARAM_INT);
 $stmt3->execute();
 $title = $stmt3->fetchAll(PDO::FETCH_ASSOC);
@@ -31,7 +31,7 @@ $stmt2->execute();
 $review = $stmt2->fetchAll(PDO::FETCH_ASSOC);
 
 $user = $_SESSION['userid'];
-$pid = htmlspecialchars($_GET['id']);
+
 
 ?>
 <!doctype html>
@@ -137,7 +137,7 @@ $pid = htmlspecialchars($_GET['id']);
                     if (isset ($_SESSION['userid'])){
                         echo "<form action='insertreview.php' method='POST'>
                         <input type='hidden' id='userid' name='userid' value='$user'>
-                        <input type='hidden' id='programid' name='programid' value='$pid'>
+                        <input type='hidden' id='programid' name='programid' value='$sid'>
                         <textarea class='form-control' placeholder='Review' id='review' name='review'></textarea>
                         <br>
                         <input type='submit' class='btn btn-dark' value='Submit Review'>    
