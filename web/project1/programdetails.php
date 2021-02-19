@@ -18,7 +18,7 @@ $stmt = $db->prepare('SELECT content_name, description, service_id, service_name
 $stmt->bindValue(':id', $sid, PDO::PARAM_INT);
 $stmt->execute();
 $details = $stmt->fetchAll(PDO::FETCH_ASSOC);
-echo $details['content_name'];
+
 
 $stmt2 = $db->prepare('SELECT user_name, note FROM reviews INNER JOIN account ON account.id = reviews.account_id WHERE reviews.content_id = :id');
 $stmt2->bindValue(':id', $sid, PDO::PARAM_INT);
@@ -35,7 +35,7 @@ $pid = htmlspecialchars($_GET['id']);
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title><?php echo $title; ?></title>
+    <title><?php echo $details['content_name']; ?></title>
     <link href="../../bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
     <link href="style.css" rel="stylesheet">
