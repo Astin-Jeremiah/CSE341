@@ -3,8 +3,7 @@ session_start();
 require $_SERVER['DOCUMENT_ROOT'] . '/modules/dbConnect.php';
 $db = get_db();
 
-$username = htmlspecialchars($_POST['username']);
-$email = htmlspecialchars($_POST['email']);
+$user = $_SESSION['userid'];
 ?>
 <!doctype html>
 <html lang="en">
@@ -42,8 +41,6 @@ $email = htmlspecialchars($_POST['email']);
                     <div class="row g-3">
                         <div class="col-md-6">
                             <form action="updateusername.php" method="post">
-                            <input type='hidden' id='email' name='email' value='<?php echo $email; ?>'>
-                            <br>
                             <label for="username" class="form-label">User Name</label>
                             <input type="text" class="form-control" id="username" name="username" required <?php if(isset($username)){echo "value='$username'";}  ?>>
                             <br>
