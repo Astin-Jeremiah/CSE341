@@ -31,5 +31,6 @@ $stmt->execute();
 
 $new_page = "accountinfo.php";    
 header("Location: $new_page");
-die();  
+die();
+}
 ?>
