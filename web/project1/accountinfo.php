@@ -74,7 +74,7 @@ $suggestion = $stmt4->fetchAll(PDO::FETCH_ASSOC);
                             </form>
                         </div>  
                     </div>
-                </div>
+                </div><br>
                 <div class="card col-md-6 offset-md-3 p-3">
                 <h4 class="mb-3">Watch List</h4>
                 <ul>
@@ -95,7 +95,7 @@ $suggestion = $stmt4->fetchAll(PDO::FETCH_ASSOC);
                         }
                 ?>
                 </ul>
-                </div>
+                </div><br>
 
                 <div class="card col-md-6 offset-md-3 p-3">
                 <h4 class="mb-3">My Reviews - Click A Review To Edit</h4>
@@ -117,13 +117,12 @@ $suggestion = $stmt4->fetchAll(PDO::FETCH_ASSOC);
                         }
                 ?>
                 </ul>
-                </div>
+                </div><br>
             
                 <?php 
 
                     if (isset ($_SESSION['userlevel']) && $_SESSION['userlevel'] == 3){
                         echo "
-                        <hr>
                         <div class='card col-md-6 offset-md-3 p-3'>
                         <h4 class='mb-3'>Admin: User Suggestions - Click To Edit Suggestion</h4>
                         <ul>";
