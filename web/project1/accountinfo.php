@@ -93,7 +93,7 @@ $suggestion = $stmt4->fetchAll(PDO::FETCH_ASSOC);
 
                 <div class="card col-md-6 offset-md-3 p-3">
                 <h4 class="mb-3">My Reviews - Click A Review To Edit</h4>
-                <ul>
+                <ul class="list">
                 <?php
                     foreach ($reviews as $rev)
                         {
@@ -103,7 +103,7 @@ $suggestion = $stmt4->fetchAll(PDO::FETCH_ASSOC);
                         $review = $rev['note'];
                         echo "
                         <form id='specialform2' action='editreview.php' method='POST'>
-                        <li class='hover'><button type='submit' id='special' title='Edit Review' class='text-norwap'><b>$showname</b> - $review</button></li>
+                        <li><button type='submit' id='special' title='Edit Review' class='text-norwap'><b>$showname</b> - $review</button></li>
                         <input type='hidden' id='accountid' name='accountid' value='$accid'>
                         <input type='hidden' id='contentid' name='contentid' value='$conid'>
                         <input type='hidden' id='contentid' name='review' value='$review'>
@@ -119,14 +119,14 @@ $suggestion = $stmt4->fetchAll(PDO::FETCH_ASSOC);
                         echo "
                         <div class='card col-md-6 offset-md-3 p-3'>
                         <h4 class='mb-3'>Admin: User Suggestions - Click To Edit Suggestion</h4>
-                        <ul>";
+                        <ul class='list'>";
                         foreach ($suggestion as $sug){
                             $sname = $sug['suggested_content_name'];
                             $desc = $sug['suggested_description'];
                             $serv = $sug['service_id'];
                             echo "
                             <form id='specialform' action='databaseinfo.php' method='POST'>
-                            <li class='hover'><button type='submit' id='special' class='text-norwap' title='Add Suggestion To Database'><b> $sname</b> - $desc</button></li>
+                            <li><button type='submit' id='special' class='text-norwap' title='Add Suggestion To Database'><b> $sname</b> - $desc</button></li>
                             <input type='hidden' id='showname' name='showname' value='$sname'>
                             <input type='hidden' id='description' name='description' value='$desc'>
                             <input type='hidden' id='service' name='service' value='$serv'>
