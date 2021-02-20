@@ -51,7 +51,7 @@
                     <li><a class="dropdown-item" href="../week7/signup.php">Week 7 Team Activity</a></li>
                     </ul>
                 <button type="button" class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                    Week 7
+                    Project 1
                 </button>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                     <li><a class="dropdown-item" href="../project1/index.php">Project 1</a></li>
