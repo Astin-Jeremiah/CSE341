@@ -16,3 +16,7 @@
 #special {
     text-align: left;
 }
+
+.hover:hover {
+    text-decoration: underline;
+}
