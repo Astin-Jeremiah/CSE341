@@ -31,9 +31,9 @@ $db = get_db();
                 <div class="message">
                 <?php
                     if (isset($_GET['success']) && $_GET['success'] == 1 ){
-                     echo "<h6>Username Already Exists</h6>";
+                     echo "<h6 class='text-danger'>User Name Already Exists</h6>";
                     } else if (isset($_GET['success']) && $_GET['success'] == 2 ){
-                     echo "<h6>Email Already Exists Please <a href='login.php'>Login</a>.</h6>";
+                     echo "<h6 class='text-danger'>Email Already Exists Please <a href='login.php'>Login</a>.</h6>";
                     }
                 ?>
                 </div>
