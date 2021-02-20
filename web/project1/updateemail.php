@@ -1,12 +1,13 @@
 <?php
+session_start();
 require $_SERVER['DOCUMENT_ROOT'] . '/modules/dbConnect.php';
 
-$uname = htmlspecialchars($_POST['uname']);
 $email = htmlspecialchars($_POST['email']);
+$user = $_SESSION['userid'];
 
 $existingemail = checkExistingEmail($email);
 
-$regOutcome = updateuser($uname, $email);
+$regOutcome = updateuser($user, $email);
 
 function checkExistingEmail($email) {
  $db = get_db();
@@ -24,11 +25,11 @@ die();
 }
 
 
-function updateuser($uname, $email) {
+function updateuser($user, $email) {
 $db = get_db();
-$stmt = $db->prepare('UPDATE account SET email = :newemail WHERE user_name = :uname');
+$stmt = $db->prepare('UPDATE account SET email = :newemail WHERE id = :id');
 $stmt->bindValue(':newemail', $email);
-$stmt->bindValue(':uname', $uname);
+$stmt->bindValue(':id', $user);
 $stmt->execute();
     
 $new_page = "updateaccountinfo.php?success=5";    

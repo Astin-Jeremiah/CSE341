@@ -63,7 +63,6 @@ $user = $_SESSION['userid'];
                     <div class="row g-3">
                         <div class="col-12">
                             <form action="updateemail.php" method="post">
-                            <input type='hidden' id='uname' name='uname' value='<?php echo $username; ?>'><br>
                             <label for="email" class="form-label">Email</label>
                             <input type="email" class="form-control" id="email" name="email" required <?php if(isset($email)){echo "value='$email'";}  ?>>
                             <br>
