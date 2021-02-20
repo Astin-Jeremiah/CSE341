@@ -32,7 +32,7 @@ if (isset($_POST['user']) && isset($_POST['pw']))
         } else if (password_verify($password, $hash)) {
             $_SESSION['userid'] = $uid;
             $_SESSION['userlevel'] = $level;
-            header("Location: index.php");
+            header("Location: accountinfo.php");
              die();
         }else {
             $badLogin = true;
