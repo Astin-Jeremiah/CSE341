@@ -17,6 +17,6 @@
     text-align: left;
 }
 
-.list li button:hover {
+#special:hover {
     text-decoration: underline;
 }
