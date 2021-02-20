@@ -1,18 +1,17 @@
 <?php
+session_start();
 require $_SERVER['DOCUMENT_ROOT'] . '/modules/dbConnect.php';
 
-$uname = htmlspecialchars($_POST['uname']);
+$user = $_SESSION['userid'];
 $pword = htmlspecialchars($_POST['password']);
 $newhash =  password_hash($pword, PASSWORD_DEFAULT);
 
-echo $uname;
-echo $pword;
-echo $newhash;
+
 
 $db = get_db();
-$stmt = $db->prepare('UPDATE account SET password = :npass WHERE user_name = :username');
+$stmt = $db->prepare('UPDATE account SET password = :npass WHERE id = :id');
 $stmt->bindValue(':npass', $newhash);
-$stmt->bindValue(':username', $uname);
+$stmt->bindValue(':id', $user);
 $stmt->execute();
 
 
@@ -21,4 +20,4 @@ header("Location: $new_page");
     
 die();
 
-?>
+?

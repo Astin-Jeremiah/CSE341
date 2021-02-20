@@ -83,7 +83,6 @@ $user = $_SESSION['userid'];
                       <div class="row g-3">  
                       <div class="col-12">
                             <form action="updatepword.php" method="post">
-                            <input type='hidden' id='uname' name='uname' value='<?php echo $username; ?>'><br>
                             <label for="password" class="form-label">Password - At least 8 characters containing 1 number, 1 capital letter and 1 special character.</label>
                             <input type="password" class="form-control" id="password" name="password" required pattern="(?=^.{8,}$)(?=.*\d)(?=.*\W+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$">
                                 <br>
