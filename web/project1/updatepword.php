@@ -20,4 +20,4 @@ header("Location: $new_page");
     
 die();
 
-?
+?>
