@@ -36,7 +36,7 @@ $review = htmlspecialchars($_POST['review']);
                             <textarea class='form-control' placeholder='Review' id='newreview' name='newreview'><?php echo $review; ?></textarea>
                             <br>
                             <div class="col-lg-6">
-                            <input type='submit' class='btn btn-dark' value='Submit Review' name='edit'>
+                            <input type='submit' class='btn btn-dark' value='Update Review' name='edit'>
                             <input type='submit' class='btn btn-dark' value='Delete Review' name='delete'>
                             </div>
                             </form>  
