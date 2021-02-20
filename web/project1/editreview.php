@@ -35,11 +35,9 @@ $review = htmlspecialchars($_POST['review']);
                             <input type='hidden' id='cid' name='cid' value='<?php echo $programid; ?>'>
                             <textarea class='form-control' placeholder='Review' id='newreview' name='newreview'><?php echo $review; ?></textarea>
                             <br>
-                            <div class="col-lg-6">
                             <input type='submit' class='btn btn-dark' value='Update Review' name='result'>
                             <input type='submit' class='btn btn-dark' value='Delete Review' name='result'>
                             <a class="btn btn-dark" href="accountinfo.php" role="button">Return To Account Information</a>
-                            </div>
                             </form>  
                         </div>
                     </div>
