@@ -17,6 +17,6 @@
     text-align: left;
 }
 
-.hover:hover {
+li.hover:hover {
     text-decoration: underline;
 }
