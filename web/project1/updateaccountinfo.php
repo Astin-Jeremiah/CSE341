@@ -29,19 +29,13 @@ $email = htmlspecialchars($_POST['email']);
     </div>
     
       <div class="card col-md-6 offset-md-3 p-2">
-                <h4 class="mb-3">Update Account Information</h4>
+                <h4 class="mb-3">Update User Name</h4>
                 <div class="message">
                 <?php
-                    if (isset($_GET['success']) && $_GET['success'] == 1 ){
-                     echo "<h6>Password Reset</h6>";
-                    } else if (isset($_GET['success']) && $_GET['success'] == 2 ){
-                     echo "<h6>Username Already Taken</h6>";
+                    if (isset($_GET['success']) && $_GET['success'] == 2 ){
+                     echo "<h6 class='text-danger'>User Name Already Taken</h6>";
                     } else if (isset($_GET['success']) && $_GET['success'] == 3 ){
                      echo "<h6>User Name Updated</h6>";
-                    } else if (isset($_GET['success']) && $_GET['success'] == 4 ){
-                     echo "<h6>Email Already Used</h6>";
-                    } else if (isset($_GET['success']) && $_GET['success'] == 5){
-                     echo "<h6>Email Address Updated</h6>";
                     }
                 ?>
                 </div>
@@ -56,6 +50,20 @@ $email = htmlspecialchars($_POST['email']);
                             <input type='submit' class='btn btn-dark' value='Update User Name'>
                             </form>    
                         </div>
+                    </div>
+          </div><br>
+          <div class="card col-md-6 offset-md-3 p-2">
+              <h4 class="mb-3">Update Email</h4>
+                <div class="message">
+                <?php
+                    if (isset($_GET['success']) && $_GET['success'] == 4 ){
+                     echo "<h6 class='text-danger'>Email Already Used</h6>";
+                    } else if (isset($_GET['success']) && $_GET['success'] == 5 ){
+                     echo "<h6>Email Address Updated</h6>";
+                    }
+                ?>
+                </div>
+                    <div class="row g-3">
                         <div class="col-12">
                             <form action="updateemail.php" method="post">
                             <input type='hidden' id='uname' name='uname' value='<?php echo $username; ?>'><br>
@@ -65,6 +73,18 @@ $email = htmlspecialchars($_POST['email']);
                             <input type='submit' class='btn btn-dark' value='Update Email'>
                             </form>
                         </div>
+                </div> 
+          </div><br>
+                 <div class="card col-md-6 offset-md-3 p-2">
+                    <h4 class="mb-3">Update Password</h4>
+                     <div class="message">
+                        <?php
+                            if (isset($_GET['success']) && $_GET['success'] == 1){
+                            echo "<h6>Password Reset</h6>";
+                            }
+                        ?>
+                    </div>       
+                      <div class="row g-3">  
                       <div class="col-12">
                             <form action="updatepword.php" method="post">
                             <input type='hidden' id='uname' name='uname' value='<?php echo $username; ?>'><br>
@@ -74,8 +94,8 @@ $email = htmlspecialchars($_POST['email']);
                             <input type='submit' class='btn btn-dark' value='Update Password'>
                           </form>
                         </div>  
-                    </div><br>
-          </div>   
+                    </div>
+          </div><br>
       </main>
     </div> 
   </body>
