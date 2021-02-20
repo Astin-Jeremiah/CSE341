@@ -2,11 +2,14 @@
 
 var_dump($_POST);
 
-/*$nrev = htmlspecialchars($_POST['newreview']);
+$nrev = htmlspecialchars($_POST['newreview']);
 $userid2 = htmlspecialchars($_POST['aid']);
 $programid2 = htmlspecialchars($_POST['cid']);
+$result = htmlspecialchars($_POST['result']);
 
-require $_SERVER['DOCUMENT_ROOT'] . '/modules/dbConnect.php';
+echo $result;
+
+/*require $_SERVER['DOCUMENT_ROOT'] . '/modules/dbConnect.php';
 $db = get_db();
 $stmt = $db->prepare('UPDATE reviews SET note = :review WHERE account_id = :userid AND content_id = :programid');
 $stmt->bindValue(':review', $nrev);
