@@ -38,6 +38,7 @@ $review = htmlspecialchars($_POST['review']);
                             <div class="col-lg-6">
                             <input type='submit' class='btn btn-dark' value='Update Review' name='result'>
                             <input type='submit' class='btn btn-dark' value='Delete Review' name='result'>
+                            <a class="btn btn-dark" href="accountinfo.php" role="button">Return To Account Information</a>
                             </div>
                             </form>  
                         </div>
