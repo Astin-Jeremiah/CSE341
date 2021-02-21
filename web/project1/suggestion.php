@@ -39,7 +39,7 @@ $serv = $stmt2->fetchAll(PDO::FETCH_ASSOC);
                     if (isset($_GET['success']) && $_GET['success'] == 1 ){
                      echo "<h6>Suggestion Submitted</h6>";
                     } else if (isset($_GET['success']) && $_GET['success'] == 2 ){
-                     echo "<h6>Title Already In Database</a>.</h6>";
+                     echo "<h6 class='text-warning'>Title Already In Database</a>.</h6>";
                     }
                 ?>
                 </div>
@@ -68,6 +68,7 @@ $serv = $stmt2->fetchAll(PDO::FETCH_ASSOC);
                         </div>  
                     </div><br>
                         <input type="submit" class="btn btn-dark" value="Submit Suggestion">
+                        <a class="btn btn-dark" href="index.php" role="button">Return Home</a>
             </form>    
           </div>   
       </main>
