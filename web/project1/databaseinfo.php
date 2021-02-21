@@ -58,7 +58,9 @@ $link = '../images/';
                         </div>
                     </div><br>
                         <input type='hidden' id='showname' name='showname' value='<?php echo $showname; ?>'>
-                        <input type="submit" class="btn btn-dark" value="Write To Database">
+                        <input type="submit" class="btn btn-dark" value="Write To Database" name="result">
+                        <input type="submit" class="btn btn-dark" value="Delete Suggestion" name="result">
+                        <a class="btn btn-dark" href="accountinfo.php" role="button">Return To Account Information</a>
             </form>    
           </div>   
       </main>

@@ -7,8 +7,12 @@ $about = htmlspecialchars($_POST['description']);
 $service = htmlspecialchars($_POST['service']);
 $link = htmlspecialchars($_POST['link']);
 $yes = 'yes';
+$no = 'no';
+$result = htmlspecialchars($_POST['result']);
+$add = "Write To Database";
+$delete = "Delete Suggestion";
 
-
+if ($result == $add){
 $db = get_db();
 $stmt = $db->prepare('INSERT INTO content (content_name, description, picture, service_id) VALUES (:name, :description, :link, :service)');
 $stmt->bindValue(':name', $name);
@@ -23,6 +27,22 @@ $new_page = "index.php";
 header("Location: $new_page");
     
 die();
+}
+
+if ($result == $delete){
+$db = get_db();
+$stmt3 = $db->prepare('UPDATE suggested_content SET sinked = :false WHERE suggested_content_name = :name');
+$stmt3->bindValue(':false', $no);
+$stmt3->bindValue(':name', $sugname);   
+$stmt3->execute();
+
+$new_page = "accountinfo.php";    
+header("Location: $new_page");
+    
+die();
+}
+
+
 
 
 function markedsinked($yes, $sugname) {
