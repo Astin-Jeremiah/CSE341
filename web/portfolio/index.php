@@ -57,6 +57,15 @@
                     <li><a class="dropdown-item" href="../project1/index.php">Project 1</a></li>
                     </ul>
             </div>
+            
+            <div class="btn-group gap-5">
+                <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                    Week 9
+                </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <li><a class="dropdown-item" href="https://calm-journey-75190.herokuapp.com/">Postal Rate Calculator</a></li>
+                    </ul>
+            </div>
         </div>
     </main>
     <footer class="footer mt-auto py-2 bg-dark">
