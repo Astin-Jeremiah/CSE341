@@ -65,6 +65,12 @@
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                     <li><a class="dropdown-item" href="https://calm-journey-75190.herokuapp.com/">Postal Rate Calculator</a></li>
                     </ul>
+                <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                    Week 10
+                </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <li><a class="dropdown-item" href="https://afternoon-crag-79313.herokuapp.com/">Project2</a></li>
+                    </ul>
             </div>
         </div>
     </main>
